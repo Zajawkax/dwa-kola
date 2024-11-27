@@ -1,0 +1,104 @@
+﻿.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #0d6efd;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__brand {
+    color: #fff;
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+    .navbar__brand svg {
+        margin-right: 10px;
+    }
+
+.navbar__toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar__links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+    .navbar__links li {
+        margin-left: 20px;
+    }
+
+    .navbar__links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+        position: relative;
+    }
+
+        .navbar__links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ffdd57;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        .navbar__links a:hover,
+        .navbar__links a.active {
+            color: #ffdd57;
+        }
+
+            .navbar__links a:hover::after,
+            .navbar__links a.active::after {
+                width: 100%;
+            }
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__toggle {
+        display: block;
+    }
+
+    .navbar__links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #0d6efd;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+        .navbar__links.active {
+            max-height: 300px;
+        }
+
+        .navbar__links li {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+
+        .navbar__links a {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+        }
+}

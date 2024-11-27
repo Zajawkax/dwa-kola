@@ -1,0 +1,102 @@
+2024-11-05 21:52:32,559 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 21:52:32,559 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 21:52:35,425 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:52:37,251 - INFO - Otwarto okno parametru.
+2024-11-05 21:52:37,251 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 21:52:51,702 - INFO - Dodano parametr: duza
+2024-11-05 21:52:53,651 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:52:55,713 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:52:55,899 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:53:20,396 - ERROR - B³¹d generowania przypadków testowych: must provide more than one option
+2024-11-05 21:53:24,895 - INFO - Wygenerowano 4 przypadków testowych.
+2024-11-05 21:53:27,149 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:53:27,985 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:53:32,253 - INFO - Wykonano operacjê cofniêcia.
+2024-11-05 21:53:33,614 - INFO - Wykonano operacjê ponowienia.
+2024-11-05 21:53:36,069 - INFO - Wykonano operacjê cofniêcia.
+2024-11-05 21:53:36,864 - INFO - Wykonano operacjê ponowienia.
+2024-11-05 21:53:42,505 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:53:46,391 - INFO - Usuniêto parametr: duza
+2024-11-05 21:53:50,552 - INFO - Otwarto okno parametru.
+2024-11-05 21:53:50,552 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 21:53:58,572 - INFO - Dodano parametr: fd
+2024-11-05 21:54:18,623 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:54:20,497 - INFO - Otwarto okno parametru.
+2024-11-05 21:54:20,497 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 21:54:26,690 - INFO - Dodano parametr: blbulbu
+2024-11-05 21:54:29,784 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:54:31,018 - INFO - Otwarto okno parametru.
+2024-11-05 21:54:31,018 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 21:54:40,841 - INFO - Dodano parametr: figofago
+2024-11-05 21:54:42,382 - INFO - Otwarto okno parametru.
+2024-11-05 21:54:42,382 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 21:54:46,239 - INFO - Wygenerowano 56 przypadków testowych.
+2024-11-05 21:54:48,426 - INFO - Wyœwietlono podgl¹d 56 przypadków testowych.
+2024-11-05 21:54:59,977 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:55:06,129 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:55:12,272 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:55:13,711 - INFO - Wygenerowano 10 przypadków testowych.
+2024-11-05 21:55:15,678 - INFO - Wyœwietlono podgl¹d 10 przypadków testowych.
+2024-11-05 21:55:24,616 - INFO - Wygenerowano 10 przypadków testowych.
+2024-11-05 21:55:57,701 - ERROR - B³¹d zapisu przypadków testowych: No module named 'openpyxl'
+2024-11-05 21:55:57,713 - INFO - Przypadki testowe zapisano do bazy danych z ID konfiguracji 1.
+2024-11-05 21:56:19,183 - INFO - Wygenerowano raport PDF w pliku C:/Users/zaklo/OneDrive/Desktop/Studia/Projekt_inzynierski/raport/fajnyraport.pdf
+2024-11-05 21:57:09,197 - INFO - Wygenerowano 10 przypadków testowych.
+2024-11-05 21:57:12,015 - INFO - Wyœwietlono podgl¹d 10 przypadków testowych.
+2024-11-05 21:57:41,197 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 21:57:54,233 - INFO - Otwarto okno parametru.
+2024-11-05 21:57:54,233 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 21:58:06,180 - INFO - Dodano parametr: fff
+2024-11-05 21:58:14,780 - INFO - Wyœwietlono wizualizacje parametrów.
+2024-11-05 22:04:35,356 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:04:35,356 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:04:44,375 - INFO - Wyœwietlono instrukcjê obs³ugi.
+2024-11-05 22:04:48,147 - INFO - Wyœwietlono informacje o programie.
+2024-11-05 22:04:49,915 - INFO - Otwarto okno ustawieñ.
+2024-11-05 22:04:49,915 - INFO - Otwarto okno ustawieñ.
+2024-11-05 22:04:58,025 - INFO - Ustawienia zosta³y zapisane.
+2024-11-05 22:05:02,021 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:05:02,021 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:05:09,709 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:05:09,709 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:05:21,864 - INFO - Otwarto okno ustawieñ.
+2024-11-05 22:05:21,864 - INFO - Otwarto okno ustawieñ.
+2024-11-05 22:05:29,384 - INFO - Ustawienia zosta³y zapisane.
+2024-11-05 22:05:36,102 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:05:36,102 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:10:00,677 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:10:00,677 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:10:34,333 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:10:34,333 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:10:52,208 - INFO - Wykonano operacjê cofniêcia.
+2024-11-05 22:10:54,132 - INFO - Wykonano operacjê cofniêcia.
+2024-11-05 22:14:45,817 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:14:45,817 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:14:52,696 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:14:52,696 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:15:15,650 - INFO - Otwarto okno parametru.
+2024-11-05 22:15:15,650 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 22:15:27,582 - INFO - Dodano parametr: duzy
+2024-11-05 22:15:28,734 - INFO - Otwarto okno parametru.
+2024-11-05 22:15:28,734 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 22:15:38,863 - INFO - Dodano parametr: bardzo duzy
+2024-11-05 22:15:41,019 - INFO - Otwarto okno parametru.
+2024-11-05 22:15:41,019 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 22:15:51,261 - INFO - Dodano parametr: liczba
+2024-11-05 22:15:52,715 - INFO - Otwarto okno parametru.
+2024-11-05 22:15:52,715 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 22:16:01,817 - INFO - Dodano parametr: ból
+2024-11-05 22:16:16,350 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-11-05 22:16:16,350 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-11-05 22:16:18,849 - INFO - Wygenerowano raport PDF z wizualizacjami w pliku C:/Users/zaklo/OneDrive/Desktop/Studia/Projekt_inzynierski/raport/raport_2.pdf
+2024-11-05 22:17:40,167 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:17:40,167 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:17:52,587 - INFO - Otwarto okno parametru.
+2024-11-05 22:17:52,587 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 22:18:17,919 - INFO - Otwarto okno parametru.
+2024-11-05 22:18:17,919 - INFO - Otwarto okno dodawania parametru.
+2024-11-05 22:18:23,263 - INFO - Dodano parametr: ff
+2024-11-05 22:20:52,143 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:20:52,145 - INFO - Aplikacja zosta³a uruchomiona.
+2024-11-05 22:21:19,934 - INFO - Za³adowano wtyczkê: example_plugin
+2024-11-05 22:21:19,934 - INFO - Aplikacja zosta³a uruchomiona.

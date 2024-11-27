@@ -1,0 +1,78 @@
+﻿.car-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+    .car-form h2 {
+        margin-bottom: 20px;
+        color: #343a40;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #495057;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 16px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #495057;
+    }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #0d6efd;
+            outline: none;
+        }
+
+.car-form button,
+.car-form .btn {
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0d6efd;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn:hover {
+        background-color: #0b5ed7;
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+    .btn-secondary:hover {
+        background-color: #5c636a;
+    }
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}

@@ -1,0 +1,11 @@
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\bin\Debug\net8.0\Cars.Domain.deps.json
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\bin\Debug\net8.0\Cars.Domain.dll
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\bin\Debug\net8.0\Cars.Domain.pdb
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\Cars.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\Cars.Domain.AssemblyInfoInputs.cache
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\Cars.Domain.AssemblyInfo.cs
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\Cars.Domain.csproj.CoreCompileInputs.cache
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\Cars.Domain.dll
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\refint\Cars.Domain.dll
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\Cars.Domain.pdb
+C:\Users\zaklo\OneDrive\Desktop\Studia\Semestr 5\Aplikacje weebowe\Cars\Cars.API\Cars.Domain\obj\Debug\net8.0\ref\Cars.Domain.dll
