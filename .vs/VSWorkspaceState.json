@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Bikes.Application",
+    "\\Bikes.Domain",
+    "\\Bikes.Domain\\bin\\Debug\\net8.0",
+    "\\Bikes.Infrastructure"
+  ],
+  "SelectedNode": "\\Bikes.API.sln",
+  "PreviewInSolutionExplorer": false
+}
