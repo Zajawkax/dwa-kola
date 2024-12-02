@@ -31,7 +31,7 @@ function Navbar() {
                         className={({ isActive }) => (isActive ? 'active' : '')}
                         onClick={() => setMenuActive(false)}
                     >
-                        Dodaj samochód
+                        Dodaj rower
                     </NavLink>
                 </li>
             </ul>

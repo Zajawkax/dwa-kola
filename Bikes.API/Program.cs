@@ -1,6 +1,6 @@
 using System;
 using Bikes.Infrastructure;
-using Bikes.Application.Bikes; // Dodaj to, jeœli nie masz
+using Bikes.Application.Bikes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MediatR;
@@ -27,11 +27,17 @@ builder.Services.AddMediatR(cfg =>
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateCommandValidator>();
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+Console.WriteLine("Connection String: " + connectionString);
+
 // Konfiguracja kontekstu bazy danych
 builder.Services.AddDbContext<DataContext>(opt =>
 {
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    opt.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 25)), b =>
+        b.MigrationsAssembly("Bikes.Infrastructure"));
 });
+
 
 // Dodanie polityki CORS
 builder.Services.AddCors(options =>
@@ -41,7 +47,7 @@ builder.Services.AddCors(options =>
         policy
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .WithOrigins("http://localhost:3005")
+            .WithOrigins("http://localhost:3000") // Upewnij siê, ¿e frontend dzia³a na porcie 3000
             .AllowCredentials();
     });
 });
@@ -54,7 +60,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Version = "v1",
         Title = "Bikes API",
-        Description = "API do zarz¹dzania samochodami",
+        Description = "API do zarz¹dzania rowerami",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {

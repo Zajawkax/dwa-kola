@@ -16,7 +16,7 @@ function BikeDetails() {
                 setBike(response.data);
             })
             .catch((error) => {
-                console.error('Błąd podczas pobierania szczegółów samochodu:', error);
+                console.error('Błąd podczas pobierania szczegółów roweru:', error);
             });
     }, [id]);
 
@@ -26,18 +26,15 @@ function BikeDetails() {
 
     return (
         <div className="bike-details">
-            <h2>
-                {bike.brand} {bike.model}
-            </h2>
-            <p>Liczba drzwi: {bike.doorsNumber}</p>
-            <p>Pojemność bagażnika: {bike.luggageCapacity} l</p>
-            <p>Pojemność silnika: {bike.engineCapacity} cm³</p>
-            <p>Rodzaj paliwa: {bike.fuelType}</p>
-            <p>Data produkcji: {new Date(bike.productionDate).toLocaleDateString()}</p>
-            <p>Spalanie: {bike.bikeFuelConsumption} l/100km</p>
-            <p>Typ nadwozia: {bike.bodyType}</p>
+            <h2>{bike.name}</h2>
+            <p>Rozmiar: {bike.size}</p>
+            <p>Typ roweru: {bike.bikeType}</p>
+            <p>Czy elektryczny: {bike.isElectric ? 'Tak' : 'Nie'}</p>
+            <p>Stawka godzinowa: {bike.hourlyRate} zł</p>
+            <p>Stawka dzienna: {bike.dailyRate} zł</p>
+            <p>Dostępność: {bike.availabilityStatus ? 'Dostępny' : 'Niedostępny'}</p>
             <Link to="/" className="btn btn-secondary">
-                <FontAwesomeIcon icon={faArrowLeft} /> Powrót do listy samochodów
+                <FontAwesomeIcon icon={faArrowLeft} /> Powrót do listy rowerów
             </Link>
         </div>
     );

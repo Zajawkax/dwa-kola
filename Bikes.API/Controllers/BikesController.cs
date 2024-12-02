@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Bikes.Application.Bikes;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,31 +13,28 @@ namespace Bikes.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBike(Guid id)
+        public async Task<IActionResult> GetBike(int id)
         {
-            return HandleResult(await Mediator.Send(new DetailsQuery { Id = id }));
+            return HandleResult(await Mediator.Send(new DetailsQuery { BikeId = id }));
         }
 
-        [HttpPost]
         [HttpPost]
         public async Task<IActionResult> CreateBike([FromBody] CreateCommand command)
         {
             return HandleResult(await Mediator.Send(command));
         }
 
-
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBike(Guid id, [FromBody] EditCommand command)
+        public async Task<IActionResult> UpdateBike(int id, [FromBody] EditCommand command)
         {
-            command.Id = id;
+            command.BikeId = id;
             return HandleResult(await Mediator.Send(command));
         }
 
-
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBike(Guid id)
+        public async Task<IActionResult> DeleteBike(int id)
         {
-            return HandleResult(await Mediator.Send(new DeleteCommand { Id = id }));
+            return HandleResult(await Mediator.Send(new DeleteCommand { BikeId = id }));
         }
     }
 }

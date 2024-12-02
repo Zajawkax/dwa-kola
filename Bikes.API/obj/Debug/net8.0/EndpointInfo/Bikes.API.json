@@ -1,0 +1,234 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Bikes API",
+    "description": "API do zarządzania rowerami",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "Twoje Imię",
+      "url": "https://example.com/contact",
+      "email": "twojemail@example.com"
+    },
+    "license": {
+      "name": "Licencja MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Bikes": {
+      "get": {
+        "tags": [
+          "Bikes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bikes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bikes/{id}": {
+      "get": {
+        "tags": [
+          "Bikes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Bikes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Bikes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BikeSize": {
+        "enum": [
+          "Small",
+          "Medium",
+          "Large"
+        ],
+        "type": "string"
+      },
+      "BikeType": {
+        "enum": [
+          "Mountain",
+          "Road",
+          "Hybrid",
+          "Electric"
+        ],
+        "type": "string"
+      },
+      "CreateCommand": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "$ref": "#/components/schemas/BikeSize"
+          },
+          "bikeType": {
+            "$ref": "#/components/schemas/BikeType"
+          },
+          "isElectric": {
+            "type": "boolean"
+          },
+          "hourlyRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "dailyRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "availabilityStatus": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditCommand": {
+        "type": "object",
+        "properties": {
+          "bikeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "$ref": "#/components/schemas/BikeSize"
+          },
+          "bikeType": {
+            "$ref": "#/components/schemas/BikeType"
+          },
+          "isElectric": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "hourlyRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "dailyRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "availabilityStatus": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

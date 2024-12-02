@@ -21,20 +21,20 @@ function BikesList() {
                 setIsLoading(false);
             })
             .catch((error) => {
-                console.error('Błąd podczas pobierania samochodów:', error);
+                console.error('Błąd podczas pobierania rowerów:', error);
                 setIsLoading(false);
             });
     };
 
     const deleteBike = (id) => {
-        if (window.confirm('Czy na pewno chcesz usunąć ten samochód?')) {
+        if (window.confirm('Czy na pewno chcesz usunąć ten rower?')) {
             axios
                 .delete(`/api/bikes/${id}`)
                 .then(() => {
-                    setBikes(bikes.filter((bike) => bike.id !== id));
+                    setBikes(bikes.filter((bike) => bike.bikeId !== id));
                 })
                 .catch((error) => {
-                    console.error('Błąd podczas usuwania samochodu:', error);
+                    console.error('Błąd podczas usuwania roweru:', error);
                 });
         }
     };
@@ -46,26 +46,24 @@ function BikesList() {
     return (
         <div className="bike-list">
             <div className="bike-list__header">
-                <h2>Lista Samochodów</h2>
+                <h2>Lista Rowerów</h2>
                 <Link to="/create" className="btn btn-primary">
-                    <FontAwesomeIcon icon={faPlus} /> Dodaj nowy samochód
+                    <FontAwesomeIcon icon={faPlus} /> Dodaj nowy rower
                 </Link>
             </div>
             {bikes.length > 0 ? (
                 <ul>
                     {bikes.map((bike) => (
-                        <li key={bike.id}>
-                            <span>
-                                {bike.brand} {bike.model}
-                            </span>
+                        <li key={bike.bikeId}>
+                            <span>{bike.name}</span>
                             <div>
-                                <Link to={`/details/${bike.id}`} className="btn btn-secondary">
+                                <Link to={`/details/${bike.bikeId}`} className="btn btn-secondary">
                                     <FontAwesomeIcon icon={faEye} /> Szczegóły
                                 </Link>
-                                <Link to={`/edit/${bike.id}`} className="btn btn-secondary">
+                                <Link to={`/edit/${bike.bikeId}`} className="btn btn-secondary">
                                     <FontAwesomeIcon icon={faEdit} /> Edytuj
                                 </Link>
-                                <button onClick={() => deleteBike(bike.id)} className="btn btn-danger">
+                                <button onClick={() => deleteBike(bike.bikeId)} className="btn btn-danger">
                                     <FontAwesomeIcon icon={faTrash} /> Usuń
                                 </button>
                             </div>
@@ -73,7 +71,7 @@ function BikesList() {
                     ))}
                 </ul>
             ) : (
-                <p>Brak samochodów do wyświetlenia.</p>
+                <p>Brak rowerów do wyświetlenia.</p>
             )}
         </div>
     );

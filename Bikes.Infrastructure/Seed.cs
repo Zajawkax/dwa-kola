@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Bikes.Domain;
 
@@ -16,40 +15,24 @@ namespace Bikes.Infrastructure
             {
                 new Bike
                 {
-                    Brand = "Mazda",
-                    Model = "CX60",
-                    DoorsNumber = 5,
-                    LuggageCapacity = 570,
-                    EngineCapacity = 2488,
-                    FuelType = FuelType.Hybrid,
-                    ProductionDate = DateTime.UtcNow.AddMonths(-1),
-                    BikeFuelConsumption = 18.1,
-                    BodyType = BodyType.SUV
+                    Name = "Mountain Bike X1",
+                    Size = BikeSize.Medium,
+                    BikeType = BikeType.Mountain,
+                    IsElectric = false,
+                    HourlyRate = 15.50m,
+                    DailyRate = 100.00m,
+                    AvailabilityStatus = true
                 },
                 new Bike
                 {
-                    Brand = "Toyota",
-                    Model = "Corolla",
-                    DoorsNumber = 4,
-                    LuggageCapacity = 470,
-                    EngineCapacity = 1798,
-                    FuelType = FuelType.Petrol,
-                    ProductionDate = DateTime.UtcNow.AddYears(-2),
-                    BikeFuelConsumption = 6.5,
-                    BodyType = BodyType.Sedan
+                    Name = "Electric City Bike E200",
+                    Size = BikeSize.Large,
+                    BikeType = BikeType.Electric,
+                    IsElectric = true,
+                    HourlyRate = 20.00m,
+                    DailyRate = 130.00m,
+                    AvailabilityStatus = true
                 },
-                new Bike
-                {
-                    Brand = "Ford",
-                    Model = "Focus",
-                    DoorsNumber = 5,
-                    LuggageCapacity = 375,
-                    EngineCapacity = 1499,
-                    FuelType = FuelType.Diesel,
-                    ProductionDate = DateTime.UtcNow.AddYears(-3),
-                    BikeFuelConsumption = 5.0,
-                    BodyType = BodyType.Hatchback
-                }
             };
 
             await context.Bikes.AddRangeAsync(bikes);
