@@ -1,0 +1,85 @@
+h10 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color: white;
+    background-color: transparent;
+    font-style: normal;
+    padding: 10px;
+    top: 10%;
+    left: 25%;
+    font-size: 40px;
+    cursor: pointer;
+    border-color: transparent;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 60px;
+    margin-top: 20px;
+    margin-left: 35%;
+}
+
+.bike-list-container {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color: white;
+    width: 100%;
+    height: 500%;
+    position: absolute;
+    top: 10%;
+    left: -20%;
+    background-color: transparent;
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+    border-color: transparent;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.bike-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 65px;
+    margin-top: 20px;
+    margin-left: 35%;
+
+}
+.bike-card {
+    width: 100%;
+    height: 500%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.bike-item {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    height: 80%;
+    border-bottom: 1px solid #ddd;
+    color: black;
+
+}
+
+
+
+.bike-item-button, btn btn-secondary bike-item-button,
+.edit-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bike-item button:hover {
+    background-color: #0056b3;
+}
