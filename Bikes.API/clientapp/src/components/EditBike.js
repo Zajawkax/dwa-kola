@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../axiosConfig';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import './BikeForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -62,13 +62,22 @@ function EditBike() {
             return;
         }
 
+        const updatedBike = {
+            ...bike,
+            bikeId: parseInt(id),
+        };
+
         axios
-            .put(`/api/bikes/${id}`, bike)
+            .put(`/api/bikes/${id}`, updatedBike)
             .then(() => {
                 navigate('/');
             })
             .catch((error) => {
-                console.error('Błąd podczas aktualizacji roweru:', error.response.data);
+                console.error('Błąd podczas aktualizacji roweru:', error);
+                if (error.response) {
+                    console.error('Status:', error.response.status);
+                    console.error('Data:', error.response.data);
+                }
             });
     };
 

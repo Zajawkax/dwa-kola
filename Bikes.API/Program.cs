@@ -7,6 +7,7 @@ using MediatR;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using System.Text.Json.Serialization;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,14 +15,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
-    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); // Dodaj konwerter enumów
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
 });
 
 // Dodaj MediatR
 builder.Services.AddMediatR(cfg =>
 {
-    cfg.RegisterServicesFromAssembly(typeof(ListHandler).Assembly);
+    cfg.RegisterServicesFromAssembly(typeof(DetailsHandler).Assembly);
 });
+
+
 
 // Dodaj FluentValidation
 builder.Services.AddFluentValidationAutoValidation();
@@ -45,10 +49,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy("CorsPolicy", policy =>
     {
         policy
+            .AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowAnyHeader()
-            .WithOrigins("http://localhost:3000") // Upewnij siê, ¿e frontend dzia³a na porcie 3000
-            .AllowCredentials();
+            .AllowAnyHeader();
     });
 });
 

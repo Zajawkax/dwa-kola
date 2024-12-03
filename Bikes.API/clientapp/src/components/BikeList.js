@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../axiosConfig';
 import { Link } from 'react-router-dom';
 import './BikeList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

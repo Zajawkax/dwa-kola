@@ -3119,7 +3119,6 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Bikes.Application >= 1.0.0",
-      "MediatR >= 12.4.1",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.10",
       "Pomelo.EntityFrameworkCore.MySql >= 8.0.2",
@@ -3180,10 +3179,6 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "MediatR": {
-            "target": "Package",
-            "version": "[12.4.1, )"
-          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",

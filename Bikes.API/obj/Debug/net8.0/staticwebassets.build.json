@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rT7FN6+yBMliC4A+WIzgi9Vb33c3MSPdYfJn1AgE/pU=",
+  "Hash": "ckKl3Qd4MGtP0XEb1Etun07V8FAE4VfjRzDMatuYTrc=",
   "Source": "Bikes.API",
   "BasePath": "_content/Bikes.API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Bikes.API\\wwwroot",
       "Source": "Bikes.API",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css",
       "SourceId": "Bikes.API",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "Bikes.API#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "in856RBndmWWATvdchmkXuDA9nuS1vSaR2zM9VuoqYc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css"
+      "OriginalItemSpec": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css",
       "SourceId": "Bikes.API",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "Bikes.API#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "Integrity": "in856RBndmWWATvdchmkXuDA9nuS1vSaR2zM9VuoqYc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\css\\site.css",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\favicon.ico",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\js\\site.js",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "lib/bootstrap/LICENSE#[.{fingerprint}]?",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -164,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "lib/jquery-validation/LICENSE#[.{fingerprint}]?.md",
       "AssetKind": "All",
@@ -185,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -206,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -227,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Bikes.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\",
       "BasePath": "_content/Bikes.API",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -251,7 +251,7 @@
   "Endpoints": [
     {
       "Route": "Bikes.API.2taznyqqkm.bundle.scp.css",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -296,7 +296,7 @@
     },
     {
       "Route": "Bikes.API.2taznyqqkm.styles.css",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -341,7 +341,7 @@
     },
     {
       "Route": "Bikes.API.bundle.scp.css",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bikes.API.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -378,7 +378,7 @@
     },
     {
       "Route": "Bikes.API.styles.css",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Bikes.API.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -415,7 +415,7 @@
     },
     {
       "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -460,7 +460,7 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -497,7 +497,7 @@
     },
     {
       "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -542,7 +542,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -579,7 +579,7 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -616,7 +616,7 @@
     },
     {
       "Route": "js/site.xtxxf3hu2r.js",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -661,7 +661,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -698,7 +698,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE.81b7ukuj9c",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -743,7 +743,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.mlv21k5csn.txt",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -788,7 +788,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.txt",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -825,7 +825,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.md",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -862,7 +862,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.x0q3zqp4vz.md",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -907,7 +907,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.eitk8i1piz.js",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -952,7 +952,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -989,7 +989,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1026,7 +1026,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.mfpz4owzig.js",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1071,7 +1071,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.356vix0kms.txt",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1116,7 +1116,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
-      "AssetFile": "C:\\Users\\zaklo\\Source\\Repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {

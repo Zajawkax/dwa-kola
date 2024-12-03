@@ -9,7 +9,6 @@
       "Bikes.API/1.0.0": {
         "dependencies": {
           "Bikes.Application": "1.0.0",
-          "MediatR": "12.4.1",
           "Microsoft.EntityFrameworkCore.Design": "8.0.10",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.10",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.2",

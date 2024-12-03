@@ -1,15 +1,12 @@
-﻿using Bikes.Domain;
-using MediatR;
+﻿using MediatR;
 using Bikes.Application.Core;
 using Bikes.Infrastructure;
+using Bikes.Domain;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Bikes.Application.Bikes
 {
-    public class DetailsQuery : IRequest<Result<Bike>>
-    {
-        public int BikeId { get; set; } // Dodaj tę właściwość
-    }
-
     public class DetailsHandler : IRequestHandler<DetailsQuery, Result<Bike>>
     {
         private readonly DataContext _context;

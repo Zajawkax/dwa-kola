@@ -1,0 +1,635 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.application\\bikes\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.application\\bikes\\delete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\delete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.application\\bikes\\details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\bike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\bike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\bikes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\bikes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\damage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\damage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4038D119-140F-47AA-8426-BEBABBB1A3D3}|Bikes.Infrastructure\\Bikes.Infrastructure.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.infrastructure\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4038D119-140F-47AA-8426-BEBABBB1A3D3}|Bikes.Infrastructure\\Bikes.Infrastructure.csproj|solutionrelative:bikes.infrastructure\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4038D119-140F-47AA-8426-BEBABBB1A3D3}|Bikes.Infrastructure\\Bikes.Infrastructure.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.infrastructure\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4038D119-140F-47AA-8426-BEBABBB1A3D3}|Bikes.Infrastructure\\Bikes.Infrastructure.csproj|solutionrelative:bikes.infrastructure\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\controllers\\bikescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\controllers\\bikescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\components\\bikelist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\components\\bikelist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\components\\bikedetails.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\components\\bikedetails.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.domain\\bikes.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\bikes.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.application\\bikes\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\components\\editbike.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\components\\editbike.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\app.test.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\app.test.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\components\\navbar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\components\\navbar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\components\\createbike.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\components\\createbike.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\axiosconfig.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\axiosconfig.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\setuptests.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\setuptests.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\src\\reportwebvitals.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\reportwebvitals.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.application\\bikes\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.application\\bikes\\bikevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\bikevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.application\\bikes\\edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\zaklo\\source\\repos\\dwa-kola\\bikes.api\\clientapp\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "List.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\List.cs",
+              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\List.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\List.cs",
+              "RelativeToolTip": "Bikes.Application\\Bikes\\List.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:22.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Delete.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Delete.cs",
+              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\Delete.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Delete.cs",
+              "RelativeToolTip": "Bikes.Application\\Bikes\\Delete.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:28.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\Program.cs",
+              "RelativeDocumentMoniker": "Bikes.API\\Program.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\Program.cs",
+              "RelativeToolTip": "Bikes.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:35.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Details.cs",
+              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\Details.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Details.cs",
+              "RelativeToolTip": "Bikes.Application\\Bikes\\Details.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:25.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Availability.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Availability.cs",
+              "RelativeDocumentMoniker": "Bikes.Domain\\Availability.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Availability.cs",
+              "RelativeToolTip": "Bikes.Domain\\Availability.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:42:56.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Bike.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bike.cs",
+              "RelativeDocumentMoniker": "Bikes.Domain\\Bike.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bike.cs",
+              "RelativeToolTip": "Bikes.Domain\\Bike.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:42:58.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Bikes.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bikes.cs",
+              "RelativeDocumentMoniker": "Bikes.Domain\\Bikes.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bikes.cs",
+              "RelativeToolTip": "Bikes.Domain\\Bikes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:42:58.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Damage.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Damage.cs",
+              "RelativeDocumentMoniker": "Bikes.Domain\\Damage.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Damage.cs",
+              "RelativeToolTip": "Bikes.Domain\\Damage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:00.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Feedback.cs",
+              "RelativeDocumentMoniker": "Bikes.Domain\\Feedback.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Feedback.cs",
+              "RelativeToolTip": "Bikes.Domain\\Feedback.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:00.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Reservation.cs",
+              "RelativeDocumentMoniker": "Bikes.Domain\\Reservation.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Reservation.cs",
+              "RelativeToolTip": "Bikes.Domain\\Reservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:01.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\User.cs",
+              "RelativeDocumentMoniker": "Bikes.Domain\\User.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\User.cs",
+              "RelativeToolTip": "Bikes.Domain\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:02.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Seed.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Infrastructure\\Seed.cs",
+              "RelativeDocumentMoniker": "Bikes.Infrastructure\\Seed.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Infrastructure\\Seed.cs",
+              "RelativeToolTip": "Bikes.Infrastructure\\Seed.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:08.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Infrastructure\\DataContext.cs",
+              "RelativeDocumentMoniker": "Bikes.Infrastructure\\DataContext.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Infrastructure\\DataContext.cs",
+              "RelativeToolTip": "Bikes.Infrastructure\\DataContext.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvwYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:06.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BikesController.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\Controllers\\BikesController.cs",
+              "RelativeDocumentMoniker": "Bikes.API\\Controllers\\BikesController.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\Controllers\\BikesController.cs",
+              "RelativeToolTip": "Bikes.API\\Controllers\\BikesController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:44:18.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BaseApiController.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\Controllers\\BaseApiController.cs",
+              "RelativeDocumentMoniker": "Bikes.API\\Controllers\\BaseApiController.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\Controllers\\BaseApiController.cs",
+              "RelativeToolTip": "Bikes.API\\Controllers\\BaseApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:41:36.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BikeList.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\BikeList.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\components\\BikeList.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\BikeList.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\components\\BikeList.js",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:40:43.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BikeDetails.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\BikeDetails.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\components\\BikeDetails.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\BikeDetails.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\components\\BikeDetails.js",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:40:20.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Bikes.Domain",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bikes.Domain.csproj",
+              "RelativeDocumentMoniker": "Bikes.Domain\\Bikes.Domain.csproj",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bikes.Domain.csproj",
+              "RelativeToolTip": "Bikes.Domain\\Bikes.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-03T13:27:16.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EditBike.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\EditBike.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\components\\EditBike.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\EditBike.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\components\\EditBike.js",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAwEkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:40:34.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Result.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Result.cs",
+              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\Result.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Result.cs",
+              "RelativeToolTip": "Bikes.Application\\Bikes\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:21.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "index.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\index.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\index.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\index.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\index.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:47:08.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Navbar.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\Navbar.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\components\\Navbar.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\Navbar.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\components\\Navbar.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T12:21:30.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "App.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\App.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\App.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\App.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\App.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:42:34.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "App.test.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\App.test.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\App.test.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\App.test.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\App.test.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:47:13.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CreateBike.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\CreateBike.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\components\\CreateBike.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\components\\CreateBike.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\components\\CreateBike.js",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAowJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:42:18.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\package.json",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\package.json",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\package.json",
+              "RelativeToolTip": "Bikes.API\\clientapp\\package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-03T11:42:30.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "axiosConfig.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\axiosConfig.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\axiosConfig.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\axiosConfig.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\axiosConfig.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:48:53.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\README.md",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\README.md",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\README.md",
+              "RelativeToolTip": "Bikes.API\\clientapp\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-12-03T11:54:55.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Bikes.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\appsettings.json",
+              "RelativeToolTip": "Bikes.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-03T12:12:43.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "setupTests.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\setupTests.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\setupTests.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\setupTests.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\setupTests.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:47:04.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "reportWebVitals.js",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\reportWebVitals.js",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\reportWebVitals.js",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\src\\reportWebVitals.js",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\reportWebVitals.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-03T11:47:05.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Create.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Create.cs",
+              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\Create.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Create.cs",
+              "RelativeToolTip": "Bikes.Application\\Bikes\\Create.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:29.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BikeValidator.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\BikeValidator.cs",
+              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\BikeValidator.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\BikeValidator.cs",
+              "RelativeToolTip": "Bikes.Application\\Bikes\\BikeValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:31.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Edit.cs",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Edit.cs",
+              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\Edit.cs",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Application\\Bikes\\Edit.cs",
+              "RelativeToolTip": "Bikes.Application\\Bikes\\Edit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T11:43:23.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "package-lock.json",
+              "DocumentMoniker": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\package-lock.json",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\package-lock.json",
+              "ToolTip": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.API\\clientapp\\package-lock.json",
+              "RelativeToolTip": "Bikes.API\\clientapp\\package-lock.json",
+              "ViewState": "AgIAAGgVAAAAAAAAAAAuwH4VAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-03T11:42:21.6Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

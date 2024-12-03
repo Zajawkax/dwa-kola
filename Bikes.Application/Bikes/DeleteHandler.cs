@@ -1,14 +1,11 @@
 ﻿using MediatR;
 using Bikes.Application.Core;
 using Bikes.Infrastructure;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Bikes.Application.Bikes
 {
-    public class DeleteCommand : IRequest<Result<Unit>>
-    {
-        public int BikeId { get; set; } // Dodaj tę właściwość
-    }
-
     public class DeleteHandler : IRequestHandler<DeleteCommand, Result<Unit>>
     {
         private readonly DataContext _context;
