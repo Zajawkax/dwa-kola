@@ -41,7 +41,7 @@ h10 {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 7%;
-    grid-row-gap: 50%;
+    grid-row-gap: 20%;
 }
 
 .bike-card {
