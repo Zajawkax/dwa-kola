@@ -1,5 +1,5 @@
-﻿.login-page {
-   
+.login-page {
+  
 }
 
 .imie {
@@ -60,6 +60,22 @@
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
 }
+.login-register-button {
+    font-family: "Playfair Display", serif;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   
+   
+}
+
+
+    .login-register-button:focus {
+        outline: none; /* Usuwa obramowanie po kliknięciu */
+    }
 .zapisz {
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -90,6 +106,27 @@
 
 
 }
+
+.zapisz-submit {
+    background-color: #28a745; /* Zielony kolor tła */
+    color: white; /* Kolor tekstu */
+    border: none; /* Brak ramki */
+    padding: 12px 20px; /* Wewnętrzne marginesy */
+    font-size: 16px; /* Rozmiar czcionki */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Zmieniamy kursor na wskazujący */
+    transition: background-color 0.3s ease; /* Płynna zmiana koloru tła */
+    width: 100%; /* Szerokość na 100% (jeśli chcesz, żeby przycisk był na szerokość formularza) */
+}
+
+    .zapisz-submit:hover {
+        background-color: #218838; /* Ciemniejszy zielony podczas najechania */
+    }
+
+    .zapisz-submit:disabled {
+        background-color: #ccc; /* Kolor tła, gdy przycisk jest wyłączony */
+        cursor: not-allowed; /* Kursor zmienia się na niedozwolony */
+    }
 .square {
    
     position: absolute;
