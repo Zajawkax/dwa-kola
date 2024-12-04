@@ -1,0 +1,114 @@
+﻿h16 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color: black;
+    background-color: transparent;
+    font-style: normal;
+    padding: 10px;
+    top: 10%;
+    left: 20%;
+    font-size: 30px;
+    border-color: transparent;
+    transition: box-shadow 0.3s ease;
+    display: grid;
+}
+
+.custom-button14
+{
+font-family: "Playfair Display", serif;
+font-weight: 400;
+color: white;
+background-color: transparent;
+font-style: normal;
+padding: 10px;
+top: 10%;
+left: 25%;
+font-size: 40px;
+cursor: pointer;
+border-color: transparent;
+transition: box-shadow 0.3s ease;
+display: grid;
+gap: 60px;
+margin-top: 20px;
+margin-left: 35%;
+}
+
+.bike-form {
+   position: absolute;
+   top: 20%;
+    max-width: 500px;
+left: 35%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .bike-form h2 {
+        
+        text-align: center;
+        color: #333;
+    }
+
+    .bike-form .form-group {
+        margin-bottom: 15px;
+    }
+
+        .bike-form .form-group label {
+
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .bike-form .form-group input,
+        .bike-form .form-group select {
+
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+            .bike-form .form-group input[type="checkbox"] {
+
+                width: auto;
+                margin-left: 10px;
+            }
+
+    .bike-form .btn {
+
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .bike-form .btn-primary {
+
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+        .bike-form .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .bike-form .btn-secondary {
+
+        background-color: #6c757d;
+        color: white;
+        border: none;
+    }
+
+        .bike-form .btn-secondary:hover {
+            background-color: #5a6268;
+        }
