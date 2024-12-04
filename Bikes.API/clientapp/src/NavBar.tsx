@@ -44,7 +44,7 @@ export default function NavBar() {
 
                                         />
                                     </Menu.Item>}
-                                    {<Menu.Item as={NavLink} to='/add-car'>
+                                    {<Menu.Item as={NavLink} to='/contact'>
                                         <Button
                                             content="Kontakt"
                                             size="large"
