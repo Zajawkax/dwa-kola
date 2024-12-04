@@ -62,15 +62,16 @@ h13 {
     font-family: "Playfair Display", serif;
     font-weight: 400;
     font-size: 40px;
-    left: 35%;
+    left: 31%;
     width: 500%;
     position: absolute;
-    top: 3%;
+    top: -10%;
     color: rgb( 86, 101, 115);
     border: black;
-    color: black;
+    color: White;
+    background-color: transparent;
     width: 500px;
-    background-color: white;
+
     
 }
 h15 {
