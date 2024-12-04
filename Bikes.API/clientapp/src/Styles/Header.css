@@ -91,8 +91,10 @@ h3 {
     position: absolute;
     left: 15%;
     top: 11%;
+   
     margin-right: 30%;
 }
+
 .header-container {
     position: relative;
     align-items: center;
@@ -231,13 +233,13 @@ h3 {
 }
 .custom-button9 {
     font-family: "Playfair Display", serif;
-    font-size: 90px;
+    font-size: 70px;
     color: white;
     font-style: normal;
     position: absolute;
-    left: 30%;
+    left: 37%;
     top: 30%;
-    margin-right: 30%;
+    
 }
 
 .custom-button:hover {
@@ -308,12 +310,12 @@ h3 {
     font-family: "Playfair Display", serif;
     font-weight: 400;
     color: white;
-    width: 80%;
+    width: 60%;
     height: 300px;
     min-height: 200px;
     position: absolute;
     top: 35%;
-    left: 10%;
+    left: 20%;
     background-color: transparent;
     font-style: normal;
     font-size: 30px;
