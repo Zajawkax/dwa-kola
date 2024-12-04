@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import './contact.css';
+import '../Styles/contact.css';
 
 const Contact = () => {
     const [message, setMessage] = useState('');
@@ -14,7 +14,7 @@ const Contact = () => {
             return;
         }
 
-        // Wyślij wiadomość (np. API lub alert)
+      
         alert('Twoja wiadomość została wysłana: ' + message);
         setMessage('');
         setError('');
@@ -23,7 +23,7 @@ const Contact = () => {
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setMessage(e.target.value);
         if (e.target.value.trim() !== '') {
-            setError(''); // Ukryj komunikat o błędzie, gdy wiadomość nie jest pusta
+            setError(''); 
         }
     };
 

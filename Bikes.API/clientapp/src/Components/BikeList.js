@@ -3,8 +3,10 @@ import axios from '../axiosConfig';
 import { Link } from 'react-router-dom';
 import '../Styles/BikeList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faEye, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import { faPlus, faEye, faEdit, faTrash, faBicycle } from '@fortawesome/free-solid-svg-icons';
+import { Menu, Button } from 'semantic-ui-react';
+import { NavLink } from "react-router-dom"; 
+import '../Styles/CreateBike.css';
 function BikesList() {
     const [bikes, setBikes] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -46,9 +48,13 @@ function BikesList() {
         <div className="bike-list-container">
             
             <div className="bike-list__header">
-                <Link to="/create" className="btn btn-primary bike-item-button">
-                    <FontAwesomeIcon icon={faPlus} /> Dodaj nowy rower
-                </Link>
+
+                <Menu.Item as={NavLink} to="/bikes/create-bike">
+                    <Button content="Dodaj Rower" size="large" className="custom-button17" />
+                   
+                </Menu.Item>
+               
+
             </div>
             {bikes.length > 0 ? (
                 <div className="bike-grid">
@@ -56,10 +62,10 @@ function BikesList() {
                         <div key={bike.bikeId} className="bike-card">
                             <span className="bike-item">{bike.name}</span>
                             <div>
-                                <Link to={`/details/${bike.bikeId}`} className="btn btn-secondary bike-item-button">
+                                <Link to={`/details/${bike.bikeId}`} className="bike-item-button">
                                     <FontAwesomeIcon icon={faEye} /> Szczegóły
                                 </Link>
-                                <Link to={`/edit/${bike.bikeId}`} className="btn btn-secondary edit-button">
+                                <Link to={`/edit/${bike.bikeId}`} className="edit-button">
                                     <FontAwesomeIcon icon={faEdit} /> Edytuj
                                 </Link>
                                 <button onClick={() => deleteBike(bike.bikeId)} className="btn btn-danger bike-item-button">

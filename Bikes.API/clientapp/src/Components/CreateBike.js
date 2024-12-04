@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import './BikeForm.css';
+import '../Styles/CreateBike.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faSave } from '@fortawesome/free-solid-svg-icons';
 
@@ -69,7 +69,7 @@ function CreateBike() {
         console.log('Wysyłane dane roweru:', bikeToSend);
 
         axios
-            .post('/api/bikes', bikeToSend)
+            .post('https://localhost:7032/api/bikes', bikeToSend)
             .then(() => {
                 navigate('/');
             })
@@ -85,7 +85,7 @@ function CreateBike() {
 
     return (
         <div className="bike-form">
-            <h2>Dodaj nowy rower</h2>
+            <h16>Dodaj nowy rower</h16>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Nazwa:</label>
@@ -136,10 +136,20 @@ function CreateBike() {
                         onChange={handleChange}
                     />
                 </div>
+                <div className="form-group">
+                    <label>Zdjęcie:</label>
+                    <input
+                        type="file"
+                        name="bikeImage"
+                        accept="image/*"
+                       
+                        className="form-control"
+                    />
+                </div>
                 <button type="submit" className="btn btn-primary">
                     <FontAwesomeIcon icon={faSave} /> Dodaj rower
                 </button>
-                <Link to="/" className="btn btn-secondary">
+                <Link to="/bikes" className="btn btn-secondary">
                     <FontAwesomeIcon icon={faArrowLeft} /> Powrót do listy rowerów
                 </Link>
             </form>

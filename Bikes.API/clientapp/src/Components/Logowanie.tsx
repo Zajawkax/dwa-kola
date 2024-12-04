@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import NavBar from '../NavBar';
 import '../Styles/Login.css';
 
@@ -75,15 +75,33 @@ const Logowanie = () => {
 
     return (
         <div className="login-page">
-            <div className="button-container">
-                {/* Przełączanie między formularzami */}
-                <button className="login-register-button" onClick={() => setIsLogin(true)}>Zaloguj się</button>
-                <button className="login-register-button" onClick={() => setIsLogin(false)}>Zarejestruj się</button>
-            </div>
+            
 
             <form onSubmit={handleSubmit}>
                 <div className="square"></div>
-
+                <div className="button-container">
+                    {}
+                    <button
+                        type="button"
+                        className="login-register-button1"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsLogin(true);
+                        }}
+                    >
+                        Zaloguj się
+                    </button>
+                    <button
+                        type="button"
+                        className="login-register-button2"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsLogin(false);
+                        }}
+                    >
+                        Zarejestruj się
+                    </button>
+                </div>
                 {!isLogin && (
                     <>
                         <input
@@ -121,6 +139,7 @@ const Logowanie = () => {
                     placeholder="Hasło"
                     value={password}
                     onChange={handlePasswordChange}
+                    onBlur={() => setIsTouched(true)} 
                 />
                 <label className="pokaz">
                     <input
@@ -138,9 +157,7 @@ const Logowanie = () => {
                                 ? 'Hasło jest poprawne!'
                                 : 'Hasło musi zawierać cyfrę, znak specjalny i mieć od 6 do 16 znaków.'}
                         </p>
-                        <p className="zapisz2" style={{ color: isEmailValid ? 'green' : 'red' }}>
-                            {isEmailValid ? 'Email jest poprawny!' : 'Email jest niepoprawny.'}
-                        </p>
+                       
                     </>
                 )}
 
