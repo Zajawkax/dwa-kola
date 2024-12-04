@@ -4,6 +4,8 @@ import BikeList from "../Components/BikeList";
 import Logowanie from "../Components/Logowanie";
 import Main from "../Components/Main";
 import Details from "../Components/BikeDetails";
+import CreateBike from "../Components/CreateBike";
+import Kontakt from "../Components/Kontakt";
 export const routes: RouteObject[] = [
     {
         path: "/",
@@ -13,7 +15,8 @@ export const routes: RouteObject[] = [
             { path: "bikes", element: <BikeList /> },
             { path: "login", element: <Logowanie /> }, 
             { path: "details/:id", element: <Details /> },
-           // { path: "delete/:id", element: <CarDelete /> },
+            { path: "bikes/create-bike", element: <CreateBike /> },
+            { path: "contact", element: <Kontakt /> },
             /*{
                 path: "add-car", element: <CarCreate onAddCar={function (car: Car):
                     void {
