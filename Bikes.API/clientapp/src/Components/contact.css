@@ -1,0 +1,64 @@
+﻿/* Kontener formularza */
+.contact-container {
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+    /* Nagłówek formularza */
+    .contact-container h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 20px;
+    }
+
+    /* Styl dla pola tekstowego */
+    .contact-container textarea {
+        width: 100%;
+        height: 150px; /* Stała wysokość */
+        resize: none; /* Zabrania rozciągania */
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: 'Arial', sans-serif;
+        margin-bottom: 20px;
+        box-sizing: border-box; /* Wlicza padding do szerokości */
+        transition: border-color 0.3s ease-in-out;
+    }
+
+        .contact-container textarea:focus {
+           
+            outline: none; /* Usuwa obramowanie focus */
+        }
+
+    /* Przyciski */
+    .contact-container button {
+        padding: 12px 20px;
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%; /* Przyciski na pełną szerokość */
+        transition: background-color 0.3s ease-in-out;
+    }
+
+        .contact-container button:hover {
+            background-color: #000; /* Zmiana koloru przy najechaniu */
+        }
+
+    /* Styl dla informacji kontaktowych */
+    .contact-container p {
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+    }
