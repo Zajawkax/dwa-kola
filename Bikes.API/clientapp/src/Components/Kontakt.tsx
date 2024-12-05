@@ -42,7 +42,7 @@ const Contact = () => {
                 />
                 <button type="submit">Wyślij</button>
             </form>
-            <p>Email: contact@gmail.com</p>
+            <p>Email: dwakolkacontact@gmail.com</p>
         </div>
     );
 };
