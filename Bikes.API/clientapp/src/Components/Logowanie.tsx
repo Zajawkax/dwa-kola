@@ -75,12 +75,10 @@ const Logowanie = () => {
 
     return (
         <div className="login-page">
-            
-
-            <form onSubmit={handleSubmit}>
+            <h1>Logowanie</h1>
+            <form onSubmit={handleSubmit} className="login-form">
                 <div className="square"></div>
                 <div className="button-container">
-                    {}
                     <button
                         type="button"
                         className="login-register-button1"
@@ -102,6 +100,8 @@ const Logowanie = () => {
                         Zarejestruj się
                     </button>
                 </div>
+
+                {/* Pola dla rejestracji */}
                 {!isLogin && (
                     <>
                         <input
@@ -121,6 +121,7 @@ const Logowanie = () => {
                     </>
                 )}
 
+                {/* Pole e-mail */}
                 <input
                     type="email"
                     id="email"
@@ -131,6 +132,7 @@ const Logowanie = () => {
                     onChange={handleEmailChange}
                 />
 
+                {/* Pole hasło */}
                 <input
                     type={showPassword ? 'text' : 'password'}
                     id="haslo"
@@ -139,7 +141,7 @@ const Logowanie = () => {
                     placeholder="Hasło"
                     value={password}
                     onChange={handlePasswordChange}
-                    onBlur={() => setIsTouched(true)} 
+                    onBlur={() => setIsTouched(true)}
                 />
                 <label className="pokaz">
                     <input
@@ -150,17 +152,19 @@ const Logowanie = () => {
                     Pokaż hasło
                 </label>
 
+                {/* Komunikat walidacji hasła */}
                 {isTouched && (
-                    <>
-                        <p className="zapisz2" style={{ color: isPasswordValid ? 'green' : 'red' }}>
-                            {isPasswordValid
-                                ? 'Hasło jest poprawne!'
-                                : 'Hasło musi zawierać cyfrę, znak specjalny i mieć od 6 do 16 znaków.'}
-                        </p>
-                       
-                    </>
+                    <p
+                        className="zapisz2"
+                        style={{ color: isPasswordValid ? 'green' : 'red' }}
+                    >
+                        {isPasswordValid
+                            ? 'Hasło jest poprawne!'
+                            : 'Hasło musi zawierać cyfrę, znak specjalny i mieć od 6 do 16 znaków.'}
+                    </p>
                 )}
 
+                {/* Przycisk submit */}
                 <input
                     type="submit"
                     className="zapisz"
@@ -168,11 +172,12 @@ const Logowanie = () => {
                     disabled={!isPasswordValid || !isEmailValid}
                 />
 
-                {/* Wyświetlanie komunikatów o sukcesie lub błędzie */}
+                {/* Komunikaty o błędach/sukcesach */}
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                 {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
             </form>
         </div>
     );
-}
+};
+
 export default Logowanie;

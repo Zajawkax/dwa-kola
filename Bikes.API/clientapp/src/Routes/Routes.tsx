@@ -6,6 +6,9 @@ import Main from "../Components/Main";
 import Details from "../Components/BikeDetails";
 import CreateBike from "../Components/CreateBike";
 import Kontakt from "../Components/Kontakt";
+import TermsOfService from "../Components/TermsOfService";
+import FilterSort from "../Components/FilterSort";
+
 export const routes: RouteObject[] = [
     {
         path: "/",
@@ -16,7 +19,11 @@ export const routes: RouteObject[] = [
             { path: "login", element: <Logowanie /> }, 
             { path: "details/:id", element: <Details /> },
             { path: "bikes/create-bike", element: <CreateBike /> },
+            { path: "bikes/filtersort", element: <FilterSort /> },
+
             { path: "contact", element: <Kontakt /> },
+            { path: "regulamin", element: <TermsOfService /> },
+
             /*{
                 path: "add-car", element: <CarCreate onAddCar={function (car: Car):
                     void {

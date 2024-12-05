@@ -143,7 +143,7 @@ h3 {
     position: absolute;
     padding: 10px;
     top: 10%;
-    left: 25%;
+    left: 23%;
     font-size: 40px;
     cursor: pointer;
     border-color: transparent;
@@ -176,7 +176,7 @@ h3 {
     position: absolute;
     padding: 10px;
     top: 10%;
-    left: 55%;
+    left: 53%;
     font-size: 40px;
     cursor: pointer;
     border-color: transparent;
@@ -241,6 +241,7 @@ h3 {
     top: 30%;
     
 }
+
 
 .custom-button:hover {
         background-color: gray;

@@ -1127,23 +1127,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zaklo\\.nuget\\packages\\": {},
+    "C:\\Users\\alam0\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Infrastructure\\Bikes.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\alam0\\Documents\\GitHub\\dwa-kola\\Bikes.Infrastructure\\Bikes.Infrastructure.csproj",
       "projectName": "Bikes.Infrastructure",
-      "projectPath": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Infrastructure\\Bikes.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\zaklo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\alam0\\Documents\\GitHub\\dwa-kola\\Bikes.Infrastructure\\Bikes.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\alam0\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alam0\\Documents\\GitHub\\dwa-kola\\Bikes.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\zaklo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alam0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1152,14 +1152,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bikes.Domain.csproj": {
-              "projectPath": "C:\\Users\\zaklo\\source\\repos\\dwa-kola\\Bikes.Domain\\Bikes.Domain.csproj"
+            "C:\\Users\\alam0\\Documents\\GitHub\\dwa-kola\\Bikes.Domain\\Bikes.Domain.csproj": {
+              "projectPath": "C:\\Users\\alam0\\Documents\\GitHub\\dwa-kola\\Bikes.Domain\\Bikes.Domain.csproj"
             }
           }
         }
@@ -1172,9 +1173,8 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+        "auditMode": "direct"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -1205,7 +1205,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

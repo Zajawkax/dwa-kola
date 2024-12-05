@@ -5,7 +5,7 @@ import '../Styles/BikeList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEye, faEdit, faTrash, faBicycle } from '@fortawesome/free-solid-svg-icons';
 import { Menu, Button } from 'semantic-ui-react';
-import { NavLink } from "react-router-dom"; 
+import { NavLink } from "react-router-dom";
 import '../Styles/CreateBike.css';
 function BikesList() {
     const [bikes, setBikes] = useState([]);
@@ -14,14 +14,14 @@ function BikesList() {
     useEffect(() => {
         fetchBikes();
     }, []);
-   
+
     const fetchBikes = async () => {
         try {
             const response = await axios.get('https://localhost:7032/api/bikes');
             setBikes(response.data);
         } catch (error) {
             console.error('Błąd podczas pobierania samochodów:', error);
-           
+
         } finally {
             setIsLoading(false);
         }
@@ -46,14 +46,18 @@ function BikesList() {
 
     return (
         <div className="bike-list-container">
-            
+
             <div className="bike-list__header">
 
                 <Menu.Item as={NavLink} to="/bikes/create-bike">
                     <Button content="Dodaj Rower" size="large" className="custom-button17" />
-                   
+
                 </Menu.Item>
-               
+                <Menu.Item as={NavLink} to="/bikes/filtersort">
+                    <Button content="Filtrowanie/Sortowanie" size="large" className="custom-button18" />
+
+                </Menu.Item>
+
 
             </div>
             {bikes.length > 0 ? (
@@ -83,3 +87,5 @@ function BikesList() {
 }
 
 export default BikesList;
+
+

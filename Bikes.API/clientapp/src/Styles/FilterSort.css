@@ -1,0 +1,117 @@
+﻿
+.filter-sort {
+/*    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;*/
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  
+  
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    padding: 30px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+}
+
+    .filter-sort h3 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: 33px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 20px;
+        color: white;
+        top: -6%;
+        left: 32%;
+
+    }
+
+.filter-form,
+.sort-form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        font-size: 1.1em;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group select,
+    .form-group input {
+        width: 100%;
+        padding: 8px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-group button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+.bike-list {
+    margin-top: 20px;
+}
+
+    .bike-list ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .bike-list li {
+        padding: 10px;
+        background-color: #fff;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .bike-list .brak {
+        text-align: center;
+        font-size: 1.2em;
+        color: #888;
+    }
+
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+.filter-sort.fixed-header {
+    position: fixed;
+    top: 10%; /* Zmienisz wartość w zależności od preferencji */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}

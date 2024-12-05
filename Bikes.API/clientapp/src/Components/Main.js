@@ -10,7 +10,7 @@ import '../Styles/Header.css';
 
 export default function Main() {
     const [bikes, setBikes] = useState([]); 
-
+    const [showTerms, setShowTerms] = useState(false); 
    
     useEffect(() => {
         fetchBikes();
@@ -49,7 +49,7 @@ export default function Main() {
                                 <Menu.Item as={NavLink} to="/add-car">
                                     <Button content="Rezerwacje" size="large" className="custom-button2" />
                                 </Menu.Item>
-                                <Menu.Item as={NavLink} to="/add-car">
+                                <Menu.Item as={NavLink} to="/contact">
                                     <Button content="Kontakt" size="large" className="custom-button3" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/login">
@@ -58,7 +58,7 @@ export default function Main() {
                                 <Menu.Item as={NavLink} to="/add-car">
                                     <Button content="Cennik" size="large" className="custom-button6" />
                                 </Menu.Item>
-                                <Menu.Item as={NavLink} to="/add-car">
+                                <Menu.Item as={NavLink} to="/regulamin">
                                     <Button content="Regulamin" size="large" className="custom-button7" />
                                 </Menu.Item>
                             </div>

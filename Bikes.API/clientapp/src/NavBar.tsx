@@ -4,12 +4,6 @@ import logo from './logo.jpg';
 import './Styles/Header.css';
 
 
-
-
-
-
-
-
 export default function NavBar() {
     const scrollToNewModels = () => {
         const element = document.getElementById('new-models');
@@ -21,10 +15,10 @@ export default function NavBar() {
         return (
             <Menu inverted fixed="top">
                 <Container className="header-container">
-                    <Menu.Item as={NavLink} to='/' header>
+                   
                         <div className="logo-container">
                             <img src={logo} alt="logo" className="header-logo" />
-                            {/*<img src="/carr.png" alt="bikes" className="header-logo2" />*/}
+                            
                             <div className="square-overlay" >
 
                                 <div className="buttons-container">
@@ -68,7 +62,7 @@ export default function NavBar() {
 
                                         />
                                     </Menu.Item>}
-                                    {<Menu.Item as={NavLink} to='/add-car'>
+                                    {<Menu.Item as={NavLink} to='/regulamin'>
                                         <Button
                                             content="Regulamin"
                                             size="large"
@@ -83,7 +77,7 @@ export default function NavBar() {
                             
                 
                         </div>
-                    </Menu.Item>
+                    
                 </Container>
             </Menu>
         );

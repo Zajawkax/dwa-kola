@@ -353,10 +353,7 @@
       "System.Memory/4.5.3": {},
       "Bikes.Domain/1.0.0": {
         "runtime": {
-          "Bikes.Domain.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Bikes.Domain.dll": {}
         }
       }
     }
