@@ -34,3 +34,15 @@ C:\Users\alam0\Documents\GitHub\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Dom
 C:\Users\alam0\Documents\GitHub\dwa-kola\Bikes.Domain\obj\Debug\net8.0\refint\Bikes.Domain.dll
 C:\Users\alam0\Documents\GitHub\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.pdb
 C:\Users\alam0\Documents\GitHub\dwa-kola\Bikes.Domain\obj\Debug\net8.0\ref\Bikes.Domain.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\bin\Debug\net8.0\Bikes.Domain.deps.json
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\bin\Debug\net8.0\Bikes.Domain.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\bin\Debug\net8.0\Bikes.Domain.pdb
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.AssemblyInfoInputs.cache
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.AssemblyInfo.cs
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.csproj.CoreCompileInputs.cache
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.sourcelink.json
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\refint\Bikes.Domain.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.pdb
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\ref\Bikes.Domain.dll

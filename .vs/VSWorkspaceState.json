@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Bikes.Application",
-    "\\Bikes.Application\\Bikes"
+    ""
   ],
-  "SelectedNode": "\\Bikes.Application\\Bikes\\List.cs",
+  "SelectedNode": "\\Bikes.API.sln",
   "PreviewInSolutionExplorer": false
 }
