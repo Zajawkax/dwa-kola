@@ -1,82 +1,95 @@
 ﻿import React, { useState } from 'react';
-import NavBar from '../NavBar';
 import '../Styles/Login.css';
+import axios from 'axios';
 
 const Logowanie = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [isTouched, setIsTouched] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-    const [successMessage, setSuccessMessage] = useState('');
-    const [isLogin, setIsLogin] = useState(true);  // Dodany stan do przechowywania wybranego formularza
+    const [loginInfo, setLoginInfo] = useState({
+        username: '',
+        password: ''
+    });
+    const [registerInfo, setRegisterInfo] = useState({
+        username: '',
+        phoneNumber: '',
+        email: '',
+        password: ''
+    });
+    const [error, setErrorMessage] = useState<string | null>(null);
+    const [success, setSuccessMessage] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);  // Added state to store which form to show
 
     const togglePassword = () => {
         setShowPassword(!showPassword);
     };
 
-    const regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-    const Email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
+    const handleLoginInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setLoginInfo((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
     };
 
-    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
+    const handleRegisterInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setRegisterInfo((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
     };
 
-    const isPasswordValid = regularExpression.test(password);
-    const isEmailValid = Email.test(email);
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        setIsTouched(true);
+        setErrorMessage(null);
+        try {
+            setLoading(true);
+            const response = await axios.post('https://localhost:7032/api/Auth/login', loginInfo);
 
-        if (isPasswordValid && isEmailValid) {
-            const userData = {
-                username: username,
-                email: email,
-                password: password,
-                phoneNumber: phoneNumber,
-            };
+            if (response.status === 200) {
+                const { token, username } = response.data;
 
-            try {
-                const url = isLogin
-                    ? 'https://localhost:7032/api/auth/login'  // Endpoint logowania
-                    : 'https://localhost:7032/api/auth/register';  // Endpoint rejestracji
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(userData),
-                });
-
-                if (response.ok) {
-                    if (isLogin) {
-                        setSuccessMessage('Zalogowano pomyślnie.');
-                    } else {
-                        setSuccessMessage('Użytkownik zarejestrowany pomyślnie.');
-                    }
-                    setErrorMessage('');
-                } else {
-                    setErrorMessage('Wystąpił błąd.');
-                    setSuccessMessage('');
-                }
-            } catch (error) {
-                setErrorMessage('Błąd połączenia z serwerem.');
-                setSuccessMessage('');
+                console.log('Zalogowano pomyślnie.', { token, username });
+                setSuccessMessage("Zalogowano pomyślnie.")
+                localStorage.setItem('authToken', token);
+                localStorage.setItem('displayName', username); // Saving the username as displayName
             }
+        } catch (error: any) {
+            console.error('Error during login:', error);
+            setErrorMessage(error.response?.data?.message || 'Próba logowania nie powiodła się. Sprawdź swoje dane.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleRegister = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setErrorMessage(null);
+
+        try {
+            setLoading(true);
+            const response = await axios.post('https://localhost:7032/api/Auth/register', registerInfo);
+
+            if (response.status === 200) {
+                const { token, username } = response.data;
+
+                console.log('Rejestracja zakończona sukcesem:', { token, username });
+                setSuccessMessage("Rejestracja zakończona sukcesem.")
+                localStorage.setItem('authToken', token);
+                localStorage.setItem('username', username);
+            }
+        } catch (error: any) {
+            console.error('Error during registration:', error);
+            setErrorMessage(error.response?.data?.message || 'Rejestracja nie powiodła się. Spróbuj ponownie.');
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <div className="login-page">
-            <h1>Logowanie</h1>
-            <form onSubmit={handleSubmit} className="login-form">
+            <h1>{isLogin ? 'Logowanie' : 'Rejestracja'}</h1>
+            <form onSubmit={isLogin ? handleLogin : handleRegister} className="login-form">
                 <div className="square"></div>
                 <div className="button-container">
                     <button
@@ -85,6 +98,8 @@ const Logowanie = () => {
                         onClick={(e) => {
                             e.preventDefault();
                             setIsLogin(true);
+                            setSuccessMessage(null)
+                            setErrorMessage(null)
                         }}
                     >
                         Zaloguj się
@@ -95,54 +110,58 @@ const Logowanie = () => {
                         onClick={(e) => {
                             e.preventDefault();
                             setIsLogin(false);
+                            setSuccessMessage(null)
+                            setErrorMessage(null)
                         }}
                     >
                         Zarejestruj się
                     </button>
                 </div>
 
-                {/* Pola dla rejestracji */}
+                {/* Conditional form rendering */}
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    className="email"
+                    placeholder="nazwa użytkownika"
+                    value={isLogin ? loginInfo.username : registerInfo.username}
+                    onChange={isLogin ? handleLoginInputChange : handleRegisterInputChange}
+                />
+
                 {!isLogin && (
                     <>
                         <input
                             type="text"
-                            id="imie"
-                            className="imie"
-                            name="imie"
-                            placeholder="imię"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            className="displayName"
+                            placeholder="Numer telefonu"
+                            value={registerInfo.phoneNumber}
+                            onChange={handleRegisterInputChange}
                         />
                         <input
-                            type="text"
-                            id="nazwisko"
-                            name="nazwisko"
-                            className="nazwisko"
-                            placeholder="nazwisko"
+                            type="email"
+                            id="email"
+                            name="email"
+                            className="email"
+                            placeholder="Email"
+                            value={registerInfo.email}
+                            onChange={handleRegisterInputChange}
                         />
                     </>
                 )}
 
-                {/* Pole e-mail */}
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="email"
-                    placeholder="adres email"
-                    value={email}
-                    onChange={handleEmailChange}
-                />
-
-                {/* Pole hasło */}
                 <input
                     type={showPassword ? 'text' : 'password'}
-                    id="haslo"
+                    id="password"
                     className="haslo"
-                    name="haslo"
+                    name="password"
                     placeholder="Hasło"
-                    value={password}
-                    onChange={handlePasswordChange}
-                    onBlur={() => setIsTouched(true)}
+                    value={isLogin ? loginInfo.password : registerInfo.password}
+                    onChange={isLogin ? handleLoginInputChange : handleRegisterInputChange}
                 />
+
                 <label className="pokaz">
                     <input
                         type="checkbox"
@@ -152,29 +171,16 @@ const Logowanie = () => {
                     Pokaż hasło
                 </label>
 
-                {/* Komunikat walidacji hasła */}
-                {isTouched && (
-                    <p
-                        className="zapisz2"
-                        style={{ color: isPasswordValid ? 'green' : 'red' }}
-                    >
-                        {isPasswordValid
-                            ? 'Hasło jest poprawne!'
-                            : 'Hasło musi zawierać cyfrę, znak specjalny i mieć od 6 do 16 znaków.'}
-                    </p>
-                )}
-
-                {/* Przycisk submit */}
                 <input
                     type="submit"
                     className="zapisz"
                     value={isLogin ? 'Zaloguj się' : 'Zarejestruj'}
-                    disabled={!isPasswordValid || !isEmailValid}
+                    disabled={loading}
                 />
 
-                {/* Komunikaty o błędach/sukcesach */}
-                {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-                {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+                {/* Error and success messages */}
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {success && <p style={{ color: 'green' }}>{success}</p>}
             </form>
         </div>
     );

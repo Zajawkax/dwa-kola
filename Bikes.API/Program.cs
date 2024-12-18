@@ -8,6 +8,9 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using Bikes.API.Controllers;
+using Bikes.Domain;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,6 +58,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+
 // Konfiguracja Swaggera
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -78,6 +82,17 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+builder.Services.AddIdentityServices(builder.Configuration);
+
+builder.Services.AddScoped<PasswordHasher<User>>();
+builder.Services.AddScoped<TokenService>();
+builder.Services.AddDbContext<DataContext>(opt =>
+{
+    opt.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 25)),
+    b => b.MigrationsAssembly("Bikes.Infrastructure"));
+});
+
 
 var app = builder.Build();
 
@@ -90,7 +105,8 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty;
     });
 }
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
