@@ -62,3 +62,5 @@ C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Infrastructure\obj\Debug\ne
 C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Infrastructure\obj\Debug\net8.0\refint\Bikes.Infrastructure.dll
 C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Infrastructure\obj\Debug\net8.0\Bikes.Infrastructure.pdb
 C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Infrastructure\obj\Debug\net8.0\ref\Bikes.Infrastructure.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Infrastructure\bin\Debug\net8.0\Bikes.Infrastructure.runtimeconfig.json
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Infrastructure\obj\Debug\net8.0\Bikes.Infrastructure.genruntimeconfig.cache

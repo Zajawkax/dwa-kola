@@ -46,3 +46,4 @@ C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bik
 C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\refint\Bikes.Domain.dll
 C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.pdb
 C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\ref\Bikes.Domain.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.Domain\obj\Debug\net8.0\Bikes.Domain.csproj.AssemblyReference.cache

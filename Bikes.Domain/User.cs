@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace Bikes.Domain
 {
-    public class User
+    public class User : IdentityUser<int>
     {
-        public int UserId { get; set; }
-
+        //public int Id { get; set; }
+        //public int UserId { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Username { get; set; }
+        public override string UserName { get; set; }
 
         [Required]
         [MaxLength(100)]
         public string Email { get; set; }
-
-        [Required]
-        [MaxLength(255)]
-        public string PasswordHash { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

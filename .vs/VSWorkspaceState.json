@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Bikes.API",
+    "\\Bikes.Application",
+    "\\Bikes.Application\\Bikes",
+    "\\Bikes.Application\\Reservations"
   ],
   "SelectedNode": "\\Bikes.API.sln",
   "PreviewInSolutionExplorer": false

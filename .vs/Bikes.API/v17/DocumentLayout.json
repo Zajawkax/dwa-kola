@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\marta\\onedrive\\academia\\5\\io\\dwa-kola\\bikes.application\\bikes\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\marta\\onedrive\\academia\\5\\io\\dwa-kola\\bikes.api\\clientapp\\src\\components\\logowanie.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\clientapp\\src\\components\\logowanie.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\marta\\onedrive\\academia\\5\\io\\dwa-kola\\bikes.application\\reservations\\createreservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\reservations\\createreservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\marta\\onedrive\\academia\\5\\io\\dwa-kola\\bikes.application\\reservations\\reservationvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\reservations\\reservationvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|c:\\users\\marta\\onedrive\\academia\\5\\io\\dwa-kola\\bikes.domain\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA4161E-6C0D-4855-A5B2-EF930F511822}|Bikes.Domain\\Bikes.Domain.csproj|solutionrelative:bikes.domain\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|c:\\users\\marta\\onedrive\\academia\\5\\io\\dwa-kola\\bikes.application\\bikes\\bikevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FDD8827-D1CD-4BAB-A782-D5545D463527}|Bikes.Application\\Bikes.Application.csproj|solutionrelative:bikes.application\\bikes\\bikevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|c:\\users\\marta\\onedrive\\academia\\5\\io\\dwa-kola\\bikes.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4264784A-F031-4524-8C9F-A1BD6E6D9DDC}|Bikes.API\\Bikes.API.csproj|solutionrelative:bikes.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -57,74 +45,33 @@
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Create.cs",
-              "DocumentMoniker": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Bikes\\Create.cs",
-              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\Create.cs",
-              "ToolTip": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Bikes\\Create.cs",
-              "RelativeToolTip": "Bikes.Application\\Bikes\\Create.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAcwEEAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T10:15:24.259Z",
+              "Title": "Logowanie.tsx",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.API\\clientapp\\src\\Components\\Logowanie.tsx",
+              "RelativeDocumentMoniker": "Bikes.API\\clientapp\\src\\Components\\Logowanie.tsx",
+              "ToolTip": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.API\\clientapp\\src\\Components\\Logowanie.tsx",
+              "RelativeToolTip": "Bikes.API\\clientapp\\src\\Components\\Logowanie.tsx",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAiwGkAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-12-18T12:01:15.226Z",
               "EditorCaption": ""
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Reservation.cs",
-              "DocumentMoniker": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Domain\\Reservation.cs",
-              "RelativeDocumentMoniker": "Bikes.Domain\\Reservation.cs",
-              "ToolTip": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Domain\\Reservation.cs",
-              "RelativeToolTip": "Bikes.Domain\\Reservation.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAzwA8AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T10:11:24.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BikeValidator.cs",
-              "DocumentMoniker": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Bikes\\BikeValidator.cs",
-              "RelativeDocumentMoniker": "Bikes.Application\\Bikes\\BikeValidator.cs",
-              "ToolTip": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Bikes\\BikeValidator.cs",
-              "RelativeToolTip": "Bikes.Application\\Bikes\\BikeValidator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T10:06:31.686Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CreateReservation.cs",
-              "DocumentMoniker": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Reservations\\CreateReservation.cs",
-              "RelativeDocumentMoniker": "Bikes.Application\\Reservations\\CreateReservation.cs",
-              "ToolTip": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Reservations\\CreateReservation.cs",
-              "RelativeToolTip": "Bikes.Application\\Reservations\\CreateReservation.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAuwC8AAAAOAAAA",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Bikes.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Bikes.API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAACcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T10:15:52.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReservationValidator.cs",
-              "DocumentMoniker": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Reservations\\ReservationValidator.cs",
-              "RelativeDocumentMoniker": "Bikes.Application\\Reservations\\ReservationValidator.cs",
-              "ToolTip": "C:\\Users\\marta\\OneDrive\\Academia\\5\\IO\\dwa-kola\\Bikes.Application\\Reservations\\ReservationValidator.cs",
-              "RelativeToolTip": "Bikes.Application\\Reservations\\ReservationValidator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T10:06:11.599Z",
+              "WhenOpened": "2024-12-17T15:33:30.775Z",
               "EditorCaption": ""
             }
           ]

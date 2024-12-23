@@ -1,11 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Bikes.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Bikes.Infrastructure
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<User, IdentityRole<int>, int>
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        public DataContext(DbContextOptions<DataContext> options)
+             : base(options) { }
 
         public DbSet<Bike> Bikes { get; set; }
         public DbSet<User> Users { get; set; }
@@ -16,21 +19,25 @@ namespace Bikes.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Tabela Users
+            // Konfiguracja tabeli Users
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(e => e.UserId);
-                entity.Property(e => e.Username).IsRequired().HasMaxLength(50);
+                //entity.Property(e => e.Username).IsRequired().HasMaxLength(50);
+                entity.HasKey(e => e.Id); 
                 entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
-                entity.Property(e => e.PasswordHash).IsRequired().HasMaxLength(255);
                 entity.Property(e => e.PhoneNumber).HasMaxLength(15);
-                entity.Property(e => e.IsActive).HasDefaultValue(true);
-                entity.Property(e => e.IsAdmin).HasDefaultValue(false);
-                entity.HasIndex(e => e.Email).IsUnique();
+
                 entity.Property(e => e.CreatedAt)
                       .HasColumnType("datetime")
                       .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.IsActive).HasDefaultValue(true);
+                entity.Property(e => e.IsAdmin).HasDefaultValue(false);
+
+                entity.HasIndex(e => e.Email).IsUnique();
             });
+
+
 
             // Tabela Bikes
             modelBuilder.Entity<Bike>(entity =>
@@ -56,11 +63,13 @@ namespace Bikes.Infrastructure
                 entity.Property(e => e.ReservationTime)
                       .HasColumnType("datetime")
                       .ValueGeneratedOnAdd();
-
+                // Relacja do User
                 entity.HasOne(e => e.User)
                       .WithMany(u => u.Reservations)
-                      .HasForeignKey(e => e.UserId);
+                      .HasForeignKey(e => e.UserId)
+                      .IsRequired(); // Upewnij się, że UserId jest typu string
 
+                // Relacja do Bike
                 entity.HasOne(e => e.Bike)
                       .WithMany(b => b.Reservations)
                       .HasForeignKey(e => e.BikeId);
@@ -78,7 +87,8 @@ namespace Bikes.Infrastructure
 
                 entity.HasOne(e => e.User)
                       .WithMany(u => u.Feedbacks)
-                      .HasForeignKey(e => e.UserId);
+                      .HasForeignKey(e => e.UserId)
+                      .IsRequired();
 
                 entity.HasOne(e => e.Bike)
                       .WithMany(b => b.Feedbacks)
@@ -96,6 +106,7 @@ namespace Bikes.Infrastructure
                 entity.Property(e => e.ReportDate)
                       .HasColumnType("datetime")
                       .ValueGeneratedOnAdd();
+
                 entity.Property(e => e.Description).IsRequired();
                 entity.Property(e => e.RepairStatus).IsRequired();
 
@@ -105,7 +116,8 @@ namespace Bikes.Infrastructure
 
                 entity.HasOne(e => e.User)
                       .WithMany(u => u.Damages)
-                      .HasForeignKey(e => e.UserId);
+                      .HasForeignKey(e => e.UserId)
+                      .IsRequired();
             });
 
             // Tabela Availability
@@ -121,6 +133,8 @@ namespace Bikes.Infrastructure
             });
 
             base.OnModelCreating(modelBuilder);
-        }
+
+
     }
+}
 }
