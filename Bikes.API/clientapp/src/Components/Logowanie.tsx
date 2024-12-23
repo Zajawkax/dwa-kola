@@ -1,11 +1,11 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import '../Styles/Login.css';
 import axios from 'axios';
 
 const Logowanie = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [loginInfo, setLoginInfo] = useState({
-        username: '',
+        email: '',
         password: ''
     });
     const [registerInfo, setRegisterInfo] = useState({
@@ -119,25 +119,25 @@ const Logowanie = () => {
                 </div>
 
                 {/* Conditional form rendering */}
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    className="email"
-                    placeholder="nazwa użytkownika"
-                    value={isLogin ? loginInfo.username : registerInfo.username}
-                    onChange={isLogin ? handleLoginInputChange : handleRegisterInputChange}
-                />
-
-                {!isLogin && (
+                {isLogin ? (
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="email"
+                        placeholder="Email"
+                        value={loginInfo.email}
+                        onChange={handleLoginInputChange}
+                    />
+                ) : (
                     <>
                         <input
                             type="text"
-                            id="phoneNumber"
-                            name="phoneNumber"
-                            className="displayName"
-                            placeholder="Numer telefonu"
-                            value={registerInfo.phoneNumber}
+                            id="username"
+                            name="username"
+                            className="username"
+                            placeholder="Nazwa użytkownika"
+                            value={registerInfo.username}
                             onChange={handleRegisterInputChange}
                         />
                         <input
@@ -147,6 +147,15 @@ const Logowanie = () => {
                             className="email"
                             placeholder="Email"
                             value={registerInfo.email}
+                            onChange={handleRegisterInputChange}
+                        />
+                        <input
+                            type="text"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            className="displayName"
+                            placeholder="Numer telefonu"
+                            value={registerInfo.phoneNumber}
                             onChange={handleRegisterInputChange}
                         />
                     </>
