@@ -1,4 +1,4 @@
-﻿using Bikes.Domain;
+using Bikes.Domain;
 using Bikes.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -72,41 +72,46 @@ namespace Bikes.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == dto.Username);
+            // Zmieniono z UserName na Email
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
 
             if (user == null)
-                return Unauthorized("Invalid username");
+                return Unauthorized("Nieprawidłowy email");
 
             // Weryfikacja hasła za pomocą BCrypt
             bool isPasswordValid = BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash);
             if (!isPasswordValid)
-                return Unauthorized("Invalid password");
+                return Unauthorized("Nieprawidłowe hasło");
 
             // Generowanie tokena
             var token = _tokenService.CreateToken(user);
 
             return Ok(new { Token = token, Username = user.UserName });
         }
-    }
 
-    // DTO dla rejestracji
-    public class RegisterDto
-    {
-        [Required]   
-        public string Username { get; set; }
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
-        [Required]
-        public string Password { get; set; }
-        [Required]
-        public string PhoneNumber { get; set; }
-    }
+        // DTO dla rejestracji
+        public class RegisterDto
+        {
+            [Required]
 
-    // DTO dla logowania
-    public class LoginDto
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
+            public string Username { get; set; }
+            [Required]
+            [EmailAddress]
+            public string Email { get; set; }
+            [Required]
+            public string Password { get; set; }
+            [Required]
+            public string PhoneNumber { get; set; }
+        }
+
+        // DTO dla logowania
+        public class LoginDto
+        {
+            [Required]
+            [EmailAddress]
+            public string Email { get; set; }
+            [Required]
+            public string Password { get; set; }
+        }
     }
 }
