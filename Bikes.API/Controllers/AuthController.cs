@@ -89,6 +89,38 @@ namespace Bikes.Api.Controllers
             return Ok(new { Token = token, Username = user.UserName });
         }
 
+        [HttpGet("profile")]
+        [Authorize]
+        public async Task<IActionResult> GetProfile()
+        {
+            // Pobranie nazwy użytkownika z tokena JWT
+            var username = User.Claims.FirstOrDefault(c => c.Type == "unique_name")?.Value;
+
+            if (string.IsNullOrEmpty(username))
+            {
+                return Unauthorized("Użytkownik nie jest uwierzytelniony.");
+            }
+
+            // Pobranie użytkownika z bazy danych
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null)
+            {
+                return NotFound("Nie znaleziono użytkownika.");
+            }
+
+            // Przygotowanie odpowiedzi z profilem użytkownika
+            var userProfile = new
+            {
+                Username = user.UserName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber
+            };
+
+            return Ok(userProfile);
+        }
+
+
         // DTO dla rejestracji
         public class RegisterDto
         {
