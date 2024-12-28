@@ -46,7 +46,7 @@ export default function Main() {
                                 <Menu.Item as={NavLink} to="/bikes">
                                     <Button content="Wszystkie Rowery" size="large" className="custom-button" />
                                 </Menu.Item>
-                                <Menu.Item as={NavLink} to="/add-car">
+                                <Menu.Item as={NavLink} to="/user/reservations">
                                     <Button content="Rezerwacje" size="large" className="custom-button2" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/contact">
@@ -55,7 +55,7 @@ export default function Main() {
                                 <Menu.Item as={NavLink} to="/login">
                                     <Button content="Logowanie" size="large" className="custom-button5" />
                                 </Menu.Item>
-                                <Menu.Item as={NavLink} to="/add-car">
+                                <Menu.Item as={NavLink} to="/user/reservations">
                                     <Button content="Cennik" size="large" className="custom-button6" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/regulamin">

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Bikes.Domain
 {
@@ -7,7 +8,10 @@ namespace Bikes.Domain
 
     public class Bike
     {
+        // Klucz główny
         public int BikeId { get; set; } // Auto-incremented primary key
+
+        // Podstawowe właściwości
         public string Name { get; set; }
         public BikeSize Size { get; set; }
         public BikeType BikeType { get; set; }
@@ -17,9 +21,16 @@ namespace Bikes.Domain
         public bool AvailabilityStatus { get; set; }
 
         // Nawigacja
+        [JsonIgnore] // Ignorowanie, aby uniknąć cyklicznych referencji
         public ICollection<Reservation> Reservations { get; set; }
+
+        [JsonIgnore]
         public ICollection<Feedback> Feedbacks { get; set; }
+
+        [JsonIgnore]
         public ICollection<Damage> Damages { get; set; }
+
+        [JsonIgnore]
         public ICollection<Availability> Availabilities { get; set; }
     }
 }

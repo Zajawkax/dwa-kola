@@ -970,7 +970,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.11"
         },
         "runtime": {
-          "Bikes.Application.dll": {}
+          "Bikes.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Bikes.Domain/1.0.0": {
@@ -979,7 +982,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.11"
         },
         "runtime": {
-          "Bikes.Domain.dll": {}
+          "Bikes.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Bikes.Infrastructure/1.0.0": {
@@ -991,7 +997,10 @@
           "Pomelo.EntityFrameworkCore.MySql": "8.0.2"
         },
         "runtime": {
-          "Bikes.Infrastructure.dll": {}
+          "Bikes.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

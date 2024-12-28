@@ -1,14 +1,26 @@
-﻿//export default FilterSort;
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
+﻿import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../Styles/FilterSort.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-function FilterSort() {
-    const [bikes, setBikes] = useState([]);
-    const [filteredBikes, setFilteredBikes] = useState([]);
+interface Bike {
+    bikeId: number;
+    name: string;
+    size: string; // Small, Medium, Large
+    bikeType: string; // Mountain, Road, Hybrid, Electric
+    isElectric: boolean;
+    availabilityStatus: boolean;
+    hourlyRate: number;
+    dailyRate: number;
+}
+
+interface FilterSortProps {
+    bikes: Bike[];
+    onFilteredBikes: (filtered: Bike[]) => void;
+}
+
+const FilterSort: React.FC<FilterSortProps> = ({ bikes, onFilteredBikes }) => {
     const [filters, setFilters] = useState({
         bikeType: '',
         size: '',
@@ -17,80 +29,74 @@ function FilterSort() {
     });
     const [sortOption, setSortOption] = useState('');
 
-    const navigate = useNavigate();
-
-    // Fetch bikes from the API when the component mounts
     useEffect(() => {
-        axios
-            .get('https://localhost:7032/api/bikes')
-            .then((response) => {
-                setBikes(response.data);
-                setFilteredBikes(response.data); // Initialize filtered bikes as the full list
-            })
-            .catch((error) => {
-                console.error('Błąd podczas ładowania rowerów:', error);
-            });
-    }, []);
+        applyFiltersAndSort();
+    }, [filters, sortOption]);
 
-    // Filter bikes based on selected filters
-    useEffect(() => {
-        let filtered = [...bikes];
+    /**
+     * Aktualizacja filtrów
+     * Obsługuje zarówno checkboxy, jak i selecty
+     */
+    const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name } = e.target;
+        let newValue: string | boolean = e.target.value;
 
-        if (filters.bikeType) {
-            filtered = filtered.filter(bike => bike.bikeType === filters.bikeType);
-        }
-        if (filters.size) {
-            filtered = filtered.filter(bike => bike.size === filters.size);
-        }
-        if (filters.isElectric) {
-            filtered = filtered.filter(bike => bike.isElectric === filters.isElectric);
-        }
-        if (filters.availabilityStatus !== '') {
-            filtered = filtered.filter(bike => bike.availabilityStatus === filters.availabilityStatus);
+        if (e.target instanceof HTMLInputElement && e.target.type === 'checkbox') {
+            newValue = e.target.checked;
         }
 
-        setFilteredBikes(filtered);
-    }, [filters, bikes]);
-
-    // Handle the filter change
-    const handleFilterChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        let newValue = value;
-
-        if (type === 'checkbox') {
-            newValue = checked;
-        }
-
-        setFilters({
-            ...filters,
+        setFilters((prev) => ({
+            ...prev,
             [name]: newValue,
-        });
+        }));
     };
 
-    // Handle the sort change
-    const handleSortChange = (e) => {
+    /**
+     * Zmiana opcji sortowania
+     */
+    const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSortOption(e.target.value);
     };
 
-    // Sort bikes based on the selected sort option
-    const handleSort = () => {
-        let sortedBikes = [...filteredBikes];
-        if (sortOption === 'hourlyRateAsc') {
-            sortedBikes.sort((a, b) => a.hourlyRate - b.hourlyRate);
-        } else if (sortOption === 'hourlyRateDesc') {
-            sortedBikes.sort((a, b) => b.hourlyRate - a.hourlyRate);
-        } else if (sortOption === 'dailyRateAsc') {
-            sortedBikes.sort((a, b) => a.dailyRate - b.dailyRate);
-        } else if (sortOption === 'dailyRateDesc') {
-            sortedBikes.sort((a, b) => b.dailyRate - a.dailyRate);
+    /**
+     * Zastosowanie filtrów i sortowania
+     */
+    const applyFiltersAndSort = () => {
+        let filteredBikes = [...bikes];
+
+        // Filtrowanie
+        if (filters.bikeType) {
+            filteredBikes = filteredBikes.filter((bike) => bike.bikeType === filters.bikeType);
         }
-        setFilteredBikes(sortedBikes);
+        if (filters.size) {
+            filteredBikes = filteredBikes.filter((bike) => bike.size === filters.size);
+        }
+        if (filters.isElectric) {
+            filteredBikes = filteredBikes.filter((bike) => bike.isElectric === filters.isElectric);
+        }
+        if (filters.availabilityStatus !== null) {
+            filteredBikes = filteredBikes.filter((bike) => bike.availabilityStatus === filters.availabilityStatus);
+        }
+
+        // Sortowanie
+        if (sortOption === 'hourlyRateAsc') {
+            filteredBikes.sort((a, b) => a.hourlyRate - b.hourlyRate);
+        } else if (sortOption === 'hourlyRateDesc') {
+            filteredBikes.sort((a, b) => b.hourlyRate - a.hourlyRate);
+        } else if (sortOption === 'dailyRateAsc') {
+            filteredBikes.sort((a, b) => a.dailyRate - b.dailyRate);
+        } else if (sortOption === 'dailyRateDesc') {
+            filteredBikes.sort((a, b) => b.dailyRate - a.dailyRate);
+        }
+
+        onFilteredBikes(filteredBikes);
     };
 
     return (
         <div className="filter-sort">
-           {/* <h3>Filtruj i Sortuj</h3>*/}
+            <h3>Filtrowanie i sortowanie</h3>
 
+            {/* Formularz filtrowania */}
             <div className="filter-form">
                 <form>
                     <div className="form-group">
@@ -99,7 +105,7 @@ function FilterSort() {
                             <option value="">Wszystkie</option>
                             <option value="Mountain">Górski</option>
                             <option value="Road">Szosowy</option>
-                            <option value="Hybrid">Hybrida</option>
+                            <option value="Hybrid">Hybrydowy</option>
                             <option value="Electric">Elektryczny</option>
                         </select>
                     </div>
@@ -133,17 +139,12 @@ function FilterSort() {
                             onChange={handleFilterChange}
                         />
                     </div>
-
-                    <div className="form-group">
-                        <button type="button" onClick={handleSort} className="btn btn-primary">
-                            Filtruj i Sortuj
-                        </button>
-                    </div>
                 </form>
             </div>
 
+            {/* Formularz sortowania */}
             <div className="sort-form">
-                
+                <label>Sortowanie:</label>
                 <select value={sortOption} onChange={handleSortChange}>
                     <option value="">Wybierz opcję</option>
                     <option value="hourlyRateAsc">Stawka godzinowa rosnąco</option>
@@ -151,29 +152,14 @@ function FilterSort() {
                     <option value="dailyRateAsc">Stawka dzienna rosnąco</option>
                     <option value="dailyRateDesc">Stawka dzienna malejąco</option>
                 </select>
-                <button type="button" onClick={handleSort} className="btn btn-primary">
-                    Sortuj
-                </button>
             </div>
 
-            <div className="bike-list">
-                {filteredBikes.length === 0 ? (
-                    <p className="brak">Brak rowerów spełniających wybrane kryteria.</p>
-                ) : (
-                    <ul>
-                        {filteredBikes.map((bike) => (
-                            <li key={bike.id}>
-                                {bike.name} - {bike.bikeType} - {bike.size} - {bike.hourlyRate} zł/h - {bike.dailyRate} zł/dzień
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
+            {/* Powrót do listy rowerów */}
             <Link to="/bikes" className="btn btn-secondary">
                 <FontAwesomeIcon icon={faArrowLeft} /> Powrót do listy rowerów
             </Link>
         </div>
     );
-}
+};
 
 export default FilterSort;
