@@ -241,7 +241,22 @@ h3 {
     top: 30%;
     
 }
-
+.custom-button10 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color: white;
+    background-color: transparent;
+    font-style: normal;
+    position: absolute;
+    padding: 10px;
+    top: 10%;
+    left: 56%;
+    font-size: 40px;
+    cursor: pointer;
+    border-color: transparent;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
 
 .custom-button:hover {
         background-color: gray;
@@ -282,7 +297,9 @@ h3 {
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
         transition: box-shadow 0.3s ease;
     }
-
+.custom-button10:hover {
+    background-color: gray;
+}
 .custom-scroll-button:hover {
         background-color: gray; 
     }

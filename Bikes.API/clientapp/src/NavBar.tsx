@@ -69,6 +69,7 @@ const NavBar: React.FC = () => {
                                     className="custom-button7"
                                 />
                             </Menu.Item>
+
                         </div>
 
                         {/* Dynamiczne elementy logowania */}
@@ -78,12 +79,13 @@ const NavBar: React.FC = () => {
                                     <span style={{ marginRight: '20px' }}>
                                         Zalogowany jako: <b>{username}</b>
                                     </span>
-                                    <Button
-                                        content="Wyloguj"
-                                        size="large"
-                                        className="custom-button-logout"
-                                        onClick={handleLogout}
-                                    />
+                                    <Menu.Item as={NavLink} to="/profile">
+                                        <Button
+                                            content="Profil"
+                                            size="large"
+                                            className="custom-button10"
+                                        />
+                                    </Menu.Item>
                                 </>
                             ) : (
                                 <Menu.Item as={NavLink} to="/login">
@@ -95,6 +97,7 @@ const NavBar: React.FC = () => {
                                 </Menu.Item>
                             )}
                         </div>
+
                     </div>
                 </div>
             </Container>

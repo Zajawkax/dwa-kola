@@ -11,6 +11,7 @@ import FilterSort from "../Components/FilterSort";
 import MyReservations from '../Components/MyReservations';
 import AdminPanel from '../Components/AdminPanel';
 import Dashboard from '../Dashboard';
+import UserProfile from "../Components/UserProfile";
 
 export const routes: RouteObject[] = [
     {
@@ -21,22 +22,17 @@ export const routes: RouteObject[] = [
             { path: 'user/reservations', element: <MyReservations /> },
             { path: "/", element: <Main /> },
             { path: "bikes", element: <BikeList /> },
-            { path: "login", element: <Logowanie /> }, 
+            { path: "login", element: <Logowanie /> },
             { path: "details/:id", element: <Details /> },
             { path: "bikes/create-bike", element: <CreateBike /> },
-            //{ path: "bikes/filtersort", element: <FilterSort /> },
-            { path: 'dashboard', element: <Dashboard /> },
+            { path: "dashboard", element: <Dashboard /> },
             { path: "contact", element: <Kontakt /> },
             { path: "regulamin", element: <TermsOfService /> },
-
-
-           
-
-            
+            { path: "profile", element: <UserProfile /> }, // Nowa trasa
         ]
-            
     }
 ];
+
 
 export const router = createBrowserRouter(routes);
 

@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Bikes.API",
-    "\\Bikes.Application",
-    "\\Bikes.Application\\Bikes",
-    "\\Bikes.Application\\Reservations"
+    "\\Bikes.API\\Controllers"
   ],
-  "SelectedNode": "\\Bikes.API.sln",
+  "SelectedNode": "\\Bikes.API\\Controllers\\ReservationController.cs",
   "PreviewInSolutionExplorer": false
 }

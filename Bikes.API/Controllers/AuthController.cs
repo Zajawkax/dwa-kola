@@ -89,20 +89,22 @@ namespace Bikes.Api.Controllers
             return Ok(new { Token = token, Username = user.UserName });
         }
 
+
         [HttpGet("profile")]
         [Authorize]
         public async Task<IActionResult> GetProfile()
         {
-            // Pobranie nazwy użytkownika z tokena JWT
-            var username = User.Claims.FirstOrDefault(c => c.Type == "unique_name")?.Value;
+            // Pobranie emaila użytkownika z tokena JWT
+            var username = User.Identity?.Name;
 
             if (string.IsNullOrEmpty(username))
             {
                 return Unauthorized("Użytkownik nie jest uwierzytelniony.");
             }
 
-            // Pobranie użytkownika z bazy danych
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+            // Pobranie użytkownika z bazy danych na podstawie emaila z tokenu
+            var user = await _context.Users
+                    .FirstOrDefaultAsync(u => u.UserName == username);
 
             if (user == null)
             {
@@ -120,6 +122,39 @@ namespace Bikes.Api.Controllers
             return Ok(userProfile);
         }
 
+        [HttpPost("change-password-login")]
+        [Authorize]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto dto)
+        {
+            var username = User.Identity?.Name;
+
+            if (string.IsNullOrEmpty(username))
+            {
+                return Unauthorized("Użytkownik nie jest uwierzytelniony.");
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null)
+            {
+                return NotFound("Nie znaleziono użytkownika.");
+            }
+
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(dto.CurrentPassword, user.PasswordHash);
+            if (!isPasswordValid)
+            {
+                return BadRequest("Podane obecne hasło jest nieprawidłowe.");
+            }
+
+            var newPasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.NewPassword);
+
+            user.PasswordHash = newPasswordHash;
+
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+
+            return Ok("Hasło zostało pomyślnie zmienione.");
+        }
 
         // DTO dla rejestracji
         public class RegisterDto
@@ -144,6 +179,16 @@ namespace Bikes.Api.Controllers
             public string Email { get; set; }
             [Required]
             public string Password { get; set; }
+        }
+
+        public class ChangePasswordDto
+        {
+            [Required]
+            public string CurrentPassword { get; set; }
+
+            [Required]
+            [MinLength(6, ErrorMessage = "Nowe hasło musi mieć co najmniej 6 znaków.")]
+            public string NewPassword { get; set; }
         }
     }
 }
