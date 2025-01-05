@@ -9,11 +9,14 @@ function BikeDetails() {
     const [bike, setBike] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [formError, setFormError] = useState(null); // Błąd związany z formularzem
+    const [startDateTime, setStartDateTime] = useState('');
+    const [endDateTime, setEndDateTime] = useState('');
+    const [reservationError, setReservationError] = useState(null); // Błąd rezerwacji
 
-    const { id } = useParams();      // id roweru z adresu /details/:id
-    const navigate = useNavigate();  // do przekierowań
+    const { id } = useParams();
+    const navigate = useNavigate();
 
-    // 1. Pobieranie danych roweru
     const fetchBike = async () => {
         try {
             const response = await axios.get(`https://localhost:7032/api/bikes/${id}`);
@@ -28,48 +31,82 @@ function BikeDetails() {
 
     useEffect(() => {
         fetchBike();
-    }, [id]); // wywołaj fetchBike przy zmianie id
+    }, [id]);
 
-    // 2. Obsługa przycisku "Zarezerwuj"
     const handleReserve = async (event) => {
-        // Zapobiegamy przeładowaniu strony, jeżeli to <Link to="#"> lub <a>
         event.preventDefault();
+
+        if (!startDateTime || !endDateTime) {
+            setFormError('Wybierz datę i godzinę rozpoczęcia oraz zakończenia rezerwacji!');
+            return;
+        }
+
+        const start = new Date(startDateTime);
+        const end = new Date(endDateTime);
+
+        if (end <= start) {
+            setFormError('Data zakończenia musi być późniejsza niż data rozpoczęcia!');
+            return;
+        }
+
+        setFormError(null); // Reset błędu formularza
 
         try {
             const token = localStorage.getItem('authToken');
             if (!token) {
                 setError('Musisz być zalogowany, by zarezerwować rower!');
-                // ewentualnie przekieruj do logowania:
                 navigate('/login');
                 return;
             }
-            if (!bike || !bike.bikeId) {
-                setError('Nieprawidłowy ID roweru');
+
+            const adjustToTimezone = (dateTime) => {
+                const localDate = new Date(dateTime);
+                return new Date(localDate.getTime() - localDate.getTimezoneOffset() * 60000).toISOString();
+            };
+
+            const adjustedStartDate = adjustToTimezone(startDateTime);
+            const adjustedEndDate = adjustToTimezone(endDateTime);
+
+            // Sprawdzanie dostępności roweru tylko na zadany okres
+            try {
+                const checkResponse = await axios.post(
+                    `https://localhost:7032/api/Reservation/check-availability/${bike.bikeId}`,
+                    {
+                        startDate: startDateTime,
+                        endDate: endDateTime
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
+                );
+                if (!checkResponse.data.available) {
+                    setReservationError('Rower jest już zarezerwowany na ten okres.');
+                    return;
+                }
+                setReservationError(null); // Reset błędu rezerwacji
+            } catch (err) {
+                console.error('Błąd sprawdzania dostępności:', err.response ? err.response.data : err);
+                setError('Nie udało się sprawdzić dostępności roweru.');
                 return;
             }
 
-            // Przykładowo ustaw datę startu "teraz" i koniec "jutro"
-            const now = new Date().toISOString();
-            const tomorrowDate = new Date();
-            tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-            const tomorrow = tomorrowDate.toISOString();
-
-            // Wysyłamy żądanie rezerwacji
+            // Jeśli rower jest dostępny, kontynuuj rezerwację
             const response = await axios.post(
                 `https://localhost:7032/api/Reservation/rent/${bike.bikeId}`,
                 {
-                    startDate: now,
-                    endDate: tomorrow
+                    startDate: adjustedStartDate,
+                    endDate: adjustedEndDate,
                 },
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`
-                    }
+                        Authorization: `Bearer ${token}`,
+                    },
                 }
             );
-            console.log('Rezerwacja udana:', response.data);
 
-            // Po udanej rezerwacji przekieruj np. do listy rezerwacji użytkownika
+            console.log('Rezerwacja udana:', response.data);
             navigate('/user/reservations');
         } catch (err) {
             console.error('Błąd rezerwacji:', err);
@@ -77,13 +114,14 @@ function BikeDetails() {
         }
     };
 
-    // 3. Renderowanie w zależności od stanu
     if (isLoading) {
         return <p>Ładowanie danych...</p>;
     }
+
     if (error) {
         return <p style={{ color: 'red' }}>{error}</p>;
     }
+
     if (!bike) {
         return <p>Nie znaleziono roweru</p>;
     }
@@ -99,19 +137,40 @@ function BikeDetails() {
             <p>Stawka dzienna: {bike.dailyRate} zł</p>
             <p>Dostępność: {bike.availabilityStatus ? 'Dostępny' : 'Niedostępny'}</p>
 
-            {/* Link powrotu do listy */}
             <Link to="/" className="btn btn-secondary">
                 <FontAwesomeIcon icon={faArrowLeft} /> Powrót do listy rowerów
             </Link>
 
-            {/* Jeśli rower jest dostępny – przycisk "Zarezerwuj" */}
-            {bike.availabilityStatus ? (
-                <Link to="#" onClick={handleReserve} className="btn btn-secondary2">
-                    Zarezerwuj <FontAwesomeIcon icon={faArrowRight} />
-                </Link>
-            ) : (
-                <p>Ten rower jest aktualnie niedostępny</p>
+            {reservationError && <p style={{ color: 'red' }}>{reservationError}</p>} {/* Wyświetlanie komunikatu o dostępności */}
+
+            {bike.availabilityStatus && (
+                <div>
+                    {formError && <p style={{ color: 'red' }}>{formError}</p>} {/* Wyświetlanie błędu formularza */}
+                    <div className="date-inputs">
+                        <label>
+                            Data i godzina rozpoczęcia:
+                            <input
+                                type="datetime-local"
+                                value={startDateTime}
+                                onChange={(e) => setStartDateTime(e.target.value)}
+                            />
+                        </label>
+                        <label>
+                            Data i godzina zakończenia:
+                            <input
+                                type="datetime-local"
+                                value={endDateTime}
+                                onChange={(e) => setEndDateTime(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <button onClick={handleReserve} className="btn btn-secondary">
+                        Zarezerwuj <FontAwesomeIcon icon={faArrowRight} />
+                    </button>
+                </div>
             )}
+
+            {!bike.availabilityStatus && <p>Ten rower jest aktualnie niedostępny</p>}
         </div>
     );
 }

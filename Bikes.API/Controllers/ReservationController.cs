@@ -5,6 +5,7 @@ using Bikes.Application.Reservations;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Bikes.Application.Bikes;
 
 namespace Bikes.API.Controllers
 {
@@ -54,6 +55,47 @@ namespace Bikes.API.Controllers
 
             return Ok(result.Value);
         }
+        [HttpGet("bike/{bikeId}")]
+        public async Task<IActionResult> GetReservationsForBike(int bikeId)
+        {
+            var query = new GetReservationsForBikeQuery { BikeId = bikeId };
+            var result = await _mediator.Send(query);
+
+            if (!result.IsSuccess)
+            {
+                // If there are no reservations, the bike is available
+                return Ok(new { Available = true });
+            }
+
+            return Ok(new { Available = false, Reservations = result.Value });
+        }
+
+
+        [HttpPost("check-availability/{bikeId}")]
+        public async Task<IActionResult> CheckBikeAvailability(int bikeId, [FromBody] RentBikeDto dto)
+        {
+            // Pobieramy wszystkie rezerwacje dla roweru
+            var result = await _mediator.Send(new GetReservationsForBikeQuery { BikeId = bikeId });
+
+            if (!result.IsSuccess)
+                return BadRequest(result.Error);
+
+            // Sprawdzamy dostępność na podstawie dat
+            var reservations = result.Value;
+
+            var isAvailable = reservations.All(r => r.EndDate <= dto.StartDate || r.StartDate >= dto.EndDate);
+
+            if (isAvailable)
+            {
+                return Ok(new { Available = true });
+            }
+            else
+            {
+                return Ok(new { Available = false, Message = "Rower jest niedostępny w tym okresie" });
+            }
+        }
+
+
 
         /// <summary>
         /// Wypożycz rower (utwórz rezerwację)
@@ -68,12 +110,30 @@ namespace Bikes.API.Controllers
 
             if (!int.TryParse(userIdString, out var userId)) return Unauthorized("Błędne ID użytkownika.");
 
+            // Pobranie informacji o rowerze
+            var bike = await _mediator.Send(new DetailsQuery { BikeId = bikeId });
+            if (!bike.IsSuccess) return BadRequest(bike.Error);
+
+            // Obliczanie ceny
+            var duration = dto.EndDate - dto.StartDate;
+            double totalCost = 0;
+
+            if (duration.TotalDays < 1) // Rezerwacja na mniej niż 24 godziny
+            {
+                totalCost = (double)bike.Value.HourlyRate * duration.TotalHours; // Cena godzinowa
+            }
+            else // Rezerwacja na cały dzień lub wiele dni
+            {
+                totalCost = (double)bike.Value.DailyRate * Math.Ceiling(duration.TotalDays); // Cena dzienna
+            }
+
             var command = new RentBikeCommand
             {
                 BikeId = bikeId,
                 UserId = userId,
                 StartDate = dto.StartDate,
-                EndDate = dto.EndDate
+                EndDate = dto.EndDate,
+                TotalCost = totalCost // Przekazywanie obliczonej ceny
             };
 
             var result = await _mediator.Send(command);
@@ -81,6 +141,7 @@ namespace Bikes.API.Controllers
 
             return Ok(result.Value);
         }
+
 
         /// <summary>
         /// Zwróć rower (zakończ rezerwację)
@@ -122,4 +183,7 @@ namespace Bikes.API.Controllers
     {
         public bool DeleteReservation { get; set; } = false;
     }
+
+
+
 }

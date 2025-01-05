@@ -136,3 +136,14 @@ h15::after, .bike-details p::after{
     color: black;
     
 }
+
+.date-inputs {
+    display: flex;
+    gap: 20px; /* Odstêp miêdzy polami */
+    align-items: center; /* Wyrównanie w pionie */
+}
+
+    .date-inputs label {
+        display: flex;
+        flex-direction: column;
+    }
