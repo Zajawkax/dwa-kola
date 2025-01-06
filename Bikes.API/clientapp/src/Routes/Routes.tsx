@@ -12,6 +12,7 @@ import MyReservations from '../Components/MyReservations';
 import AdminPanel from '../Components/AdminPanel';
 import Dashboard from '../Dashboard';
 import UserProfile from "../Components/UserProfile";
+import KontaktAdmin from "../Components/KontaktAdmin";
 
 export const routes: RouteObject[] = [
     {
@@ -29,6 +30,9 @@ export const routes: RouteObject[] = [
             { path: "contact", element: <Kontakt /> },
             { path: "regulamin", element: <TermsOfService /> },
             { path: "profile", element: <UserProfile /> }, // Nowa trasa
+            { path: "admin/messages", element: <KontaktAdmin/> }, // Nowa trasa
+            
+            
         ]
     }
 ];
