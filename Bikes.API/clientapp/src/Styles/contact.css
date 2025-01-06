@@ -12,6 +12,32 @@
     font-family: 'Arial', sans-serif;
 }
 
+.error-message {
+    position: absolute;
+    top: 30%; /* Kontener jest niżej */
+    left: calc(50% - 150px); /* Przesunięcie w lewo o 150px */
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    background-color: #f8d7da; /* Kolor tła */
+    padding: 20px; /* Padding wokół tekstu */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Cień wokół ramki */
+    margin-left: -110px;
+}
+
+.contact-container .error-message p {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.contact-container a {
+    text-decoration: none;
+    color: #0056b3; /* Kolor linku */
+}
+
 
     .contact-container h1 {
         font-family: "Playfair Display", serif;
@@ -64,8 +90,8 @@
 
 
     .contact-container p {
-        font-size: 18px;
-        color: #333;
+        font-size: 20px;
+        color: #000;
         text-align: center;
         margin-top: 20px;
     }
