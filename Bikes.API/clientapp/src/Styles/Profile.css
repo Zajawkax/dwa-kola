@@ -1,4 +1,4 @@
-﻿.profile-container {
+.profile-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -43,7 +43,6 @@
             outline: none;
         }
 
-
     .profile-container button {
         padding: 12px 20px;
         background-color: #0d6efd;
@@ -60,13 +59,13 @@
             background-color: #000;
         }
 
-
     .profile-container p {
         font-size: 18px;
         color: #333;
         text-align: center;
         margin-top: 20px;
     }
+
 .change-password-form {
     margin-top: 20px;
     display: flex;
@@ -88,3 +87,8 @@
         font-size: 1rem;
         cursor: pointer;
     }
+
+/* Add margin between the buttons */
+.profile-container button + button {
+    margin-top: 10px;
+}
