@@ -11,10 +11,11 @@ using System.Text.Json;
 using Bikes.API.Controllers;
 using Bikes.Domain;
 using Microsoft.AspNetCore.Identity;
+using Bikes.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Dodaj us³ugi do kontenera.
+// Dodaj usÅ‚ugi do kontenera.
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
@@ -58,7 +59,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-
+builder.Services.AddScoped<MessageService>();
 // Konfiguracja Swaggera
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -67,11 +68,11 @@ builder.Services.AddSwaggerGen(c =>
     {
         Version = "v1",
         Title = "Bikes API",
-        Description = "API do zarz¹dzania rowerami",
+        Description = "API do zarzÄ…dzania rowerami",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
-            Name = "Twoje Imiê",
+            Name = "Twoje ImiÄ™",
             Email = "twojemail@example.com",
             Url = new Uri("https://example.com/contact")
         },
