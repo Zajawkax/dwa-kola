@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Container, Menu } from "semantic-ui-react";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -53,7 +53,7 @@ export default function Main() {
                                     <Button content="Kontakt" size="large" className="custom-button3" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/login">
-                                    <Button content="Logowanie" size="large" className="custom-button5" />
+                                    <Button content="Logowanie" size="large" className="custom-buttonLogowanie" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/user/reservations">
                                     <Button content="Cennik" size="large" className="custom-button6" />
