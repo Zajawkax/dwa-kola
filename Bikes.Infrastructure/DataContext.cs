@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Bikes.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
@@ -16,7 +16,7 @@ namespace Bikes.Infrastructure
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Damage> Damages { get; set; }
         public DbSet<Availability> Availabilities { get; set; }
-
+        public DbSet<Message> Messages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Konfiguracja tabeli Users
