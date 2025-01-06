@@ -1,5 +1,6 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../Styles/MyReservations.css'; // Dodajemy ścieżkę do pliku CSS
 
 interface Reservation {
     reservationId: number;
@@ -28,7 +29,7 @@ const MyReservations: React.FC = () => {
             setLoading(true);
             try {
                 if (!token) {
-                    setError('Musisz być zalogowany!');
+                    setError('Musisz być zalogowany aby zarezerwować rower!');
                     return;
                 }
 
@@ -70,7 +71,6 @@ const MyReservations: React.FC = () => {
                 }
             );
 
-
             // Aktualizacja stanu rezerwacji lokalnie
             const updatedList = reservations.map((res) => {
                 if (res.reservationId === reservationId) {
@@ -110,54 +110,60 @@ const MyReservations: React.FC = () => {
     }
 
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return (
+            <div className="centered-message-container">
+                <p className="centered-message" style={{ color: 'black' }}>
+                    {error}
+                </p>
+                {error.includes('Musisz być zalogowany') && (
+                    <p className="centered-message-link">
+                        <a href="/login">Zaloguj się tutaj</a>
+                    </p>
+                )}
+            </div>
+        );
     }
-
     if (reservations.length === 0) {
         return <p>Brak rezerwacji.</p>;
     }
 
-    // Wyświetlanie rezerwacji
     return (
-        <div style={{ padding: '20px' }}>
-            <h2>Moje Rezerwacje</h2>
-            <ul>
-                {reservations.map((res) => {
-                    const isCompleted = res.status === 3; // Załóżmy, że 3 = Completed
-                    return (
-                        <li key={res.reservationId} style={{ marginBottom: '15px' }}>
-                            <strong>Rezerwacja #{res.reservationId}</strong>
-                            <br />
-                            <span>
-                                Rower: {res.bike?.name ?? `(ID: ${res.bikeId})`}
-                            </span>
-                            <br />
-                            <span>
-                                Od: {new Date(res.startDate).toLocaleString()} do:{' '}
-                                {new Date(res.endDate).toLocaleString()}
-                            </span>
-                            <br />
-                            <span>Status: {res.status} | Koszt: {res.totalCost} zł</span>
-                            <br />
-                            {/* Przycisk zwrotu roweru */}
-                            {!isCompleted ? (
-                                <button
-                                    onClick={() => handleReturnBike(res.reservationId)}
-                                    style={{
-                                        marginTop: '5px',
-                                        padding: '5px 10px',
-                                        cursor: 'pointer',
-                                    }}
-                                >
-                                    Zwróć rower
-                                </button>
-                            ) : (
-                                <span style={{ color: 'green' }}>Zwrócony</span>
-                            )}
-                        </li>
-                    );
-                })}
-            </ul>
+        <div>
+            <h2 className="reservations-header">Moje Rezerwacje</h2>
+            <div className="reservations-container">
+                <ul>
+                    {reservations.map((res) => {
+                        const isCompleted = res.status === 3;
+                        return (
+                            <li key={res.reservationId} className="reservation-item">
+                                <strong>Rezerwacja #{res.reservationId}</strong>
+                                <br />
+                                <span>
+                                    Rower: {res.bike?.name ?? `(ID: ${res.bikeId})`}
+                                </span>
+                                <br />
+                                <span>
+                                    Od: {new Date(res.startDate).toLocaleString()} do:{' '}
+                                    {new Date(res.endDate).toLocaleString()}
+                                </span>
+                                <br />
+                                <span>Status: {res.status} | Koszt: {res.totalCost} zł</span>
+                                <br />
+                                {!isCompleted ? (
+                                    <button
+                                        onClick={() => handleReturnBike(res.reservationId)}
+                                        className="return-button"
+                                    >
+                                        Zwróć rower
+                                    </button>
+                                ) : (
+                                    <span className="returned-status">Zwrócony</span>
+                                )}
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </div>
     );
 };
