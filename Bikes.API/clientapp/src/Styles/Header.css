@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   top: 0%; /* 100% wysokoúci ekranu minus navbar */
+   top: 0%; /* 100% wysoko≈õci ekranu minus navbar */
     text-align: center;
 
     background: linear-gradient(135deg, #f06, #f79);
@@ -176,7 +176,7 @@ h3 {
     position: absolute;
     padding: 10px;
     top: 10%;
-    left: 53%;
+    left: 40%;
     font-size: 40px;
     cursor: pointer;
     border-color: transparent;
@@ -193,6 +193,22 @@ h3 {
     padding: 10px;
     top: 10%;
     left: 70%;
+    font-size: 40px;
+    cursor: pointer;
+    border-color: transparent;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+.custom-buttonLogowanie {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color: white;
+    background-color: transparent;
+    font-style: normal;
+    position: absolute;
+    padding: 10px;
+    top: 10%;
+    left: 53%;
     font-size: 40px;
     cursor: pointer;
     border-color: transparent;
@@ -250,14 +266,29 @@ h3 {
     position: absolute;
     padding: 10px;
     top: 10%;
-    left: 56%;
+    left: 58%;
     font-size: 40px;
     cursor: pointer;
     border-color: transparent;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
 }
-
+.custom-buttonWiadomosci {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color: white;
+    background-color: transparent;
+    font-style: normal;
+    position: absolute;
+    padding: 10px;
+    top: 10%;
+    left: 40%;
+    font-size: 40px;
+    cursor: pointer;
+    border-color: transparent;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
 .custom-button:hover {
         background-color: gray;
 
