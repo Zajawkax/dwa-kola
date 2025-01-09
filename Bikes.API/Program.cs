@@ -12,6 +12,8 @@ using Bikes.API.Controllers;
 using Bikes.Domain;
 using Microsoft.AspNetCore.Identity;
 using Bikes.API.Services;
+using Bikes.Application.Emails;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -93,6 +95,10 @@ builder.Services.AddDbContext<DataContext>(opt =>
     new MySqlServerVersion(new Version(8, 0, 25)),
     b => b.MigrationsAssembly("Bikes.Infrastructure"));
 });
+
+
+
+builder.Services.AddSingleton<EmailService>();
 
 
 var app = builder.Build();

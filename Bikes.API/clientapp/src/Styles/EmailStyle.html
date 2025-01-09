@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .header {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .body-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">Potwierdzenie rezerwacji</div>
+        <div class="body-text">
+            <p>Rower: {bikeName}</p>
+            <p>Data początkowa: {startDate}</p>
+            <p>Data końcowa: {endDate}</p>
+            <p>Cena: {totalCost}</p>
+        </div>
+    </div>
+</body>
+</html>

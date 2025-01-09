@@ -814,3 +814,6 @@ C:\Users\zaklo\source\repos\ROWERY\rowery_3\Bikes.API\obj\Debug\net8.0\Bikes.API
 C:\Users\zaklo\source\repos\ROWERY\rowery_3\Bikes.API\obj\Debug\net8.0\Bikes.API.genruntimeconfig.cache
 C:\Users\zaklo\source\repos\ROWERY\rowery_3\Bikes.API\obj\Debug\net8.0\ref\Bikes.API.dll
 C:\Users\zaklo\source\repos\ROWERY\rowery_3\Bikes.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.API\bin\Debug\net8.0\SendGrid.dll
+C:\Users\marta\OneDrive\Academia\5\IO\dwa-kola\Bikes.API\bin\Debug\net8.0\StarkbankEcdsa.dll

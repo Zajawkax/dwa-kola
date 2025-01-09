@@ -6,6 +6,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Bikes.Application.Bikes;
+using Bikes.Application.Emails;
+
 
 namespace Bikes.API.Controllers
 {
@@ -15,10 +17,12 @@ namespace Bikes.API.Controllers
     public class ReservationController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly EmailService _emailService;
 
-        public ReservationController(IMediator mediator)
+        public ReservationController(IMediator mediator, EmailService emailService)
         {
             _mediator = mediator;
+            _emailService = emailService;
         }
 
         /// <summary>
@@ -110,22 +114,13 @@ namespace Bikes.API.Controllers
 
             if (!int.TryParse(userIdString, out var userId)) return Unauthorized("Błędne ID użytkownika.");
 
-            // Pobranie informacji o rowerze
             var bike = await _mediator.Send(new DetailsQuery { BikeId = bikeId });
             if (!bike.IsSuccess) return BadRequest(bike.Error);
 
-            // Obliczanie ceny
             var duration = dto.EndDate - dto.StartDate;
-            double totalCost = 0;
-
-            if (duration.TotalDays < 1) // Rezerwacja na mniej niż 24 godziny
-            {
-                totalCost = (double)bike.Value.HourlyRate * duration.TotalHours; // Cena godzinowa
-            }
-            else // Rezerwacja na cały dzień lub wiele dni
-            {
-                totalCost = (double)bike.Value.DailyRate * Math.Ceiling(duration.TotalDays); // Cena dzienna
-            }
+            double totalCost = (duration.TotalDays < 1)
+                ? (double)bike.Value.HourlyRate * duration.TotalHours
+                : (double)bike.Value.DailyRate * Math.Ceiling(duration.TotalDays);
 
             var command = new RentBikeCommand
             {
@@ -133,14 +128,30 @@ namespace Bikes.API.Controllers
                 UserId = userId,
                 StartDate = dto.StartDate,
                 EndDate = dto.EndDate,
-                TotalCost = totalCost // Przekazywanie obliczonej ceny
             };
 
             var result = await _mediator.Send(command);
             if (!result.IsSuccess) return BadRequest(result.Error);
 
+            var userEmail = User.FindFirstValue(ClaimTypes.Email);
+            if (string.IsNullOrEmpty(userEmail)) return Unauthorized("Nie można znaleźć adresu e-mail użytkownika.");
+
+            // Wywołanie metody EmailService z dynamicznymi danymi
+            await _emailService.SendEmailAsync(
+                userEmail,
+                "Potwierdzenie rezerwacji",
+                $"Potwierdzenie rezerwacji:\n\nRower: {bike.Value.Name}\nCena: {totalCost:C}\nOd: {dto.StartDate}\nDo: {dto.EndDate}",
+                bike.Value.Name,
+                dto.StartDate,
+                dto.EndDate,
+                (decimal)totalCost
+            );
+
             return Ok(result.Value);
         }
+
+
+
 
 
         /// <summary>
