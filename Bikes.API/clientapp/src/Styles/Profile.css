@@ -12,7 +12,17 @@
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
 }
+    /* Specyficzny styl dla przycisku Usuń konto */
+    .profile-container .delete-account-button {
+        background-color: red; /* Czerwony kolor tła */
+        color: white; /* Kolor tekstu */
+        margin-top: 30px; /* Odstęp od innych przycisków */
+    }
 
+        /* Efekt hover dla przycisku Usuń konto */
+        .profile-container .delete-account-button:hover {
+            background-color: darkred; /* Ciemnoczerwony kolor po najechaniu */
+        }
     .profile-container h1 {
         font-family: "Playfair Display", serif;
         font-weight: 400;
@@ -21,7 +31,7 @@
         color: #000;
         margin-bottom: 20px;
         color: white;
-        top: -30%;
+        top: -24%;
         left: -13%;
     }
 
