@@ -1,4 +1,4 @@
-﻿.reservations-container {
+.reservations-container {
     position: absolute;
     top: 30%; /* Kontener jest niżej */
     left: 50%;
@@ -15,7 +15,7 @@
 }
 .centered-message-container {
     position: absolute;
-    top: 30%; /* Kontener jest niżej */
+    top: 38%; /* Kontener jest niżej */
     left: calc(50% - 150px); /* Przesunięcie w lewo o 150px */
     text-align: center;
     font-size: 20px;
@@ -87,6 +87,7 @@
     font-size:60px;
     color: #f9f9f9;
     margin-bottom: 15px; /* Margines dolny, by oddzielić od treści */
-    margin-top: 140px; /* Zwiększ margines górny, aby przesunąć nagłówek w dół */
+    margin-top: 160px; /* Zwiększ margines górny, aby przesunąć nagłówek w dół */
     margin-left:440px;
 }
+
