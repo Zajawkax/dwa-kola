@@ -2,7 +2,7 @@
 .contact-container {
     position: absolute;
     top: 30%;
-    left: 35%;
+    left: 31%;
     padding: 30px;
     max-width: 600px;
     margin: auto;
@@ -14,7 +14,7 @@
 
 .error-message {
     position: absolute;
-    top: 30%; /* Kontener jest niżej */
+    top: 38%; /* Kontener jest niżej */
     left: calc(50% - 150px); /* Przesunięcie w lewo o 150px */
     text-align: center;
     font-size: 20px;
@@ -47,8 +47,8 @@
         color: #000;
         margin-bottom: 20px;
         color: white;
-        top: -30%;
-        left: -13%;
+        top: -20%;
+        left: -8%;
     }
 
     
