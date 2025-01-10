@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios, { AxiosError } from 'axios';
@@ -64,14 +65,36 @@ const UserProfile: React.FC = () => {
         }
     };
 
+    const handleDeleteAccount = async () => {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            setError('Authorization token not found.');
+            return;
+        }
+
+        const confirmDelete = window.confirm('Czy jesteś pewien, że chcesz usunąć konto?');
+        if (!confirmDelete) return; // Do nothing if user cancels
+
+        try {
+            const response = await axios.delete('https://localhost:7032/api/auth/delete-account', {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            alert(response.data); // You can customize this message
+            localStorage.removeItem('authToken'); // Remove auth token immediately
+            navigate('/login'); // Redirect to login page after deletion
+        } catch (err) {
+            const error = err as AxiosError<{ message: string }>;
+            setError(error.response?.data?.message || 'Error deleting account.');
+            console.error(err);
+        }
+    };
+
     useEffect(() => {
         const fetchUserProfile = async () => {
             setLoading(true);
             setError(null);
 
             const token = localStorage.getItem('authToken');
-            console.log('Token:', token);
-
             if (!token) {
                 setError('Authorization token not found.');
                 setLoading(false);
@@ -99,6 +122,18 @@ const UserProfile: React.FC = () => {
         fetchUserProfile();
     }, []);
 
+    useEffect(() => {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            navigate('/login'); // Redirect to login if the token is missing
+        }
+    }, [navigate]);
+
+    if (!profile && !loading) {
+        // If the profile data is not available and not loading, show the login page
+        navigate('/login');
+    }
+
     return (
         <div className="profile-container">
             <h1>Profil użytkownika</h1>
@@ -116,47 +151,55 @@ const UserProfile: React.FC = () => {
                 <p>Nie znaleziono danych użytkownika.</p>
             )}
 
-            <button onClick={handleLogout}>Wyloguj</button>
-            <button onClick={() => setShowChangePasswordForm(!showChangePasswordForm)}>
-                {showChangePasswordForm ? 'Anuluj' : 'Zmień hasło'}
-            </button>
+            {/* Show buttons only if the user is logged in */}
+            {profile && (
+                <>
+                    <button onClick={handleLogout}>Wyloguj</button>
+                    <button onClick={() => setShowChangePasswordForm(!showChangePasswordForm)}>
+                        {showChangePasswordForm ? 'Anuluj' : 'Zmień hasło'}
+                    </button>
 
-            {showChangePasswordForm && (
-                <form onSubmit={handlePasswordChange} className="change-password-form">
-                    <div>
-                        <label htmlFor="currentPassword">Obecne hasło:</label>
-                        <input
-                            type="password"
-                            id="currentPassword"
-                            value={currentPassword}
-                            onChange={(e) => setCurrentPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="newPassword">Nowe hasło:</label>
-                        <input
-                            type="password"
-                            id="newPassword"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <button type="submit">Zmień hasło</button>
-                    {changePasswordMessage && (
-                        <p
-                            style={{
-                                color: changePasswordSuccess ? 'green' : 'red',
-                            }}
-                        >
-                            {changePasswordMessage}
-                        </p>
+                    {showChangePasswordForm && (
+                        <form onSubmit={handlePasswordChange} className="change-password-form">
+                            <div>
+                                <label htmlFor="currentPassword">Obecne hasło:</label>
+                                <input
+                                    type="password"
+                                    id="currentPassword"
+                                    value={currentPassword}
+                                    onChange={(e) => setCurrentPassword(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="newPassword">Nowe hasło:</label>
+                                <input
+                                    type="password"
+                                    id="newPassword"
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <button type="submit">Zmień hasło</button>
+                            {changePasswordMessage && (
+                                <p
+                                    style={{
+                                        color: changePasswordSuccess ? 'green' : 'red',
+                                    }}
+                                >
+                                    {changePasswordMessage}
+                                </p>
+                            )}
+                        </form>
                     )}
-                </form>
+
+                    <button onClick={handleDeleteAccount} className="delete-account-button">
+                        Usuń konto
+                    </button>
+                </>
             )}
         </div>
     );
-};
-
+}
 export default UserProfile;
