@@ -124,8 +124,16 @@ const MyReservations: React.FC = () => {
         );
     }
     if (reservations.length === 0) {
-        return <p>Brak rezerwacji.</p>;
+        return (
+            <div>
+                <h2 className="reservations-header">Moje rezerwacje</h2>
+                <div className="reservations-container">
+                    <p>Brak rezerwacji.</p>
+                </div>
+            </div>
+        );
     }
+
 
     return (
         <div>
