@@ -155,6 +155,10 @@ namespace Bikes.Api.Controllers
 
             return Ok("Hasło zostało pomyślnie zmienione.");
         }
+       
+
+
+
 
         // DTO dla rejestracji
         public class RegisterDto
@@ -169,6 +173,30 @@ namespace Bikes.Api.Controllers
             public string Password { get; set; }
             [Required]
             public string PhoneNumber { get; set; }
+        }
+        [HttpDelete("delete-account")]
+        [Authorize]
+        public async Task<IActionResult> DeleteAccount()
+        {
+            var username = User.Identity?.Name;
+
+            if (string.IsNullOrEmpty(username))
+            {
+                return Unauthorized("Użytkownik nie jest uwierzytelniony.");
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null)
+            {
+                return NotFound("Nie znaleziono użytkownika.");
+            }
+
+            // Usunięcie użytkownika
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return Ok("Konto zostało usunięte.");
         }
 
         // DTO dla logowania
