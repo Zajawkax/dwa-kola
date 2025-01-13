@@ -59,6 +59,8 @@ namespace Bikes.API.Controllers
 
             return Ok(result.Value);
         }
+
+        //zwraca rezerwacje roweru
         [HttpGet("bike/{bikeId}")]
         public async Task<IActionResult> GetReservationsForBike(int bikeId)
         {
@@ -74,7 +76,7 @@ namespace Bikes.API.Controllers
             return Ok(new { Available = false, Reservations = result.Value });
         }
 
-
+        // zwraca czy rower jest dostępny w danym czasie
         [HttpPost("check-availability/{bikeId}")]
         public async Task<IActionResult> CheckBikeAvailability(int bikeId, [FromBody] RentBikeDto dto)
         {
@@ -128,6 +130,7 @@ namespace Bikes.API.Controllers
                 UserId = userId,
                 StartDate = dto.StartDate,
                 EndDate = dto.EndDate,
+                TotalCost = totalCost,
             };
 
             var result = await _mediator.Send(command);

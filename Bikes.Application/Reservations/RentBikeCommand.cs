@@ -17,6 +17,7 @@ namespace Bikes.Application.Reservations
         // ewentualnie można przekazać StartDate, EndDate
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public double TotalCost { get; set; }
     }
 
     public class RentBikeHandler : IRequestHandler<RentBikeCommand, Result<Reservation>>
@@ -47,12 +48,9 @@ namespace Bikes.Application.Reservations
                 UserId = request.UserId,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
-                Status = ReservationStatus.Confirmed, // od razu potwierdzamy
-                TotalCost = 0, // ewentualnie można wyliczyć (np. na podstawie HourlyRate, DailyRate)
+                TotalCost = (decimal)request.TotalCost,
+                Status = ReservationStatus.Pending, // od razu potwierdzamy
             };
-
-            // Wyłącz dostępność roweru, jeśli chcesz “zablokować” go na czas rezerwacji
-            bike.AvailabilityStatus = false;
 
             // Zapis do bazy
             _context.Reservations.Add(reservation);
