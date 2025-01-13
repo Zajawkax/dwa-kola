@@ -44,7 +44,7 @@ export default function Main() {
                         <div className="square-overlay">
                             <div className="buttons-container">
                                 <Menu.Item as={NavLink} to="/bikes">
-                                    <Button content="Wszystkie Rowery" size="large" className="custom-button" />
+                                    <Button content="Wszystkie Rowery" size="large" className="custom-button5" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/user/reservations">
                                     <Button content="Rezerwacje" size="large" className="custom-button2" />
@@ -65,7 +65,7 @@ export default function Main() {
                         </div>
                         <div className="square-overlay2"></div>
                         <h2>Rozpocznij Piękną przygodę z naszymi rowerami</h2>
-                        <h3>Przejrzyj dostępne modele i zarezerwuj już teraz!</h3>
+                        <h18>Przejrzyj dostępne modele i zarezerwuj już teraz!</h18>
                         <Button
                             content="Zobacz nowe modele"
                             className="custom-scroll-button"
@@ -85,7 +85,7 @@ export default function Main() {
                                             <div key={bike.bikeId} className="bike-card2">
                                                 <span className="bike-item2">{bike.name}</span>
                                                 <div>
-                                                    <Link to={`/details/${bike.bikeId}`} className="btn btn-secondary bike-item-button2">
+                                                    <Link to={`/details/${bike.bikeId}`} className="bike-item-button2">
                                                         <FontAwesomeIcon icon={faEye} /> Szczegóły
                                                     </Link>
 
