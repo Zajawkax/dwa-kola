@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
                                 <Button
                                     content="Wszystkie Rowery"
                                     size="large"
-                                    className="custom-button"
+                                    className="custom-button5"
                                 />
                             </Menu.Item>
                             <Menu.Item as={NavLink} to="/user/reservations">
