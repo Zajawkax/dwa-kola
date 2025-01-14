@@ -155,7 +155,27 @@ namespace Bikes.API.Controllers
 
 
 
+        [HttpPost("confirm/{reservationId}")]
+        public async Task<IActionResult> ConfirmReservation(int reservationId)
+        {
+            var result = await _mediator.Send(new ConfirmReservationCommand { ReservationId = reservationId });
 
+            if (!result.IsSuccess) return BadRequest(result.Error);
+
+            return Ok("Rower potwierdzony.");
+        }
+
+
+        [HttpPost("cancel/{reservationId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> CancelReservation(int reservationId)
+        {
+            var result = await _mediator.Send(new CancelReservationCommand { ReservationId = reservationId });
+
+            if (!result.IsSuccess) return BadRequest(result.Error);
+
+            return Ok("Rezerwacja została anulowana.");
+        }
 
         /// <summary>
         /// Zwróć rower (zakończ rezerwację)
