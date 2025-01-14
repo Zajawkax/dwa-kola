@@ -33,14 +33,31 @@
 }
 
 .centered-message-container a {
+
     color: #0056b3;
     text-decoration: none;
     font-weight: normal;
 }
 
+.tabs-container {
+    display: flex;
+    gap: 30px;
+   margin-left: 10%;
+}
 
-
+.buttons {
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
 .reservation-item {
+    font-family: Arial, sans-serif;
     margin-bottom: 20px;
     padding: 15px;
     border: 1px solid #ddd;
@@ -51,8 +68,9 @@
 }
 
 .return-button {
+    font-family: Arial, sans-serif;
     padding: 8px 16px;
-    background-color: #0d6efd;
+    background-color: gray;
     color: white;
     border: none;
     border-radius: 5px;
@@ -64,6 +82,40 @@
         background-color: #000;
     }
 
+.return-button2 {
+    font-family: Arial, sans-serif;
+    padding: 8px 16px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .return-button2:hover {
+        background-color: #000;
+    }
+
+.return-button3 {
+    font-family: Arial, sans-serif;
+    padding: 8px 16px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .return-button3:hover {
+        background-color: #000;
+    }
+
+.button-container4 {
+    display: flex;
+    gap: 20px;
+}
 .returned-status {
     color: green;
     font-weight: bold;
