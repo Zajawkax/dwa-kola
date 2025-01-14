@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../Styles/MyReservations.css'; // Dodajemy ≈õcie≈ºkƒô do pliku CSS
+import '../Styles/MyReservations.css'; 
 
 interface Reservation {
     reservationId: number;
@@ -15,45 +15,85 @@ interface Reservation {
         name: string;
     };
 }
+interface UserProfileData {
+    username: string;
+    email: string;
+    phoneNumber: string;
+}
+
 
 const MyReservations: React.FC = () => {
-    const [reservations, setReservations] = useState<Reservation[]>([]);
+    
+    const [userReservations, setUserReservations] = useState<Reservation[]>([]);
+    const [allReservations, setAllReservations] = useState<Reservation[]>([]);
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
-
+    const role = localStorage.getItem('role');
     const token = localStorage.getItem('authToken');
+    const [profile, setProfile] = useState<UserProfileData | null>(null);
+    const [activeTab, setActiveTab] = useState<TabType>('all');
+    type TabType = 'all' | 'Pending' | 'Confirmed' | 'Cancelled' | 'Completed';
+    
 
-    // Funkcja do pobierania rezerwacji
-    useEffect(() => {
-        const fetchReservations = async () => {
+    const fetchUserReservations = async () => {
+        try {
             setLoading(true);
-            try {
-                if (!token) {
-                    setError('Musisz byƒá zalogowany aby zarezerwowaƒá rower!');
-                    return;
-                }
-
-                const response = await axios.get<Reservation[]>(
-                    'https://localhost:7032/api/Reservation/my',
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
-                    }
-                );
-                setReservations(response.data);
-            } catch (err: any) {
-                console.error('B≈ÇƒÖd pobierania rezerwacji:', err);
-                setError('WystƒÖpi≈Ç b≈ÇƒÖd przy pobieraniu rezerwacji.');
-            } finally {
-                setLoading(false);
+            if (!token) {
+                setError('Musisz byÊ zalogowany, aby zobaczyÊ swoje rezerwacje.');
+                return;
             }
-        };
+            const response = await axios.get<Reservation[]>(
+                'https://localhost:7032/api/Reservation/my',
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                }
+            );
+            setUserReservations(response.data);
+        } catch (err) {
+            console.error('B≥πd pobierania rezerwacji uøytkownika:', err);
+            setError('Nie uda≥o siÍ pobraÊ listy rezerwacji uøytkownika.');
+        } finally {
+            setLoading(false);
+        }
+    };
 
-        fetchReservations();
-    }, [token]);
+    const fetchAllReservations = async () => {
+        try {
+            setLoading(true);
+            if (!token) {
+                setError('Musisz byÊ zalogowany, aby zobaczyÊ wszystkie rezerwacje.');
+                return;
+            }
+            const response = await axios.get<Reservation[]>(
+                'https://localhost:7032/api/Reservation/all',
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                }
+            );
+            setAllReservations(response.data);
+        } catch (err) {
+            console.error('B≥πd pobierania wszystkich rezerwacji:', err);
+            setError('Nie uda≥o siÍ pobraÊ listy wszystkich rezerwacji.');
+        } finally {
+            setLoading(false);
+        }
+    };
+   
+    useEffect(() => {
+        if (role === 'Admin') {
+            fetchAllReservations();
 
-    // Funkcja do zwracania roweru
+        }
+        else {
+            fetchUserReservations();
+        }
+    }, [role]);
+
+   
+    
+
+    
+   
     const handleReturnBike = async (reservationId: number) => {
         try {
             if (!token) {
@@ -71,39 +111,113 @@ const MyReservations: React.FC = () => {
                 }
             );
 
-            // Aktualizacja stanu rezerwacji lokalnie
-            const updatedList = reservations.map((res) => {
-                if (res.reservationId === reservationId) {
-                    return {
-                        ...res,
-                        status: 3, // 3 = Completed
-                        endDate: new Date().toISOString(),
-                    };
-                }
-                return res;
-            });
-            setReservations(updatedList);
+            if (role === 'Admin') {
+                const updatedList = allReservations.filter((res) => res.reservationId !== reservationId);
+                setAllReservations(updatedList);
+            } else {
+                const updatedList = userReservations.map((res) => {
+                    if (res.reservationId === reservationId) {
+                        return {
+                            ...res,
+                            status: 3, // Mark as Completed
+                            endDate: new Date().toISOString(),
+                        };
+                    }
+                    return res;
+                });
+                setUserReservations(updatedList);
+            }
+
             setError(null);
         } catch (err: any) {
-            console.error('B≈ÇƒÖd zwracania roweru:', err);
-            setError('Nie uda≈Ço siƒô zwr√≥ciƒá roweru.');
+            console.error('B≥πd zwracania roweru:', err);
+            setError('Nie uda≥o siÍ zwrÛciÊ roweru.');
 
-            // Awaryjne pobranie pe≈Çnej listy z API
+            
             try {
                 const refreshed = await axios.get<Reservation[]>(
-                    'https://localhost:7032/api/Reservation/my',
+                    role === 'Admin' ? 'https://localhost:7032/api/Reservation/all' : 'https://localhost:7032/api/Reservation/my',
                     {
                         headers: { Authorization: `Bearer ${token}` },
                     }
                 );
-                setReservations(refreshed.data);
+                if (role === 'Admin') {
+                    setAllReservations(refreshed.data);
+                } else {
+                    setUserReservations(refreshed.data);
+                }
             } catch (refreshErr: any) {
-                console.error('B≈ÇƒÖd od≈õwie≈ºania listy rezerwacji:', refreshErr);
-                setError('Nie uda≈Ço siƒô od≈õwie≈ºyƒá listy rezerwacji.');
+                console.error('B≥πd odúwieøania listy rezerwacji:', refreshErr);
+                setError('Nie uda≥o siÍ odúwieøyÊ listy rezerwacji.');
             }
         }
     };
 
+    const handleConfirmReservation = async (reservationId: number) => {
+        try {
+            if (!token) {
+                setError('Musisz byÊ zalogowany!');
+                return;
+            }
+
+            await axios.post(
+                `https://localhost:7032/api/Reservation/confirm/${reservationId}`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            
+            const updatedList = allReservations.map((res) => {
+                if (res.reservationId === reservationId) {
+                    return { ...res, status: 1 }; 
+                }
+                return res;
+            });
+            setAllReservations(updatedList);
+            setError(null);
+        } catch (err) {
+            console.error('B≥πd potwierdzania rezerwacji:', err);
+            setError('Nie uda≥o siÍ potwierdziÊ rezerwacji.');
+        }
+    };
+
+
+
+    const handleCancelReservation = async (reservationId: number) => {
+        try {
+            if (!token) {
+                setError('Musisz byÊ zalogowany!');
+                return;
+            }
+
+            await axios.post(
+                `https://localhost:7032/api/Reservation/cancel/${reservationId}`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            const updatedList = allReservations.map((res) => {
+                if (res.reservationId === reservationId) {
+                    return { ...res, status: 2 };
+                }
+                return res;
+            });
+            setAllReservations(updatedList);
+            
+            setError(null);
+        } catch (err) {
+            console.error('B≥πd anulowania rezerwacji:', err);
+            setError('Nie uda≥o siÍ anulowaÊ rezerwacji.');
+        }
+    };
     // Obs≈Çuga stan√≥w
     if (loading) {
         return <p>≈Åadowanie rezerwacji...</p>;
@@ -123,10 +237,11 @@ const MyReservations: React.FC = () => {
             </div>
         );
     }
-    if (reservations.length === 0) {
+    
+    if (allReservations.length === 0 && role==='Admin') {
         return (
             <div>
-                <h2 className="reservations-header">Moje rezerwacje</h2>
+                <h2 className="reservations-header">Rezerwacje</h2>
                 <div className="reservations-container">
                     <p>Brak rezerwacji.</p>
                 </div>
@@ -134,44 +249,120 @@ const MyReservations: React.FC = () => {
         );
     }
 
+    if (userReservations.length === 0 && role === 'User') {
+        return (
+            <div>
+                <h2 className="reservations-header">Moje Rezerwacje</h2>
+                <div className="reservations-container">
+                    <p>Brak rezerwacji.</p>
+                </div>
+            </div>
+        );
+    }
+ 
 
     return (
         <div>
-            <h2 className="reservations-header">Moje Rezerwacje</h2>
-            <div className="reservations-container">
-                <ul>
-                    {reservations.map((res) => {
-                        const isCompleted = res.status === 3;
-                        return (
-                            <li key={res.reservationId} className="reservation-item">
-                                <strong>Rezerwacja #{res.reservationId}</strong>
-                                <br />
-                                <span>
-                                    Rower: {res.bike?.name ?? `(ID: ${res.bikeId})`}
-                                </span>
-                                <br />
-                                <span>
-                                    Od: {new Date(res.startDate).toLocaleString()} do:{' '}
-                                    {new Date(res.endDate).toLocaleString()}
-                                </span>
-                                <br />
-                                <span>Status: {res.status} | Koszt: {res.totalCost} z≈Ç</span>
-                                <br />
-                                {!isCompleted ? (
-                                    <button
-                                        onClick={() => handleReturnBike(res.reservationId)}
-                                        className="return-button"
-                                    >
-                                        Zwr√≥ƒá rower
-                                    </button>
-                                ) : (
-                                    <span className="returned-status">Zwr√≥cony</span>
-                                )}
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
+            {role === 'Admin' && (
+                <div>
+                    <h2 className="reservations-header">Wszystkie Rezerwacje</h2>
+                    <div className="reservations-container">
+                        <div className="tabs-container">
+                            {['all', 'Oczekujace', 'Potwierdzone', 'Anulowane', 'Zakonczone'].map((tab) => (
+                                <button
+                                    key={tab}
+                                    className={`buttons ${activeTab === tab ? 'active' : ''}`}
+                                    onClick={() => setActiveTab(tab as TabType)}  
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+                        </div>
+
+                        <ul>
+                            {allReservations.length === 0 ? (
+                                <p>Brak rezerwacji w tej kategorii.</p>
+                            ) : (
+                                allReservations.map((res) => (
+                                    <li key={res.reservationId} className="reservation-item">
+                                        <strong>Rezerwacja #{res.reservationId}</strong>
+                                        <br />
+                                        <span>Rower: {res.bike?.name ?? `ID: ${res.bikeId}`}</span>
+                                        <br />
+                                        <span>Uzytkownik: {res.userId}</span>
+                                        <br />
+                                        <span>
+                                            Od: {new Date(res.startDate).toLocaleString()} do: {new Date(res.endDate).toLocaleString()}
+                                        </span>
+                                        <br />
+                                        <span>Status: {res.status} | Koszt: {res.totalCost} zl</span>
+
+                                        <br />
+                                        <div className="button-container4">
+                                            <button
+                                                onClick={() => handleConfirmReservation(res.reservationId)}
+                                                className="return-button"
+                                            >
+                                                Potwierdz rezerwacje
+                                            </button>
+                                            <button
+                                                onClick={() => handleCancelReservation(res.reservationId)}
+                                                className="return-button2"
+                                            >
+                                                Anuluj rezerwacje
+                                            </button>
+                                            <button
+                                                
+                                                className="return-button3"
+                                            >
+                                                Wygeneruj PDF
+                                            </button>
+                                        </div>
+                                    </li>
+                                ))
+                            )}
+                        </ul>
+                    </div>
+                </div>
+            )}
+
+            {role === 'User' && (
+                <>
+                    <h2 className="reservations-header">Moje Rezerwacje</h2>
+                    <div className="reservations-container">
+                        <ul>
+                            {userReservations.map((res) => {
+                                const isCompleted = res.status === 3;
+                                return (
+                                    <li key={res.reservationId} className="reservation-item">
+                                        <strong>Rezerwacja #{res.reservationId}</strong>
+                                        <br />
+                                        <span>Rower: {res.bike?.name ?? `ID: ${res.bikeId}`}</span>
+                                        <br />
+                                        <span>
+                                            Od: {new Date(res.startDate).toLocaleString()} do: {new Date(res.endDate).toLocaleString()}
+                                        </span>
+                                        <br />
+                                        <span>Status: {res.status} | Koszt: {res.totalCost} z≥</span>
+
+                                        <br />
+                                        {!isCompleted ? (
+                                            <button
+                                                onClick={() => handleReturnBike(res.reservationId)}
+                                                className="return-button"
+                                            >
+                                                ZwrÛÊ rower
+                                            </button>
+                                        ) : (
+                                            <span className="returned-status">Zwrocony</span>
+                                        )}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
