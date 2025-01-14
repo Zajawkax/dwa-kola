@@ -137,7 +137,7 @@ function BikeDetails() {
             <p>Stawka dzienna: {bike.dailyRate} zł</p>
             <p>Dostępność: {bike.availabilityStatus ? 'Dostępny' : 'Niedostępny'}</p>
 
-            <Link to="/" className="btn btn-secondary">
+            <Link to="/bikes" className="btn btn-secondary">
                 <FontAwesomeIcon icon={faArrowLeft} /> Powrót do listy rowerów
             </Link>
 
