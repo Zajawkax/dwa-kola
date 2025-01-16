@@ -13,6 +13,9 @@ import AdminPanel from '../Components/AdminPanel';
 import Dashboard from '../Dashboard';
 import UserProfile from "../Components/UserProfile";
 import KontaktAdmin from "../Components/KontaktAdmin";
+import Pricing from "../Components/Pricing"; 
+
+
 
 export const routes: RouteObject[] = [
     {
@@ -30,13 +33,13 @@ export const routes: RouteObject[] = [
             { path: "contact", element: <Kontakt /> },
             { path: "regulamin", element: <TermsOfService /> },
             { path: "profile", element: <UserProfile /> }, // Nowa trasa
-            { path: "admin/messages", element: <KontaktAdmin/> }, // Nowa trasa
+            { path: "admin/messages", element: <KontaktAdmin /> }, // Nowa trasa
+            { path: "pricing", element: <Pricing /> }
             
             
         ]
     }
 ];
-
 
 export const router = createBrowserRouter(routes);
 

@@ -5,7 +5,6 @@ const TermsOfService = () => {
     return (
        
         <div className="overlay-text">
-            <h1>Regulamin korzystania z serwisu "Dwa Kółka"</h1>
 
             <h5>1. Postanowienia ogólne </h5>
 
