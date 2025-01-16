@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios, { all } from 'axios';
 import '../Styles/MyReservations.css'; 
+import { jsPDF } from 'jspdf';  // npm install jspdf
+import autoTable from 'jspdf-autotable';  // npm install jspdf-autotable
+
+
 
 interface Reservation {
     reservationId: number;
@@ -39,7 +43,7 @@ const MyReservations: React.FC = () => {
         try {
             setLoading(true);
             if (!token) {
-                setError('Musisz byÊ zalogowany, aby zobaczyÊ swoje rezerwacje.');
+                setError('Musisz byƒá zalogowany, aby zobaczyƒá swoje rezerwacje.');
                 return;
             }
             const response = await axios.get<Reservation[]>(
@@ -49,9 +53,10 @@ const MyReservations: React.FC = () => {
                 }
             );
             setUserReservations(response.data);
+            console.log(userReservations);
         } catch (err) {
-            console.error('B≥πd pobierania rezerwacji uøytkownika:', err);
-            setError('Nie uda≥o siÍ pobraÊ listy rezerwacji uøytkownika.');
+            console.error('B≈ÇƒÖd pobierania rezerwacji u≈ºytkownika:', err);
+            setError('Nie uda≈Ço siƒô pobraƒá listy rezerwacji u≈ºytkownika.');
         } finally {
             setLoading(false);
         }
@@ -61,7 +66,7 @@ const MyReservations: React.FC = () => {
         try {
             setLoading(true);
             if (!token) {
-                setError('Musisz byÊ zalogowany, aby zobaczyÊ wszystkie rezerwacje.');
+                setError('Musisz byƒá zalogowany, aby zobaczyƒá wszystkie rezerwacje.');
                 return;
             }
             const response = await axios.get<Reservation[]>(
@@ -72,8 +77,8 @@ const MyReservations: React.FC = () => {
             );
             setAllReservations(response.data);
         } catch (err) {
-            console.error('B≥πd pobierania wszystkich rezerwacji:', err);
-            setError('Nie uda≥o siÍ pobraÊ listy wszystkich rezerwacji.');
+            console.error('B≈ÇƒÖd pobierania wszystkich rezerwacji:', err);
+            setError('Nie uda≈Ço siƒô pobraƒá listy wszystkich rezerwacji.');
         } finally {
             setLoading(false);
         }
@@ -130,8 +135,8 @@ const MyReservations: React.FC = () => {
 
             setError(null);
         } catch (err: any) {
-            console.error('B≥πd zwracania roweru:', err);
-            setError('Nie uda≥o siÍ zwrÛciÊ roweru.');
+            console.error('B≈ÇƒÖd zwracania roweru:', err);
+            setError('Nie uda≈Ço siƒô zwr√≥ciƒá roweru.');
 
             
             try {
@@ -140,15 +145,17 @@ const MyReservations: React.FC = () => {
                     {
                         headers: { Authorization: `Bearer ${token}` },
                     }
+                    
                 );
+                console.log('Dane API:', refreshed.data);
                 if (role === 'Admin') {
                     setAllReservations(refreshed.data);
                 } else {
                     setUserReservations(refreshed.data);
                 }
             } catch (refreshErr: any) {
-                console.error('B≥πd odúwieøania listy rezerwacji:', refreshErr);
-                setError('Nie uda≥o siÍ odúwieøyÊ listy rezerwacji.');
+                console.error('B≈ÇƒÖd od≈õwie≈ºania listy rezerwacji:', refreshErr);
+                setError('Nie uda≈Ço siƒô od≈õwie≈ºyƒá listy rezerwacji.');
             }
         }
     };
@@ -156,7 +163,7 @@ const MyReservations: React.FC = () => {
     const handleConfirmReservation = async (reservationId: number) => {
         try {
             if (!token) {
-                setError('Musisz byÊ zalogowany!');
+                setError('Musisz byƒá zalogowany!');
                 return;
             }
 
@@ -180,8 +187,8 @@ const MyReservations: React.FC = () => {
             setAllReservations(updatedList);
             setError(null);
         } catch (err) {
-            console.error('B≥πd potwierdzania rezerwacji:', err);
-            setError('Nie uda≥o siÍ potwierdziÊ rezerwacji.');
+            console.error('B≈ÇƒÖd potwierdzania rezerwacji:', err);
+            setError('Nie uda≈Ço siƒô potwierdziƒá rezerwacji.');
         }
     };
 
@@ -190,7 +197,7 @@ const MyReservations: React.FC = () => {
     const handleCancelReservation = async (reservationId: number) => {
         try {
             if (!token) {
-                setError('Musisz byÊ zalogowany!');
+                setError('Musisz byƒá zalogowany!');
                 return;
             }
 
@@ -214,10 +221,41 @@ const MyReservations: React.FC = () => {
             
             setError(null);
         } catch (err) {
-            console.error('B≥πd anulowania rezerwacji:', err);
-            setError('Nie uda≥o siÍ anulowaÊ rezerwacji.');
+            console.error('B≈ÇƒÖd anulowania rezerwacji:', err);
+            setError('Nie uda≈Ço siƒô anulowaƒá rezerwacji.');
         }
     };
+
+    const generatePdfReport = (reservations: Reservation[]) => {
+        const doc = new jsPDF();
+
+        // Dodaj tytu≈Ç
+        doc.setFontSize(16);
+        doc.text('Raport Rezerwacji', 14, 20);
+
+        // Przygotuj dane do tabeli
+        const tableData = reservations.map(res => [
+            res.reservationId,
+            res.bike?.name || `ID: ${res.bikeId}`,
+            res.userId,
+            new Date(res.startDate).toLocaleString(),
+            new Date(res.endDate).toLocaleString(),
+            res.status,
+            `${res.totalCost} zl`
+        ]);
+
+        // Dodaj tabelƒô
+        autoTable(doc, {
+            head: [['ID', 'Rower', 'Uzytkownik', 'Data Startu', 'Data Zakonczenia', 'Status', 'Koszt']],
+            body: tableData,
+            startY: 30
+        });
+
+        // Pobierz plik
+        doc.save(`Raport_Rezerwacje_${new Date().toISOString()}.pdf`);
+    };
+
+
     // Obs≈Çuga stan√≥w
     if (loading) {
         return <p>≈Åadowanie rezerwacji...</p>;
@@ -268,58 +306,59 @@ const MyReservations: React.FC = () => {
                     <h2 className="reservations-header">Wszystkie Rezerwacje</h2>
                     <div className="reservations-container">
                         <div className="tabs-container">
-                            {['all', 'Oczekujace', 'Potwierdzone', 'Anulowane', 'Zakonczone'].map((tab) => (
+                            {['all', 'OczekujƒÖce', 'Potwierdzone', 'Anulowane', 'Zako≈Ñczone'].map((tab) => (
                                 <button
                                     key={tab}
                                     className={`buttons ${activeTab === tab ? 'active' : ''}`}
-                                    onClick={() => setActiveTab(tab as TabType)}  
+                                    onClick={() => setActiveTab(tab as TabType)}
                                 >
                                     {tab}
                                 </button>
                             ))}
+                            <button
+                                onClick={() => {
+
+                                    generatePdfReport(allReservations);
+                                }}
+                                className="buttons"
+                            >
+                                Generuj Raport
+                            </button>
                         </div>
 
-                        <ul>
-                            {allReservations.length === 0 ? (
-                                <p>Brak rezerwacji w tej kategorii.</p>
-                            ) : (
-                                allReservations.map((res) => (
-                                    <li key={res.reservationId} className="reservation-item">
-                                        <strong>Rezerwacja #{res.reservationId}</strong>
-                                        <br />
-                                        <span>Rower: {res.bike?.name ?? `ID: ${res.bikeId}`}</span>
-                                        <br />
-                                        <span>Uzytkownik: {res.userId}</span>
-                                        <br />
-                                        <span>
-                                            Od: {new Date(res.startDate).toLocaleString()} do: {new Date(res.endDate).toLocaleString()}
-                                        </span>
-                                        <br />
-                                        <span>Status: {res.status} | Koszt: {res.totalCost} zl</span>
 
-                                        <br />
-                                        <div className="button-container4">
-                                            <button
-                                                onClick={() => handleConfirmReservation(res.reservationId)}
-                                                className="return-button"
-                                            >
-                                                Potwierdz rezerwacje
-                                            </button>
-                                            <button
-                                                onClick={() => handleCancelReservation(res.reservationId)}
-                                                className="return-button2"
-                                            >
-                                                Anuluj rezerwacje
-                                            </button>
-                                            <button
-                                                
-                                                className="return-button3"
-                                            >
-                                                Wygeneruj PDF
-                                            </button>
-                                        </div>
-                                    </li>
-                                ))
+                        <ul>
+                            {allReservations.map((res) => (
+                                <li key={res.reservationId} className="reservation-item">
+                                    <strong>Rezerwacja #{res.reservationId}</strong>
+                                    <br />
+                                    <span>Rower: {res.bike?.name ?? `ID: ${res.bikeId}`}</span>
+                                    <br />
+                                    <span>U≈ºytkownik: {res.userId}</span>
+                                    <br />
+                                    <span>
+                                        Od: {new Date(res.startDate).toLocaleString()} do: {new Date(res.endDate).toLocaleString()}
+                                    </span>
+                                    <br />
+                                    <span>Status: {res.status} | Koszt: {res.totalCost} z≈Ç</span>
+                                    <br />
+                                    <div className="button-container4">
+                                        <button
+                                            onClick={() => handleConfirmReservation(res.reservationId)}
+                                            className="return-button"
+                                        >
+                                            Potwierd≈∫ rezerwacje
+                                        </button>
+                                        <button
+                                            onClick={() => handleCancelReservation(res.reservationId)}
+                                            className="return-button2"
+                                        >
+                                            Anuluj rezerwacje
+                                        </button>
+                                    </div>
+                                </li>
+                            )
+
                             )}
                         </ul>
                     </div>
@@ -343,7 +382,7 @@ const MyReservations: React.FC = () => {
                                             Od: {new Date(res.startDate).toLocaleString()} do: {new Date(res.endDate).toLocaleString()}
                                         </span>
                                         <br />
-                                        <span>Status: {res.status} | Koszt: {res.totalCost} z≥</span>
+                                        <span>Status: {res.status} | Koszt: {res.totalCost} z≈Ç</span>
 
                                         <br />
                                         {!isCompleted ? (
@@ -351,10 +390,10 @@ const MyReservations: React.FC = () => {
                                                 onClick={() => handleReturnBike(res.reservationId)}
                                                 className="return-button"
                                             >
-                                                ZwrÛÊ rower
+                                                Zwr√≥ƒá rower
                                             </button>
                                         ) : (
-                                            <span className="returned-status">Zwrocony</span>
+                                            <span className="returned-status">Zwr√≥cony</span>
                                         )}
                                     </li>
                                 );
