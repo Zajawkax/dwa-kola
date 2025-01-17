@@ -35,13 +35,13 @@
 .header-logo {
     top: 40%;
     width: 100%;
-    height: 60%;
     object-fit: cover;
+    background-size: cover;
     margin: auto;
     top: 40%;
     padding: 0;
     border: white;
-    min-height: 20vh;
+    min-height: 650vh;
     position: relative;
 }
 /*.header-logo2 {
@@ -57,7 +57,7 @@
 .logo-container {
     position: relative;
     align-items: center;
-    height: auto
+    height: auto;
 }
 
 
