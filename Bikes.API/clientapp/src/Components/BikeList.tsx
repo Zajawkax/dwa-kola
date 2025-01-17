@@ -11,6 +11,7 @@ interface Bike {
     name: string;
     size: number; // np. 0=Small,1=Medium
     bikeType: number; // np. 0=Mountain,1=Road
+    imageUrl: string;
 }
 
 const BikeList: React.FC = () => {
@@ -20,6 +21,7 @@ const BikeList: React.FC = () => {
 
     const token = localStorage.getItem('authToken');
     const role = localStorage.getItem('role'); // 'Admin' lub 'User'
+    const bikesFromStorage = JSON.parse(localStorage.getItem('bikes') || '[]');
 
     useEffect(() => {
         fetchBikes();
@@ -91,10 +93,17 @@ const BikeList: React.FC = () => {
             {bikes.length > 0 ? (
                 <div className="bike-grid">
                     {bikes.map((bike) => (
+                        <div className="bike-container">
                         <div key={bike.bikeId} className="bike-card">
                             <span className="bike-item">
                                 <FontAwesomeIcon icon={faBicycle} /> {bike.name}
                             </span>
+                            <img
+                                src={`/images/${bike.bikeId}.jpg`}
+                                alt={bike.name}
+                               
+                                className="bike-image"
+                            />
                             <div>
                                 <Link to={`/details/${bike.bikeId}`} className="bike-item-button">
                                     <FontAwesomeIcon icon={faEye} /> Szczegóły
@@ -108,12 +117,13 @@ const BikeList: React.FC = () => {
                                         </Link>
                                         <button
                                             onClick={() => handleDeleteBike(bike.bikeId)}
-                                            className="btn btn-danger bike-item-button"
+                                            className="bike-item-button2"
                                         >
                                             <FontAwesomeIcon icon={faTrash} /> Usuń
                                         </button>
                                     </>
                                 )}
+                            </div>
                             </div>
                         </div>
                     ))}
