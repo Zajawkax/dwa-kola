@@ -92,7 +92,7 @@ const NavBar: React.FC = () => {
                                     <Button
                                         content="Logowanie"
                                         size="large"
-                                        className="custom-button5"
+                                        className="custom-buttonLogowanie"
                                     />
                                 </Menu.Item>
                             )}
