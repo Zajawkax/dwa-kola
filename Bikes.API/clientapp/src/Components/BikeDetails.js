@@ -32,6 +32,10 @@ function BikeDetails() {
     };
 
     useEffect(() => {
+        window.scrollTo({
+            top: 34,
+            behavior: 'smooth',
+        });
         fetchBike();
     }, [id]);
 
