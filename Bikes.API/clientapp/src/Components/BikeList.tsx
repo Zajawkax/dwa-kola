@@ -1,11 +1,11 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, NavLink } from 'react-router-dom';
 import '../Styles/BikeList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEye, faEdit, faTrash, faBicycle } from '@fortawesome/free-solid-svg-icons';
 import { Menu, Button } from 'semantic-ui-react';
-
+import FilterSort from './FilterSort';
 interface Bike {
     bikeId: number;
     name: string;
@@ -63,7 +63,17 @@ const BikeList: React.FC = () => {
         console.log('Dodaj rower (tylko Admin)');
     };
 
+    //const handleEditBike = (bikeId: number) => {
+    //    console.log(`Edytuj rower o ID: ${bikeId} (tylko Admin)`);
+    //};
     const handleEditBike = (bikeId: number) => {
+        // Funkcja przewijania na górę strony
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+
+        // Możesz dodać logikę nawigacji, np. do strony edycji roweru
         console.log(`Edytuj rower o ID: ${bikeId} (tylko Admin)`);
     };
 
@@ -101,7 +111,7 @@ const BikeList: React.FC = () => {
                             <img
                                 src={`/images/${bike.bikeId}.jpg`}
                                 alt={bike.name}
-                               
+
                                 className="bike-image"
                             />
                             <div>
@@ -112,9 +122,9 @@ const BikeList: React.FC = () => {
                                 {/* Opcje Admina */}
                                 {role === 'Admin' && (
                                     <>
-                                        <Link to={`/edit/${bike.bikeId}`} className="edit-button">
+                                            <Link to={`/edit/${bike.bikeId}`} className="edit-button">
                                             <FontAwesomeIcon icon={faEdit} /> Edytuj
-                                        </Link>
+                                            </Link>
                                         <button
                                             onClick={() => handleDeleteBike(bike.bikeId)}
                                             className="bike-item-button2"
@@ -136,3 +146,9 @@ const BikeList: React.FC = () => {
 };
 
 export default BikeList;
+
+
+
+
+
+
