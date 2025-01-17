@@ -1,14 +1,16 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import '../Styles/BikeDetails.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
+
 function BikeDetails() {
     const [bike, setBike] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [errorClass, setErrorClass] = useState('');  // Przechowuje klasę CSS
     const [formError, setFormError] = useState(null); // Błąd związany z formularzem
     const [startDateTime, setStartDateTime] = useState('');
     const [endDateTime, setEndDateTime] = useState('');
@@ -53,9 +55,14 @@ function BikeDetails() {
 
         try {
             const token = localStorage.getItem('authToken');
+
             if (!token) {
+                // Użytkownik nie jest zalogowany
                 setError('Musisz być zalogowany, by zarezerwować rower!');
-                navigate('/login');
+                setErrorClass('centered-message-error');
+              
+               
+               
                 return;
             }
 
@@ -67,30 +74,26 @@ function BikeDetails() {
             const adjustedStartDate = adjustToTimezone(startDateTime);
             const adjustedEndDate = adjustToTimezone(endDateTime);
 
-            // Sprawdzanie dostępności roweru tylko na zadany okres
-            try {
-                const checkResponse = await axios.post(
-                    `https://localhost:7032/api/Reservation/check-availability/${bike.bikeId}`,
-                    {
-                        startDate: startDateTime,
-                        endDate: endDateTime
+            // Sprawdzanie dostępności roweru
+            const checkResponse = await axios.post(
+                `https://localhost:7032/api/Reservation/check-availability/${bike.bikeId}`,
+                {
+                    startDate: startDateTime,
+                    endDate: endDateTime,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
                     },
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
-                    }
-                );
-                if (!checkResponse.data.available) {
-                    setReservationError('Rower jest już zarezerwowany na ten okres.');
-                    return;
                 }
-                setReservationError(null); // Reset błędu rezerwacji
-            } catch (err) {
-                console.error('Błąd sprawdzania dostępności:', err.response ? err.response.data : err);
-                setError('Nie udało się sprawdzić dostępności roweru.');
+            );
+
+            if (!checkResponse.data.available) {
+                setReservationError('Rower jest już zarezerwowany na ten okres.');
                 return;
             }
+
+            setReservationError(null); // Reset błędu rezerwacji
 
             // Jeśli rower jest dostępny, kontynuuj rezerwację
             const response = await axios.post(
@@ -109,18 +112,47 @@ function BikeDetails() {
             console.log('Rezerwacja udana:', response.data);
             navigate('/user/reservations');
         } catch (err) {
-            console.error('Błąd rezerwacji:', err);
+            console.error('Błąd rezerwacji:', err); // Logowanie błędu
+            if (err.response) {
+                console.log('Odpowiedź serwera:', err.response); // Sprawdzanie odpowiedzi serwera
+                if (err.response.status === 401) {
+                    // Jeśli token wygasł
+                    setError('Musisz być zalogowany, by zarezerwować rower!');
+                    
+                    return;
+                }
+            }
+
+            // Ogólny komunikat błędu
             setError('Nie udało się zarezerwować roweru. Spróbuj ponownie.');
         }
     };
+
+
+
 
     if (isLoading) {
         return <p>Ładowanie danych...</p>;
     }
 
+    //if (error) {
+    //    return <p style={{ color: 'red' }}>{error}</p>;
+    //}
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return (
+            <div className="centered-message-error">
+                <p className="centered-message">
+                    {error}
+                </p>
+                {error.includes('Musisz być zalogowany') && (
+                    <p className="centered-message-link">
+                        <a href="/login">Zaloguj się tutaj</a>
+                    </p>
+                )}
+            </div>
+        );
     }
+
 
     if (!bike) {
         return <p>Nie znaleziono roweru</p>;
