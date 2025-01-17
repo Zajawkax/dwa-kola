@@ -14,7 +14,7 @@ import Dashboard from '../Dashboard';
 import UserProfile from "../Components/UserProfile";
 import KontaktAdmin from "../Components/KontaktAdmin";
 import Pricing from "../Components/Pricing"; 
-
+import EditBike from "../Components/EditBike";
 
 
 export const routes: RouteObject[] = [
@@ -29,6 +29,7 @@ export const routes: RouteObject[] = [
             { path: "login", element: <Logowanie /> },
             { path: "details/:id", element: <Details /> },
             { path: "bikes/create-bike", element: <CreateBike /> },
+            { path: "/edit/:id", element: <EditBike /> },
             { path: "dashboard", element: <Dashboard /> },
             { path: "contact", element: <Kontakt /> },
             { path: "regulamin", element: <TermsOfService /> },
