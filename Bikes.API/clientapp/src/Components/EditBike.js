@@ -1,9 +1,9 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import './BikeForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faSave } from '@fortawesome/free-solid-svg-icons';
+import '../Styles/EditBike.css';
 
 function EditBike() {
     const [bike, setBike] = useState({
@@ -15,11 +15,16 @@ function EditBike() {
         dailyRate: '',
         availabilityStatus: true,
     });
+    const [error, setError] = useState('');  // Stan do przechowywania komunikatu o błędzie
 
     const { id } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
         axios
             .get(`/api/bikes/${id}`)
             .then((response) => {
@@ -67,23 +72,38 @@ function EditBike() {
             bikeId: parseInt(id),
         };
 
+        // Pobierz token z localStorage (lub z innego źródła)
+        const token = localStorage.getItem('authToken'); // Zmienna authToken może mieć inną nazwę, zależnie od tego, jak go przechowujesz
+
         axios
-            .put(`/api/bikes/${id}`, updatedBike)
+            .put(`https://localhost:7032/api/Bikes/${id}`, updatedBike, {
+                headers: {
+                    'Authorization': `Bearer ${token}`, // Dodaj token w nagłówkach
+                },
+            })
             .then(() => {
-                navigate('/');
+                navigate(`/details/${id}`);
             })
             .catch((error) => {
                 console.error('Błąd podczas aktualizacji roweru:', error);
                 if (error.response) {
-                    console.error('Status:', error.response.status);
-                    console.error('Data:', error.response.data);
+                    setError(error.response.data); // Przypisz komunikat błędu do stanu
+                } else {
+                    setError('Nie udało się zaktualizować roweru. Sprawdź czy prawidłowo wpisałeś wszystkie parametry');
                 }
+                setTimeout(() => {
+                    setError('');
+                }, 3000);
             });
     };
 
     return (
         <div className="bike-form">
-            <h2>Edytuj rower</h2>
+            <h2>Edytuj</h2>
+
+            {/* Jeśli wystąpił błąd, wyświetl komunikat */}
+            {error && <div className="error-message">{error}</div>}
+
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Nazwa:</label>
@@ -137,7 +157,7 @@ function EditBike() {
                 <button type="submit" className="btn btn-primary">
                     <FontAwesomeIcon icon={faSave} /> Zapisz zmiany
                 </button>
-                <Link to="/" className="btn btn-secondary">
+                <Link to="/bikes" className="btn btn-secondary">
                     <FontAwesomeIcon icon={faArrowLeft} /> Powrót do listy rowerów
                 </Link>
             </form>
