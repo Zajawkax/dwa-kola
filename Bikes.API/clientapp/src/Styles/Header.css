@@ -395,7 +395,7 @@ h18 {
     position: absolute;
     width: 100%;
     min-height: 1000px; 
-    height: auto;
+    height: 400%;
     background-color: grey;
     top: 30%;
 }
