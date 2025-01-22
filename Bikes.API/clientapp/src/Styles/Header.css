@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=latin-ext');
+
 .main-container {
     display: flex;
     position: absolute;
@@ -10,56 +11,34 @@
     background: linear-gradient(135deg, #f06, #f79);
     color: white;
 }
-.custom-dropdown {
-  display: inline-block; 
-}
 
-.custom-dropdown .menu {
-  background-color: #fff; 
-  border-radius: 0px; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-}
 
-.custom-dropdown .menu .item {
-  color: #333; 
-  padding: 10px; 
-}
-
-    .custom-dropdown .menu .item:hover {
-        background-color: #f1f1f1;
-    }
-.menu
-{
-    z-index: 1000;
-}
 .header-logo {
     top: 40%;
     width: 100%;
     object-fit: cover;
     background-size: cover;
     margin: auto;
-    top: 40%;
     padding: 0;
     border: white;
-    min-height: 650vh;
+    min-height: 50vh;
     position: relative;
 }
-/*.header-logo2 {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    width: 50px;
-    height: auto;
-    z-index: 1000;
-   
-}*/
+
 
 .logo-container {
     position: relative;
     align-items: center;
     height: auto;
+
 }
 
+.napis1{
+    position: absolute;
+    top:20%;
+    color: white;
+    left: 1%;
+}
 
 h1 {
     font-family: "Playfair Display", serif;
@@ -116,128 +95,30 @@ h18 {
     transition: box-shadow 0.3s ease;
 }
 
-.button-container {
-
+.buttons-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; 
-    padding: 20px;
+    gap: 5vw;
+    padding: 0.5vw;
 }
-.custom-button5 {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-    background-color: transparent;
-    font-style: normal;
-    position: absolute;
-    padding: 10px;
-    top: 10%;
-    left: 0%;
-    font-size: 2.5vw;
-    cursor: pointer;
-    border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease;
-}
+
 .custom-button2 {
     font-family: "Playfair Display", serif;
     font-weight: 400;
     color: white;
     background-color: transparent;
-    font-style: normal;
-    position: absolute;
-    padding: 10px;
-    top: 10%;
-    left: 23%;
-    font-size: 2.5vw;
+    padding: 0.5vw;
+    font-size: 2vw;
+    top: 15vw;
     cursor: pointer;
+    border-radius: 5px;
     border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
 }
 
-.custom-button3 {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-    background-color: transparent;
-    font-style: normal;
-    position: absolute;
-    padding: 10px;
-    top: 10%;
-    left: 40%;
-    font-size: 2.5vw;
-    cursor: pointer;
-    border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease;
-}
 
-.custom-button6 {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-    background-color: transparent;
-    font-style: normal;
-    position: absolute;
-    padding: 10px;
-    top: 10%;
-    left: 70%;
-    font-size: 2.5vw;
-    cursor: pointer;
-    border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease;
-}
-.custom-buttonLogowanie {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-    background-color: transparent;
-    font-style: normal;
-    position: absolute;
-    padding: 10px;
-    top: 10%;
-    left: 53%;
-    font-size: 2.5vw;
-    cursor: pointer;
-    border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease;
-}
-.custom-button7 {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-    background-color: transparent;
-    font-style: normal;
-    position: absolute;
-    padding: 10px;
-    top: 10%;
-    left: 85%;
-    font-size: 2.5vw;
-    cursor: pointer;
-    border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease;
-}
-.custom-button8 {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-    background-color: transparent;
-    font-style: normal;
-    position: absolute;
-    padding: 10px;
-    top: 10%;
-    left: 100%;
-    font-size: 2.5vw;
-    cursor: pointer;
-    border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease;
-}
+
 .custom-button9 {
     font-family: "Playfair Display", serif;
     font-size: 2.5vw;
@@ -252,15 +133,11 @@ h18 {
     font-weight: 400;
     color: white;
     background-color: transparent;
-    font-style: normal;
-    position: absolute;
     padding: 10px;
-    top: 10%;
-    left: 58%;
-    font-size: 2.5vw;
+    font-size: 1rem;
     cursor: pointer;
-    border-color: transparent;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+    border-radius: 5px;
     transition: box-shadow 0.3s ease;
 }
 .custom-buttonWiadomosci {
@@ -279,28 +156,9 @@ h18 {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
 }
-.custom-button:hover {
-        background-color: gray;
-
-}
 .custom-button2:hover {
         background-color: gray;
-}
-.custom-button3:hover {
-    background-color: gray;
-}
-.custom-button4:hover {
-    background-color: gray;
-}
-    
-    .custom-button5:hover {
-        background-color: gray;
-    }
-.custom-button6:hover {
-    background-color: gray;
-}
-.custom-button7:hover {
-    background-color: gray;
+
 }
 
 
@@ -314,7 +172,7 @@ h18 {
     font-style: normal;
     position: absolute;
     padding: 10px;
-    top: 20%;
+    top: 35vw;
     left: 40%;
     font-size: 2.5vw;
     cursor: pointer;
@@ -440,10 +298,138 @@ h18 {
 }
 
 
-@media (max-width: 768px) {
-    .custom-button {
-        font-size: 1.2rem;
-        padding: 8px 16px;
+
+@media (max-width: 1370px) {
+    .header-logo {
+        min-height: 40vh;
+    }
+
+
+
+
+
+
+    .bike-grid2 {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-column-gap: auto;
+        grid-row-gap: auto;
+    }
+
+
+
+}
+
+
+@media (max-width: 540px) {
+
+
+
+    .bike-grid2 {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-column-gap: 5%;
+        grid-row-gap: 5%;
+    }
+
+
+}
+
+
+@media (max-width: 480px) {
+    .header-logo {
+        min-height: 20vh;
+    }
+
+
+    h2 {
+        top: 6%;
+        font-size: 1.5rem;
+    }
+
+    h18 {
+        top: 15%;
+        font-size: 1rem;
+    }
+
+    .custom-button2 {
+        font-size:1rem;
+        border-color: white;
+       
+    }
+    .buttons-container {
+
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 30px;
+    }
+    .custom-scroll-button {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        top: 20%;
+    }
+
+    .bike-grid2 {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-column-gap: 5%;
+        grid-row-gap: 5%;
+    }
+
+
+
+
+    .header-logo {
+        top: 40%;
+        width: 100%;
+        object-fit: cover;
+        background-size: cover;
+        margin: auto;
+        padding: 0;
+        border: white;
+        min-height: 200vh;
+        position: relative;
+    }
+
+
+
+.square-overlay2 {
+    position: absolute;
+    width: 100%;
+    min-height: 1000px; 
+    height: auto;
+    background-color: grey;
+    top: 30%;
+}
+    .bike-list-container2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        color: white;
+        width: 60%;
+        height: 300px;
+        min-height: 200px;
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        background-color: transparent;
+        font-style: normal;
+        font-size: 50px;
+        cursor: pointer;
+        border-color: transparent;
+        transition: box-shadow 0.3s ease;
+    }
+
+
+
+    .custom-button9 {
+        font-family: "Playfair Display", serif;
+        font-size:2rem;
+        color: white;
+        font-style: normal;
+        position: absolute;
+        left: 20%;
+        top: 33%;
+    }
+   .bike-item2 {
+        font-size: 1rem;
     }
 }
 
