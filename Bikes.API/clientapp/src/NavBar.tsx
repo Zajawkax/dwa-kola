@@ -27,6 +27,7 @@ const NavBar: React.FC = () => {
     };
 
     return (
+
         <Menu inverted fixed="top">
             <Container className="header-container">
                 <div className="logo-container">
@@ -38,7 +39,7 @@ const NavBar: React.FC = () => {
                                 <Button
                                     content="Wszystkie Rowery"
                                     size="large"
-                                    className="custom-button5"
+                                    className="custom-button2"
                                 />
                             </Menu.Item>
                             <Menu.Item as={NavLink} to="/user/reservations">
@@ -52,51 +53,55 @@ const NavBar: React.FC = () => {
                                 <Button
                                     content="Kontakt"
                                     size="large"
-                                    className="custom-button3"
+                                    className="custom-button2"
                                 />
                             </Menu.Item>
+                            {token ? (
+                                <>
+                                   
+                                    <Menu.Item as={NavLink} to="/profile">
+                                        <Button
+                                            content="Profil"
+                                            size="large"
+                                            className="custom-button2"
+                                        />
+                                    </Menu.Item>
+                                    <span className="napis1">
+                                        Zalogowany jako: <b>{username}</b>
+                                    </span >
+                                </>
+
+                            ) : (
+                                <Menu.Item as={NavLink} to="/login">
+                                    <Button
+                                        content="Logowanie"
+                                        size="large"
+                                        className="custom-button2"
+                                    />
+                                </Menu.Item>
+                            )}
+
+                        
                             <Menu.Item as={NavLink} to="/pricing">
                                 <Button
                                     content="Cennik"
                                     size="large"
-                                    className="custom-button6"
+                                    className="custom-button2"
                                 />
                             </Menu.Item>
                             <Menu.Item as={NavLink} to="/regulamin">
                                 <Button
                                     content="Regulamin"
                                     size="large"
-                                    className="custom-button7"
+                                    className="custom-button2"
                                 />
                             </Menu.Item>
 
                         </div>
 
-                        {/* Dynamiczne elementy logowania */}
-                        <div className="user-controls">
-                            {token ? (
-                                <>
-                                    <span style={{ marginRight: '20px' }}>
-                                        Zalogowany jako: <b>{username}</b>
-                                    </span>
-                                    <Menu.Item as={NavLink} to="/profile">
-                                        <Button
-                                            content="Profil"
-                                            size="large"
-                                            className="custom-button10"
-                                        />
-                                    </Menu.Item>
-                                </>
-                            ) : (
-                                <Menu.Item as={NavLink} to="/login">
-                                    <Button
-                                        content="Logowanie"
-                                        size="large"
-                                        className="custom-buttonLogowanie"
-                                    />
-                                </Menu.Item>
-                            )}
-                        </div>
+                        
+                        
+                           
 
                     </div>
                 </div>
