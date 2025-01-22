@@ -44,22 +44,22 @@ export default function Main() {
                         <div className="square-overlay">
                             <div className="buttons-container">
                                 <Menu.Item as={NavLink} to="/bikes">
-                                    <Button content="Wszystkie Rowery" size="large" className="custom-button5" />
+                                    <Button content="Wszystkie Rowery" size="large" className="custom-button2" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/user/reservations">
                                     <Button content="Rezerwacje" size="large" className="custom-button2" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/contact">
-                                    <Button content="Kontakt" size="large" className="custom-button3" />
+                                    <Button content="Kontakt" size="large" className="custom-button2" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/login">
-                                    <Button content="Logowanie" size="large" className="custom-buttonLogowanie" />
+                                    <Button content="Logowanie" size="large" className="custom-button2" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/user/reservations">
-                                    <Button content="Cennik" size="large" className="custom-button6" />
+                                    <Button content="Cennik" size="large" className="custom-button2" />
                                 </Menu.Item>
                                 <Menu.Item as={NavLink} to="/regulamin">
-                                    <Button content="Regulamin" size="large" className="custom-button7" />
+                                    <Button content="Regulamin" size="large" className="custom-button2" />
                                 </Menu.Item>
                             </div>
                         </div>
