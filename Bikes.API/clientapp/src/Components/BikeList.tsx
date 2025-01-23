@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, NavLink } from 'react-router-dom';
 import '../Styles/BikeList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEye, faEdit, faTrash, faBicycle } from '@fortawesome/free-solid-svg-icons';
 import { Menu, Button } from 'semantic-ui-react';
-import FilterSort from './FilterSort';
+
 interface Bike {
     bikeId: number;
     name: string;
     size: number; // np. 0=Small,1=Medium
     bikeType: number; // np. 0=Mountain,1=Road
-    imageUrl: string;
+
 }
 
 const BikeList: React.FC = () => {
@@ -21,7 +21,7 @@ const BikeList: React.FC = () => {
 
     const token = localStorage.getItem('authToken');
     const role = localStorage.getItem('role'); // 'Admin' lub 'User'
-    const bikesFromStorage = JSON.parse(localStorage.getItem('bikes') || '[]');
+    
 
     useEffect(() => {
         fetchBikes();
@@ -63,17 +63,7 @@ const BikeList: React.FC = () => {
         console.log('Dodaj rower (tylko Admin)');
     };
 
-    //const handleEditBike = (bikeId: number) => {
-    //    console.log(`Edytuj rower o ID: ${bikeId} (tylko Admin)`);
-    //};
     const handleEditBike = (bikeId: number) => {
-        // Funkcja przewijania na górę strony
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-
-        // Możesz dodać logikę nawigacji, np. do strony edycji roweru
         console.log(`Edytuj rower o ID: ${bikeId} (tylko Admin)`);
     };
 
@@ -86,69 +76,67 @@ const BikeList: React.FC = () => {
     }
 
     return (
-        <div className="bike-list-container">
-            {/* Menu dla Admina */}
-            {role === 'Admin' && (
-                <div className="bike-list__header">
-                    <Menu.Item as={NavLink} to="/bikes/create-bike">
-                        <Button content="Dodaj Rower" size="large" className="custom-button17" onClick={handleAddBike} />
-                    </Menu.Item>
-                    <Menu.Item as={NavLink} to="/bikes/filtersort">
-                        <Button content="Filtrowanie/Sortowanie" size="large" className="custom-button18" />
-                    </Menu.Item>
-                </div>
-            )}
+        <div className="bike-list-background">
+            
+            <div className="bike-list-container">
+                {/* Menu dla Admina */}
+                {role === 'Admin' && (
+                    <div className="bike-list__header">
+                        <Menu.Item as={NavLink} to="/bikes/create-bike">
+                            <Button content="Dodaj Rower" size="large" className="custom-button17" onClick={handleAddBike} />
+                        </Menu.Item>
+                        <Menu.Item as={NavLink} to="/bikes/filtersort">
+                            <Button content="Filtrowanie/Sortowanie" size="large" className="custom-button18" />
+                        </Menu.Item>
+                    </div>
+                )}
 
-            {/* Lista rowerów */}
-            {bikes.length > 0 ? (
-                <div className="bike-grid">
-                    {bikes.map((bike) => (
-                        <div className="bike-container">
-                        <div key={bike.bikeId} className="bike-card">
-                            <span className="bike-item">
-                                <FontAwesomeIcon icon={faBicycle} /> {bike.name}
-                            </span>
-                            <img
-                                src={`/images/${bike.bikeId}.jpg`}
-                                alt={bike.name}
+                {/* Lista rowerów */}
+                {bikes.length > 0 ? (
+                    <div className="bike-grid">
+                        {bikes.map((bike) => (
+                            <div className="bike-container" key={bike.bikeId}>
+                                <div className="bike-card">
+                                    <span className="bike-item">
+                                        <FontAwesomeIcon icon={faBicycle} /> {bike.name}
+                                    </span>
+                                    <img
+                                        src={`/images/${bike.bikeId}.jpg`}
+                                        alt={bike.name}
+                                        className="bike-image"
+                                    />
+                                    <div>
+                                        <Link to={`/details/${bike.bikeId}`} className="bike-item-button">
+                                            <FontAwesomeIcon icon={faEye} /> Szczegóły
+                                        </Link>
 
-                                className="bike-image"
-                            />
-                            <div>
-                                <Link to={`/details/${bike.bikeId}`} className="bike-item-button">
-                                    <FontAwesomeIcon icon={faEye} /> Szczegóły
-                                </Link>
-
-                                {/* Opcje Admina */}
-                                {role === 'Admin' && (
-                                    <>
-                                            <Link to={`/edit/${bike.bikeId}`} className="edit-button">
-                                            <FontAwesomeIcon icon={faEdit} /> Edytuj
-                                            </Link>
-                                        <button
-                                            onClick={() => handleDeleteBike(bike.bikeId)}
-                                            className="bike-item-button2"
-                                        >
-                                            <FontAwesomeIcon icon={faTrash} /> Usuń
-                                        </button>
-                                    </>
-                                )}
+                                        {/* Opcje Admina */}
+                                        {role === 'Admin' && (
+                                            <>
+                                                <Link to={`/edit/${bike.bikeId}`} className="edit-button">
+                                                    <FontAwesomeIcon icon={faEdit} /> Edytuj
+                                                </Link>
+                                                <button
+                                                    onClick={() => handleDeleteBike(bike.bikeId)}
+                                                    className="bike-item-button2"
+                                                >
+                                                    <FontAwesomeIcon icon={faTrash} /> Usuń
+                                                </button>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                ) : (
+                    <p>Brak rowerów do wyświetlenia.</p>
+                )}
                 </div>
-            ) : (
-                <p>Brak rowerów do wyświetlenia.</p>
-            )}
+            
         </div>
     );
+
 };
 
 export default BikeList;
-
-
-
-
-
-

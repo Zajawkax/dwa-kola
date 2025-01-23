@@ -1,4 +1,4 @@
-
+﻿
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios, { AxiosError } from 'axios';
@@ -136,13 +136,16 @@ const UserProfile: React.FC = () => {
 
     return (
         <div className="profile-container">
-            <h1>Profil użytkownika</h1>
+           
             {loading ? (
                 <p>Ładowanie danych użytkownika...</p>
+
             ) : error ? (
                 <p style={{ color: 'red' }}>{error}</p>
-            ) : profile ? (
-                <div>
+                ) : profile ? (
+
+                        <div>
+                    <p className = "title">Profil użytkownika</p>
                     <p>Użytkownik: {profile.username}</p>
                     <p>Email: {profile.email}</p>
                     <p>Numer telefonu: {profile.phoneNumber || 'Brak danych'}</p>

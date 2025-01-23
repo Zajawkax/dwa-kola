@@ -99,13 +99,15 @@ function EditBike() {
 
     return (
         <div className="bike-form">
-            <h2>Edytuj</h2>
+            
 
             {/* Jeśli wystąpił błąd, wyświetl komunikat */}
             {error && <div className="error-message">{error}</div>}
 
             <form onSubmit={handleSubmit}>
+                
                 <div className="form-group">
+                    <p className="h2">Edytuj</p>
                     <label>Nazwa:</label>
                     <input type="text" name="name" value={bike.name} onChange={handleChange} required />
                 </div>
