@@ -1,4 +1,3 @@
-
 .role {
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -8,9 +7,8 @@
     padding: 10px;
     top: 20%;
     left: 9%;
-    font-size: 40px;
+    font-size: 40vw;
     cursor: pointer;
-   
     transition: box-shadow 0.3s ease;
     display: grid;
     gap: 60px;
@@ -37,8 +35,8 @@
     margin-top: 20px;
     margin-left: 35%;
     border-bottom: 2px solid black;
-
 }
+
 .username1 {
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -50,11 +48,7 @@
     font-size: 80px;
     cursor: pointer;
     transition: box-shadow 0.3s ease;
-
-
-
 }
-
 
 .tile-container {
     position: absolute;
@@ -65,6 +59,7 @@
     grid-column-gap: 7%;
     grid-row-gap: 20%;
 }
+
 .tile {
     background-color: grey;
     color: white;
@@ -72,8 +67,9 @@
     text-align: center;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1; 
+    flex: 1;
 }
+
 .tile-link {
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -83,9 +79,8 @@
     left: 20%;
     font-size: 20px;
     cursor: pointer;
-
-   
 }
+
 .tile:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -93,21 +88,25 @@
 
 .bike2 {
     font-family: "Playfair Display", serif;
-    font-weight: 400;
+    font-weight: bold;
     color: white;
     font-style: normal;
-    font-size: 30px;
+    font-size: 1.7vw;
     position: absolute;
-    top: 2%;
-    left: 35%;
+    top: 1vw;
+    letter-spacing: 1vw;
+    left: 20vw;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .bikes2-info-container {
     top: 60%;
     position: absolute;
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 5vw 1vw;
     background-color: #333;
     border-radius: 10px;
 }
@@ -119,50 +118,41 @@
     font-style: normal;
     font-size: 30px;
     cursor: pointer;
-
 }
-
 
 .bike2-cards-container {
-   
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap; 
+    gap: 1vw;
+    flex-wrap: wrap;
 }
-
 
 .bike2-card {
     background-color: darkgrey;
     color: white;
-    padding: 20px;
-    width: 30%; 
+    padding: 1vw;
+    width: 27vw;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-   
     .bike2-card:hover {
         transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
-
 
     .bike2-card h3 {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        color: white;
     }
-
 
     .bike2-card p {
         font-family: "Playfair Display", serif;
         font-weight: 400;
         color: white;
     }
-
 
 h6 {
     font-family: "Playfair Display", serif;
@@ -172,6 +162,7 @@ h6 {
     font-size: 30px;
     transition: box-shadow 0.3s ease;
 }
+
 h3 {
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -181,36 +172,36 @@ h3 {
     transition: box-shadow 0.3s ease;
 }
 
-@media (max-width: 1200px) {
-    .tile-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+@media (max-width: 1024px) {
+    .username1 {
+        font-size: 60px;
     }
 
-    .username {
-        font-size: 30px;
-        top: 40%;
-        left: 15%;
+
+    .tile {
+        padding: 40px;
+    }
+
+    .bikes2-info-container {
+        padding: 40px;
+    }
+
+    .bike2-card {
+        width: 45%;
     }
 }
 
 @media (max-width: 768px) {
-    .role, .user-reservations {
-        font-size: 30px;
-        margin-left: 20%;
-        top: auto;
-        left: auto;
-    }
-
-    .username {
+    .username1 {
         font-size: 40px;
-        top: 2%;
+        top: 8%;
         left: 10%;
     }
 
     .tile-container {
         grid-template-columns: 1fr;
-        gap: 10px;
+        left: 30%;
+        top: 15%;
     }
 
     .tile {
@@ -218,19 +209,62 @@ h3 {
     }
 
     .bikes2-info-container {
-        padding: 15px;
+        padding: 30px;
+    }
+
+    .bike2-card {
+        width: 90%;
+    }
+
+    .bike2 {
+        font-family: "Playfair Display", serif;
+        font-weight: bold;
+        color: white;
+        font-style: normal;
+        font-size: 2vw;
+        position: absolute;
+        top: 1vw;
+        letter-spacing: 1vw;
+        left: 15vw;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
 }
 
 @media (max-width: 480px) {
-    .role, .user-reservations, .username {
-        font-size: 20px;
-        margin-left: 0;
-        padding: 5px;
+    .username1 {
+        font-size: 34px;
+        top: 20%;
+        left: 5%;
     }
 
     .tile {
+        padding: 10px;
+    }
+
+    .tile-container {
+        left: 26%;
+    }
+
+    .bike2 {
+        font-size: 14px;
+        left: 20%;
+        top: 0%;
+    }
+
+    .bikes2-info-container {
         padding: 20px;
     }
 
+    .bike2-card {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .bike2-title {
+        font-size: 18px;
+    }
+
+    .bike2-card p {
+        font-size: 12px;
+    }
 }

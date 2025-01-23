@@ -34,33 +34,35 @@
 
 .bike-form {
     position: absolute;
-    top: 30%;
-    max-width: 500px;
-    left: 40%;
-    padding: 20px;
+    top: 10vw;
+    max-width: 500vw;
+    left: 40vw;
+    padding: 1vw;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-    .bike-form h2 {
+    .h2 {
         font-family: "Playfair Display", serif;
-        font-weight: 400;
-        font-size: 36px;
         font-weight: bold;
-        color: #000;
-        margin-bottom: 20px;
-        color: white;
-        top: -20%;
-        left: 35%;
+        font-size: 2vw;
+        color: #333;
+        letter-spacing: 2vw;
+        left: 2vw;
+        top: -2vw;
+        text-align: center;
+
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
 
-    .bike-form . {
+    .bike-form .form-group {
         margin-bottom: 15px;
     }
 
         .bike-form .form-group label {
+            
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
@@ -68,6 +70,7 @@
 
         .bike-form .form-group input,
         .bike-form .form-group select {
+
             width: 100%;
             padding: 8px;
             font-size: 14px;
@@ -80,34 +83,134 @@
                 margin-left: 10px;
             }
 
+    .bike-form .btn {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .bike-form .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+        .bike-form .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .bike-form .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+    }
+
+        .bike-form .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+@media (max-width: 1024px) {
+
+
+    .custom-button14 {
+        font-size: 40px;
+        left: 5%;
+        margin-left: 10%;
+    }
+
+    .bike-form {
+        top: 20%;
+        max-width: 100%;
+        left: 30%;
+        padding: 40px;
+    }
+
+        .h2 {
+            font-size: 40px;
+            top: -5%;
+            left: 10%;
+        }
+
+        .bike-form .form-group input,
+        .bike-form .form-group select {
+            font-size: 10px;
+        }
+
         .bike-form .btn {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 14px;
-            text-align: center;
-            border-radius: 4px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 10px;
+        }
+}
+@media (max-width: 600px) {
+
+
+    .custom-button14 {
+        font-size: 40px;
+        left: 5%;
+        margin-left: 10%;
+    }
+
+    .bike-form {
+        top: 20%;
+        max-width: 100%;
+        left: 10%;
+        padding: 40px;
+    }
+
+        .h2 {
+            font-size: 40px;
+            top: -5%;
+            left: 10%;
         }
 
-        .bike-form .btn-primary {
-            background-color: #007bff;
-            color: white;
-            border: none;
+        .bike-form .form-group input,
+        .bike-form .form-group select {
+            font-size: 10px;
         }
 
-            .bike-form .btn-primary:hover {
-                background-color: #0056b3;
-            }
+        .bike-form .btn {
+            font-size: 10px;
+        }
+}
 
-        .bike-form .btn-secondary {
-            background-color: #6c757d;
-            color: white;
-            border: none;
+@media (max-width: 480px) {
+    h16 {
+        font-size: 18px;
+        left: 10%;
+        top: 10%;
+        
+    }
+
+    .custom-button14 {
+        font-size: 24px;
+        left: 5%;
+        margin-left: 10%;
+    }
+
+    .bike-form {
+        top: 20%;
+        max-width: 70%;
+        left: 7%;
+        padding:30px;
+    }
+
+        .h2 {
+            font-size: 20px;
+            top: -5%;
+            left: 10%;
         }
 
-            .bike-form .btn-secondary:hover {
-                background-color: #5a6268;
-            }
+        .bike-form .form-group input,
+        .bike-form .form-group select {
+            font-size: 10px;
+        }
+
+        .bike-form .btn {
+            font-size: 10px;
+        }
+}

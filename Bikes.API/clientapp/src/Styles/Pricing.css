@@ -1,7 +1,7 @@
-.pricing-overlay-text {
+﻿.pricing-overlay-text {
     font-family: "Playfair Display", serif;
     position: absolute;
-    top: 60%; 
+    top: 55%; 
     left: 50%;
     transform: translate(-50%, -50%); 
     font-size: 1.5rem;

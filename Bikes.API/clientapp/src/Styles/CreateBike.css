@@ -34,11 +34,11 @@ margin-left: 35%;
 }
 
 .bike-form {
-   position: absolute;
-   top: 20%;
-    max-width: 500px;
-left: 35%;
-    padding: 20px;
+    position: absolute;
+    top: 10vw;
+    max-width: 500vw;
+    left: 40vw;
+    padding: 1vw;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -113,3 +113,102 @@ left: 35%;
         .bike-form .btn-secondary:hover {
             background-color: #5a6268;
         }
+@media (max-width: 1024px) {
+
+
+    .custom-button14 {
+        font-size: 40px;
+        left: 5%;
+        margin-left: 10%;
+    }
+
+    .bike-form {
+        top: 20%;
+        max-width: 100%;
+        left: 30%;
+        padding: 40px;
+    }
+
+    .h2 {
+        font-size: 40px;
+        top: -5%;
+        left: 10%;
+    }
+
+    .bike-form .form-group input,
+    .bike-form .form-group select {
+        font-size: 10px;
+    }
+
+    .bike-form .btn {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+
+
+    .custom-button14 {
+        font-size: 40px;
+        left: 5%;
+        margin-left: 10%;
+    }
+
+    .bike-form {
+        top: 20%;
+        max-width: 100%;
+        left: 10%;
+        padding: 40px;
+    }
+
+    .h2 {
+        font-size: 40px;
+        top: -5%;
+        left: 10%;
+    }
+
+    .bike-form .form-group input,
+    .bike-form .form-group select {
+        font-size: 10px;
+    }
+
+    .bike-form .btn {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h16 {
+        font-size: 18px;
+        left: 10%;
+        top: 10%;
+    }
+
+    .custom-button14 {
+        font-size: 24px;
+        left: 5%;
+        margin-left: 10%;
+    }
+
+    .bike-form {
+        top: 20%;
+        max-width: 70%;
+        left: 7%;
+        padding: 30px;
+    }
+
+    .h2 {
+        font-size: 20px;
+        top: -5%;
+        left: 10%;
+    }
+
+    .bike-form .form-group input,
+    .bike-form .form-group select {
+        font-size: 10px;
+    }
+
+    .bike-form .btn {
+        font-size: 10px;
+    }
+}

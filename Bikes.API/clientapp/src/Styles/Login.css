@@ -68,8 +68,10 @@ input {
 .pokaz {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 4vw;
     color: #666;
+    width: 30vw;
+    height: 10vw;
 }
 
 .login-register-button1,
@@ -115,4 +117,60 @@ input {
 .success-message {
     text-align: center;
     font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .login-page {
+        left: 20%; /* Zmniejszenie odstêpu */
+        top: 25%; /* Dostosowanie pozycji */
+        width: 60%; /* Szerokoœæ formularza */
+        min-height: auto; /* Dostosowanie wysokoœci */
+        padding: 20px;
+    }
+
+        .login-page h1 {
+            font-size: 28px; /* Zmniejszenie rozmiaru nag³ówka */
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+
+    .login-form {
+        min-width: 300px; /* Zmniejszenie szerokoœci formularza */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .login-page {
+        left: -4.5%; 
+        top: 20%; 
+        width: 90%; 
+        
+    }
+
+        .login-page h1 {
+            font-size: 24px; 
+            margin-bottom: 10px;
+        }
+
+    .login-form {
+        min-width: auto; 
+        padding: 15px; 
+    }
+
+    input {
+        padding: 8px 10px; 
+        font-size: 14px;
+    }
+
+    .zapisz {
+        font-size: 14px; 
+    }
+
+    .login-register-button1,
+    .login-register-button2 {
+        font-size: 14px; 
+        padding: 8px;
+    }
 }
