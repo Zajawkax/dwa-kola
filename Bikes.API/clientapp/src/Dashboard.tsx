@@ -10,7 +10,7 @@ const Dashboard: React.FC = () => {
         <div className="dashboard-container">
             
             
-            <div className="username">Witaj, {username}!</div>
+            <div className="username1">Witaj, {username}!</div>
 
             <div className="tile-container">
                 <div className="tile">
@@ -56,12 +56,7 @@ const Dashboard: React.FC = () => {
 
 
            
-            {role === 'Admin' && (
-                <div style={{ marginTop: '15px' }}>
-                    <h4>Panel Admina:</h4>
-                    <Link to="/admin">Zarządzaj rowerami i rezerwacjami</Link>
-                </div>
-            )}
+            
         </div>
     );
 };
