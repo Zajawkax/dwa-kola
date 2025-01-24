@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import '../Styles/BikeDetails.css';
@@ -31,6 +31,9 @@ function BikeDetails() {
 
     useEffect(() => {
         fetchBike();
+
+        // Przewinięcie strony na górę po załadowaniu szczegółów roweru
+        window.scrollTo(100, 100);
     }, [id]);
 
     const handleReserve = async (event) => {
@@ -152,7 +155,7 @@ function BikeDetails() {
                             <input
                                 type="datetime-local"
                                 value={startDateTime}
-                                onChange={(e) => setStartDateTime(e.target.value)} 
+                                onChange={(e) => setStartDateTime(e.target.value)}
 
                             />
                         </label>
