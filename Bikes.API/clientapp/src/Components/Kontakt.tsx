@@ -1,76 +1,120 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import '../Styles/contact.css';
 
-const Contact = () => {
-    const token = localStorage.getItem('authToken');
-    const [message, setMessage] = useState('');
+const Contact: React.FC = () => {
+    const [email, setEmail] = useState('');
     const [error, setError] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [isAdmin, setIsAdmin] = useState(false);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    useEffect(() => {
+        // Sprawdzenie roli użytkownika z localStorage (lub dowolnego źródła)
+        const role = localStorage.getItem('role');
+        if (role === 'Admin') {
+            setIsAdmin(true);
+        }
+    }, []);
+
+    // Lista zaufanych domen
+    const trustedDomains = [
+        'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'icloud.com', 'aol.com',
+        'wp.pl', 'o2.pl', 'onet.pl', 'interia.pl', 'gazeta.pl',
+        'protonmail.com', 'zoho.com', 'mail.com', 'yandex.com', 'gmx.com'
+    ];
+
+    // Dozwolone rozszerzenia domen
+    const allowedExtensions = ['.com', '.pl', '.org', '.net', '.edu', '.gov'];
+
+    const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (message.trim() === '') {
-            setError('Nie możesz wysłać pustej wiadomości.');
-            setMessage('');
+        if (!email.trim()) {
+            displayError('Proszę podać swój adres e-mail.');
             return;
         }
 
-        // Wysyłanie wiadomości do API
-        const response = await fetch('https://localhost:7032/api/messages', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`, // Wysyłamy token w nagłówku
-            },
-            body: JSON.stringify({ content: message }),
-        });
-
-        if (response.ok) {
-            alert('Wiadomość została wysłana.');
-        } else {
-            alert('Wystąpił błąd przy wysyłaniu wiadomości.');
+        const emailParts = email.split('@');
+        if (emailParts.length !== 2 || !emailParts[1]) {
+            displayError('Nieprawidłowy adres e-mail.');
+            return;
         }
 
-        setMessage('');
+        const domain = emailParts[1].toLowerCase();
+
+        // Sprawdzenie, czy domena jest zaufana
+        const isDomainTrusted = trustedDomains.includes(domain);
+
+        if (!isDomainTrusted) {
+            displayError(`Domena "${domain}" nie jest obsługiwana.`);
+            return;
+        }
+
+        const isExtensionAllowed = allowedExtensions.some((ext) => domain.endsWith(ext));
+        if (!isExtensionAllowed) {
+            displayError(`Domena "${domain}" nie ma prawidłowego rozszerzenia.`);
+            return;
+        }
+
+        setSuccessMessage('Przekierowuję Cię do strony pocztowej...');
         setError('');
+        setTimeout(() => {
+            // Otwórz stronę pocztową w nowym oknie
+            window.open(`https://${domain}`, '_blank');
+        }, 2000);
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setMessage(e.target.value);
-        if (e.target.value.trim() !== '') {
-            setError('');
-        }
+    const displayError = (message: string) => {
+        setError(message);
+        setTimeout(() => setError(''), 4000);
     };
 
-    if (!token) {
+    if (isAdmin) {
+        // Widok dla administratora
         return (
-            <div className="contact-container error-message">
-                
-                <p>Aby wysłać wiadomość, musisz być zalogowany!</p>
-                <p><a href="/login">Zaloguj się tutaj</a></p>
+            <div className="admin-route">
+                <h1>Panel kontaktowy administratora</h1>
+                <p>
+                    Witaj, administratorze! Możesz skontaktować się z nami, przechodząc do swojej skrzynki pocztowej.
+                </p>
+                <button
+                    onClick={() => window.open('https://mail.google.com', '_blank')}
+                    className="admin-button"
+                >
+                    Przejdź do Gmail
+                </button>
             </div>
         );
     }
 
+    // Widok dla zwykłego użytkownika
     return (
         <div className="contact-container">
             <h1>Skontaktuj się z nami</h1>
-            <p>Wpisz wiadomość, a my skontaktujemy się z Tobą wkrótce!</p>
-            {error && <p className="error-message">{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <textarea
-                    value={message}
-                    onChange={handleChange}
-                    placeholder="Wpisz wiadomość..."
+            <p>
+                Aby się z nami skontaktować, wyślij nam wiadomość na naszego maila lub telefon:
+            </p>
+            <p>
+                <b>Telefon:</b> 123456789
+            </p>
+            <p>
+                <b>Email:</b> dwakolkacontact@gmail.com
+            </p>
+            <form onSubmit={handleEmailSubmit}>
+                <label htmlFor="email">Podaj swój adres e-mail:</label>
+                <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Twój e-mail..."
                 />
-                <button type="submit">Wyślij</button>
+                <button type="submit">Przekieruj na stronę pocztową</button>
             </form>
-            <p>Możesz także skontaktować się z nami telefonicznie lub mailowo:</p>
-                        <p>Telefon: <b>123456789</b></p>
-                        <p>Email: <b>dwakolkacontact@gmail.com</b></p>
+            {error && <p className="error-message">{error}</p>}
+            {successMessage && <p className="success-message">{successMessage}</p>}
         </div>
     );
 };
 
 export default Contact;
-
