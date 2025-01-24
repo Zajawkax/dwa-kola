@@ -27,10 +27,10 @@ enum ReservationStatus {
 
 enum TabType {
     All = 'Wszystkie',
-    Pending = 'Oczekujπce',
+    Pending = 'OczekujƒÖce',
     Confirmed = 'Potwierdzone',
     Cancelled = 'Anulowane',
-    Completed = 'ZakoÒczone',
+    Completed = 'Zako≈Ñczone',
 }
 
 interface UserProfileData {
@@ -71,7 +71,7 @@ const MyReservations: React.FC = () => {
         try {
             setLoading(true);
             if (!token) {
-                setError('Musisz byÊ zalogowany, aby zobaczyÊ swoje rezerwacje.');
+                setError('Musisz byƒá zalogowany, aby zobaczyƒá swoje rezerwacje.');
                 return;
             }
             const response = await axios.get<Reservation[]>(
@@ -83,8 +83,8 @@ const MyReservations: React.FC = () => {
             setUserReservations(response.data);
             console.log(userReservations);
         } catch (err) {
-            console.error('B≥πd pobierania rezerwacji uøytkownika:', err);
-            setError('Nie uda≥o siÍ pobraÊ listy rezerwacji uøytkownika.');
+            console.error('B≈ÇƒÖd pobierania rezerwacji u≈ºytkownika:', err);
+            setError('Nie uda≈Ço siƒô pobraƒá listy rezerwacji u≈ºytkownika.');
         } finally {
             setLoading(false);
         }
@@ -94,7 +94,7 @@ const MyReservations: React.FC = () => {
         try {
             setLoading(true);
             if (!token) {
-                setError('Musisz byÊ zalogowany, aby zobaczyÊ wszystkie rezerwacje.');
+                setError('Musisz byƒá zalogowany, aby zobaczyƒá wszystkie rezerwacje.');
                 return;
             }
             const response = await axios.get<Reservation[]>(
@@ -105,8 +105,8 @@ const MyReservations: React.FC = () => {
             );
             setAllReservations(response.data);
         } catch (err) {
-            console.error('B≥πd pobierania wszystkich rezerwacji:', err);
-            setError('Nie uda≥o siÍ pobraÊ listy wszystkich rezerwacji.');
+            console.error('B≈ÇƒÖd pobierania wszystkich rezerwacji:', err);
+            setError('Nie uda≈Ço siƒô pobraƒá listy wszystkich rezerwacji.');
         } finally {
             setLoading(false);
         }
@@ -123,7 +123,7 @@ const MyReservations: React.FC = () => {
     const handleReturnBike = async (reservationId: number) => {
         try {
             if (!token) {
-                setError('Musisz byÊ zalogowany!');
+                setError('Musisz byƒá zalogowany!');
                 return;
             }
 
@@ -156,8 +156,8 @@ const MyReservations: React.FC = () => {
 
             setError(null);
         } catch (err: any) {
-            console.error('B≥πd zwracania roweru:', err);
-            setError('Nie uda≥o siÍ zwrÛciÊ roweru.');
+            console.error('B≈ÇƒÖd zwracania roweru:', err);
+            setError('Nie uda≈Ço siƒô zwr√≥ciƒá roweru.');
 
             try {
                 const refreshed = await axios.get<Reservation[]>(
@@ -173,8 +173,8 @@ const MyReservations: React.FC = () => {
                     setUserReservations(refreshed.data);
                 }
             } catch (refreshErr: any) {
-                console.error('B≥πd odúwieøania listy rezerwacji:', refreshErr);
-                setError('Nie uda≥o siÍ odúwieøyÊ listy rezerwacji.');
+                console.error('B≈ÇƒÖd od≈õwie≈ºania listy rezerwacji:', refreshErr);
+                setError('Nie uda≈Ço siƒô od≈õwie≈ºyƒá listy rezerwacji.');
             }
         }
     };
@@ -182,7 +182,7 @@ const MyReservations: React.FC = () => {
     const handleConfirmReservation = async (reservationId: number) => {
         try {
             if (!token) {
-                setError('Musisz byÊ zalogowany!');
+                setError('Musisz byƒá zalogowany!');
                 return;
             }
 
@@ -205,15 +205,15 @@ const MyReservations: React.FC = () => {
             setAllReservations(updatedList);
             setError(null);
         } catch (err) {
-            console.error('B≥πd potwierdzania rezerwacji:', err);
-            setError('Nie uda≥o siÍ potwierdziÊ rezerwacji.');
+            console.error('B≈ÇƒÖd potwierdzania rezerwacji:', err);
+            setError('Nie uda≈Ço siƒô potwierdziƒá rezerwacji.');
         }
     };
 
     const handleCancelReservation = async (reservationId: number) => {
         try {
             if (!token) {
-                setError('Musisz byÊ zalogowany!');
+                setError('Musisz byƒá zalogowany!');
                 return;
             }
 
@@ -236,15 +236,15 @@ const MyReservations: React.FC = () => {
             setAllReservations(updatedList);
             setError(null);
         } catch (err) {
-            console.error('B≥πd anulowania rezerwacji:', err);
-            setError('Nie uda≥o siÍ anulowaÊ rezerwacji.');
+            console.error('B≈ÇƒÖd anulowania rezerwacji:', err);
+            setError('Nie uda≈Ço siƒô anulowaƒá rezerwacji.');
         }
     };
 
     const generatePdfReport = (reservations: Reservation[]) => {
         const doc = new jsPDF();
 
-        // Dodaj tytu≥
+        // Dodaj tytu≈Ç
         doc.setFontSize(16);
         doc.text('Raport Rezerwacji', 14, 20);
 
@@ -256,12 +256,12 @@ const MyReservations: React.FC = () => {
             new Date(res.startDate).toLocaleString(),
             new Date(res.endDate).toLocaleString(),
             res.status,
-            `${res.totalCost} z≥`
+            `${res.totalCost} z≈Ç`
         ]);
 
-        // Dodaj tabelÍ
+        // Dodaj tabelƒô
         autoTable(doc, {
-            head: [['ID', 'Rower', 'Uøytkownik', 'Data Startu', 'Data ZakoÒczenia', 'Status', 'Koszt']],
+            head: [['ID', 'Rower', 'U≈ºytkownik', 'Data Startu', 'Data Zako≈Ñczenia', 'Status', 'Koszt']],
             body: tableData,
             startY: 30
         });
@@ -270,9 +270,9 @@ const MyReservations: React.FC = () => {
         doc.save(`Raport_Rezerwacje_${new Date().toISOString()}.pdf`);
     };
 
-    // Obs≥uga stanÛw
+    // Obs≈Çuga stan√≥w
     if (loading) {
-        return <p>£adowanie rezerwacji...</p>;
+        return <p>≈Åadowanie rezerwacji...</p>;
     }
 
     if (error) {
@@ -281,9 +281,9 @@ const MyReservations: React.FC = () => {
                 <p className="centered-message" style={{ color: 'black' }}>
                     {error}
                 </p>
-                {error.includes('Musisz byÊ zalogowany') && (
+                {error.includes('Musisz byƒá zalogowany') && (
                     <p className="centered-message-link">
-                        <a href="/login">Zaloguj siÍ tutaj</a>
+                        <a href="/login">Zaloguj siƒô tutaj</a>
                     </p>
                 )}
             </div>
@@ -316,7 +316,7 @@ const MyReservations: React.FC = () => {
         <div>
             {role === 'Admin' && (
                 <div>
-                    
+
                     <div className="reservations-container">
                         <div className="tabs-container">
                             <h1 className="reservations-header">Wszystkie Rezerwacje</h1>
@@ -340,26 +340,26 @@ const MyReservations: React.FC = () => {
                                     <br />
                                     <span>Rower: {res.bike?.name ?? `ID: ${res.bikeId}`}</span>
                                     <br />
-                                    <span>Uøytkownik: {res.userId}</span>
+                                    <span>U≈ºytkownik: {res.userId}</span>
                                     <br />
                                     <span>
                                         Od: {new Date(res.startDate).toLocaleString()} do: {new Date(res.endDate).toLocaleString()}
                                     </span>
                                     <br />
-                                    <span>Status: {res.status} | Koszt: {res.totalCost} z≥</span>
+                                    <span>Status: {res.status} | Koszt: {res.totalCost} z≈Ç</span>
                                     <br />
                                     <div className="button-container4">
                                         <button
                                             onClick={() => handleConfirmReservation(res.reservationId)}
                                             className="return-button"
                                         >
-                                            Potwierdü rezerwacjÍ
+                                            Potwierd≈∫ rezerwacjƒô
                                         </button>
                                         <button
                                             onClick={() => handleCancelReservation(res.reservationId)}
                                             className="return-button2"
                                         >
-                                            Anuluj rezerwacjÍ
+                                            Anuluj rezerwacjƒô
                                         </button>
                                     </div>
                                 </li>
@@ -386,17 +386,17 @@ const MyReservations: React.FC = () => {
                                             Od: {new Date(res.startDate).toLocaleString()} do: {new Date(res.endDate).toLocaleString()}
                                         </span>
                                         <br />
-                                        <span>Status: {res.status} | Koszt: {res.totalCost} z≥</span>
+                                        <span>Status: {res.status} | Koszt: {res.totalCost} z≈Ç</span>
                                         <br />
                                         {!isCompleted ? (
                                             <button
                                                 onClick={() => handleReturnBike(res.reservationId)}
                                                 className="return-button"
                                             >
-                                                ZwrÛÊ rower
+                                                Zwr√≥ƒá rower
                                             </button>
                                         ) : (
-                                            <span className="returned-status">ZwrÛcony</span>
+                                            <span className="returned-status">Zwr√≥cony</span>
                                         )}
                                     </li>
                                 );
@@ -410,3 +410,4 @@ const MyReservations: React.FC = () => {
 };
 
 export default MyReservations;
+
