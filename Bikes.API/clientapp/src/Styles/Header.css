@@ -307,10 +307,6 @@ h18 {
     }
 
 
-
-
-
-
     .bike-grid2 {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-column-gap: auto;
