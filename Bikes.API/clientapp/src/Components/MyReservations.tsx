@@ -319,7 +319,7 @@ const MyReservations: React.FC = () => {
 
                     <div className="reservations-container">
                         <div className="tabs-container">
-                            <h1 className="reservations-header">Wszystkie Rezerwacje</h1>
+                            <h1 className="reservations-headeradmin">Wszystkie Rezerwacje</h1>
                             {Object.values(TabType).map(tab => (
                                 <button
                                     key={tab}
