@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import '../Styles/contact.css';
+import '../Styles/Contact.css';
 
 const Contact: React.FC = () => {
     const [email, setEmail] = useState('');
