@@ -21,8 +21,7 @@
     margin: auto;
     padding: 0;
     border: white;
-
-    height: 500vh;
+    min-height: 50vh;
     position: relative;
 }
 
@@ -75,6 +74,7 @@ h18 {
     top: 14%;
     margin-right: 30%;
 }
+
 
 .header-container {
     position: relative;
@@ -314,7 +314,7 @@ h18 {
     .bike-grid2 {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-column-gap: auto;
-        grid-row-gap: auto;
+        grid-row-gap: 20% ;
     }
 }
 
@@ -368,7 +368,7 @@ h18 {
     .bike-grid2 {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         grid-column-gap: 5%;
-        grid-row-gap: 5%;
+        grid-row-gap: 10%;
     }
 
 
