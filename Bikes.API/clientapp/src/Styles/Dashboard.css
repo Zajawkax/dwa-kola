@@ -1,3 +1,9 @@
+.dashboard-container {
+    padding: 10px;
+
+}
+
+
 .role {
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -45,7 +51,7 @@
     font-style: normal;
     top: 10%;
     left: 20%;
-    font-size: 80px;
+    font-size: 5vw;
     cursor: pointer;
     transition: box-shadow 0.3s ease;
 }
@@ -53,21 +59,22 @@
 .tile-container {
     position: absolute;
     top: 30%;
-    left: 33%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 7%;
-    grid-row-gap: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    left: 30%;
 }
 
 .tile {
     background-color: grey;
+    flex: 1 1 200px;
+    min-width: 200px;
     color: white;
-    padding: 50px;
+    padding: 20px;
     text-align: center;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1;
 }
 
 .tile-link {
@@ -77,8 +84,9 @@
     font-style: normal;
     top: 4%;
     left: 20%;
-    font-size: 20px;
+    font-size: 1rem;
     cursor: pointer;
+    display: block;
 }
 
 .tile:hover {
@@ -102,8 +110,8 @@
 
 
 .bikes2-info-container {
-    top: 60%;
     position: absolute;
+    top: 60%;
     color: white;
     text-align: center;
     padding: 5vw 1vw;
@@ -121,17 +129,15 @@
 }
 
 .bike2-cards-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 1vw;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .bike2-card {
     background-color: darkgrey;
     color: white;
-    padding: 1vw;
-    width: 27vw;
+    padding: 15px;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -172,99 +178,55 @@ h3 {
     transition: box-shadow 0.3s ease;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1048px) {
     .username1 {
-        font-size: 60px;
-    }
-
-
-    .tile {
-        padding: 40px;
-    }
-
-    .bikes2-info-container {
-        padding: 40px;
-    }
-
-    .bike2-card {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .username1 {
-        font-size: 40px;
-        top: 8%;
-        left: 10%;
-    }
-
-    .tile-container {
-        grid-template-columns: 1fr;
-        left: 30%;
+        font-size: 2rem;
         top: 15%;
     }
 
     .tile {
-        padding: 30px;
-    }
-
-    .bikes2-info-container {
-        padding: 30px;
-    }
-
-    .bike2-card {
-        width: 90%;
-    }
-
-    .bike2 {
-        font-family: "Playfair Display", serif;
-        font-weight: bold;
+        background-color: grey;
+        flex: 1 1 20px;
+        min-width: 50px;
         color: white;
-        font-style: normal;
-        font-size: 2vw;
-        position: absolute;
-        top: 1vw;
-        letter-spacing: 1vw;
-        left: 15vw;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    }
-}
-
-@media (max-width: 480px) {
-    .username1 {
-        font-size: 34px;
-        top: 20%;
-        left: 5%;
-    }
-
-    .tile {
-        padding: 10px;
-    }
-
-    .tile-container {
-        left: 26%;
-    }
-
-    .bike2 {
-        font-size: 14px;
-        left: 20%;
-        top: 0%;
-    }
-
-    .bikes2-info-container {
         padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .bike2-card {
-        padding: 15px;
-        width: 100%;
+    .tile-link {
+        font-size: 0.9rem;
     }
 
     .bike2-title {
-        font-size: 18px;
+        font-size: 1rem;
     }
 
-    .bike2-card p {
-        font-size: 12px;
+}
+
+
+@media (max-width: 480px) {
+    .username1 {
+        font-size: 2rem;
+        top: 22%;
+
+        
+    }
+    .tile-container {
+        position: absolute;
+        top: 30%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-around;
+        left: 0%;
+    }
+    .tile-link {
+        font-size: 0.9rem;
+    }
+
+    .bike2-title {
+        font-size: 1rem;
     }
 }
