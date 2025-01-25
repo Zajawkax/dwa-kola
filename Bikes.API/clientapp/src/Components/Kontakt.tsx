@@ -8,6 +8,7 @@ const Contact: React.FC = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [isAdmin, setIsAdmin] = useState(false);
 
+    
     useEffect(() => {
         // Sprawdzenie roli użytkownika z localStorage (lub dowolnego źródła)
         const role = localStorage.getItem('role');
@@ -73,8 +74,8 @@ const Contact: React.FC = () => {
         // Widok dla administratora
         return (
             <div className="admin-route">
-                <h1>Panel kontaktowy administratora</h1>
-                <p>
+                <p className="contact-header">Panel kontaktowy administratora</p>
+                <p className = "text-contact">
                     Witaj, administratorze! Możesz skontaktować się z nami, przechodząc do swojej skrzynki pocztowej.
                 </p>
                 <button
@@ -90,7 +91,7 @@ const Contact: React.FC = () => {
     // Widok dla zwykłego użytkownika
     return (
         <div className="contact-container">
-            <h1>Skontaktuj się z nami</h1>
+            <p className="contact-header">Skontaktuj się z nami</p>
             <p>
                 Aby się z nami skontaktować, wyślij nam wiadomość na naszego maila lub telefon:
             </p>
