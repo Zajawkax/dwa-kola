@@ -19,39 +19,34 @@ h10 {
     margin-left: 35%;
 }
 
-.bike-list-container {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    color: white;
-    width: 80%;
-    height: 300px;
-    min-height: 200px; 
-    position: absolute; 
-    top: 20%;
-    left: 10%;
-    background-color: transparent;
-    font-style: normal;
-    font-size: 20px;
-    cursor: pointer;
-    border-color: transparent;
-    transition: box-shadow 0.3s ease;
-}
 
 .bike-image {
     width: 100%;
-    height: 300px;
+    height: 200px;
     object-fit: cover;
     background-color: #eee;
-
     border-radius: 8px; 
 }
 .bike-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 20px;
-      grid-row-gap:4%;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 5vw 1vw;
+    background-color: #333;
+    border-radius: 10px;
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    grid-column-gap: 2%;
+    grid-row-gap: 10%;
 }
+.bike-container {
+display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 
+}
 .bike-card {
     width: 100%;
     height: 120%;
@@ -112,16 +107,16 @@ h10 {
 }
 
 
-
 .custom-button17 {
     font-family: "Playfair Display", serif;
     font-weight: bold;
     font-size: 2vw;
     color: #333;
     letter-spacing: 2vw;
-    left: -30vw;
-    top: -1vw;
+
+    top: 8vw;
     width: 100vw;
+    position: absolute;
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -132,22 +127,15 @@ h10 {
     font-size: 2vw;
     color: #333;
     letter-spacing: 2vw;
-    left: -30vw;
-    top: -1vw;
+    top: 12vw;
     width: 100vw;
+    position: absolute;
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 
-.bike-list-container {
-    width: 100%;
-    left: 0%;
-    height: auto;
-    min-height: 3000vw;
-    background-color: gray;
-}
 
 
 @media (max-width: 820px) {
@@ -157,18 +145,13 @@ h10 {
         left: 5%; 
         font-size: 16px; 
     }
-    .bike-list-container {
-        width: 90%; 
-        top: 10%; 
-        left: 5%; 
-        font-size: 16px; 
-    }
 
     .bike-grid {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-        gap: 10px; 
+        top: 25%;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
     }
-
+   
     .bike-card {
         height: auto; 
         width: 90%;
@@ -181,13 +164,7 @@ h10 {
     .bike-item {
         font-size: 14px; 
     }
-    .bike-list-container {
-        width: 100%;
-        left: 0%;
-        height: auto;
-        min-height: 3000vw;
-        background-color: gray;
-    }
+
 }
 
 @media (max-width: 480px) {
