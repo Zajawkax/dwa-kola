@@ -142,12 +142,12 @@ const Logowanie: React.FC = () => {
 
     return (
         <div className="login-page">
-            <h1>{isLogin ? 'Logowanie' : 'Rejestracja'}</h1>
+            <p className="login-header">{isLogin ? 'Logowanie' : 'Rejestracja'}</p>
             <form
                 onSubmit={isLogin ? handleLogin : handleRegister}
                 className="login-form"
             >
-                <div className="square"></div>
+                
                 <div className="button-container">
                     <button
                         type="button"
