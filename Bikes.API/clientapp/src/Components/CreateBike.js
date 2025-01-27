@@ -5,6 +5,7 @@ import '../Styles/CreateBike.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faSave } from '@fortawesome/free-solid-svg-icons';
 
+
 function CreateBike() {
     const [bike, setBike] = useState({
         name: '',
@@ -15,6 +16,9 @@ function CreateBike() {
         dailyRate: '',
         availabilityStatus: true,
     });
+
+  
+
 
     const navigate = useNavigate();
 
@@ -136,16 +140,7 @@ function CreateBike() {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="form-group">
-                    <label>Zdjęcie:</label>
-                    <input
-                        type="file"
-                        name="bikeImage"
-                        accept="image/*"
-                       
-                        className="form-control"
-                    />
-                </div>
+                
                 <button type="submit" className="btn btn-primary">
                     <FontAwesomeIcon icon={faSave} /> Dodaj rower
                 </button>
