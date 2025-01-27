@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import '../Styles/Contact.css';
 
@@ -59,9 +58,14 @@ const Contact: React.FC = () => {
 
         setSuccessMessage('Przekierowuję Cię do strony pocztowej...');
         setError('');
+
         setTimeout(() => {
             // Otwórz stronę pocztową w nowym oknie
             window.open(`https://${domain}`, '_blank');
+
+            // Zresetuj stan formularza
+            setEmail('');
+            setSuccessMessage('');
         }, 2000);
     };
 
