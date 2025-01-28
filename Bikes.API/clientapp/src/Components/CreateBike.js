@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import '../Styles/CreateBike.css';
@@ -71,9 +71,15 @@ function CreateBike() {
         };
 
         console.log('Wysyłane dane roweru:', bikeToSend);
+        
+        const token = localStorage.getItem('authToken'); // Assuming you store the token in local storage
 
         axios
-            .post('https://localhost:7032/api/bikes', bikeToSend)
+            .post('https://localhost:7032/api/bikes', bikeToSend, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
             .then(() => {
                 navigate('/');
             })
@@ -85,6 +91,7 @@ function CreateBike() {
                     alert('Wystąpił błąd podczas tworzenia roweru.');
                 }
             });
+
     };
 
     return (
